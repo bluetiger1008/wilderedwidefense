@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "popper.js": "^1.12.3"
+    "popper.js": "^1.12.3",
+    "bulma": "^0.6.1"
   }
 }

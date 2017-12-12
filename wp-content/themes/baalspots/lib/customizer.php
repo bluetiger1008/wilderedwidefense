@@ -9,6 +9,39 @@ use Roots\Sage\Assets;
  */
 function customize_register($wp_customize) {
   $wp_customize->get_setting('blogname')->transport = 'postMessage';
+  
+  $wp_customize->add_setting('upload_logo');
+  
+  $wp_customize->add_control(
+    new \WP_Customize_Image_Control(
+      $wp_customize,
+      'upload_logo',
+      array(
+        'label' => 'Logo',
+        'section' => 'title_tagline',
+        'settings' => 'upload_logo',
+        'transport' => 'postMessage'
+      )
+    )
+  );
+
+  $wp_customize->add_setting(
+    'upload_logo_width',
+    array(
+      'default' => '',
+      'sanitize_callback' => 'sanitize_text_field'
+    )
+  );
+
+  $wp_customize->add_control(
+    'upload_logo_width',
+    array(
+      'label' => 'Logo Max Width',
+      'section' => 'title_tagline',
+      'settings' => 'upload_logo_width',
+      'transport' => 'postMessage'
+    )
+  );
 }
 add_action('customize_register', __NAMESPACE__ . '\\customize_register');
 

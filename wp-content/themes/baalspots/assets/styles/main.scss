@@ -2,7 +2,10 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+// endbower
+
+// bower:sass
+@import "../../bower_components/bulma/bulma.sass";
 // endbower
 
 @import "common/global";
