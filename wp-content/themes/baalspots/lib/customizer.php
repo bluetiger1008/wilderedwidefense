@@ -26,19 +26,19 @@ function customize_register($wp_customize) {
   );
 
   $wp_customize->add_setting(
-    'upload_logo_width',
+    'phone_number',
     array(
-      'default' => '',
+      'default' => '(214) 741-4000',
       'sanitize_callback' => 'sanitize_text_field'
     )
   );
 
   $wp_customize->add_control(
-    'upload_logo_width',
+    'phone_number',
     array(
-      'label' => 'Logo Max Width',
+      'label' => 'Phone Number',
       'section' => 'title_tagline',
-      'settings' => 'upload_logo_width',
+      'settings' => 'phone_number',
       'transport' => 'postMessage'
     )
   );

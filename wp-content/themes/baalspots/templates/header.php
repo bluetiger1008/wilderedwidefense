@@ -1,20 +1,32 @@
 <header class="banner">
-  <div class="container">
-    <nav class="nav-primary">
-      <?php
-      if ( get_theme_mod( 'upload_logo' ) ) : ?>
-        <a href="<?= esc_url(home_url('/')); ?>">
-          <img src="<?php echo get_theme_mod( 'upload_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+  <div class="forebar">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="<?= esc_url(home_url('/')); ?>">
+          <?php
+          if ( get_theme_mod( 'upload_logo' ) ) : ?>
+            <img src="<?php echo get_theme_mod( 'upload_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+          <?php else: ?>
+            <?php bloginfo( 'name' ); ?>
+          <?php endif; ?>
         </a>
-      <?php else: ?>
-        <a href="<?= esc_url(home_url('/')); ?>" class="site-title"><?php bloginfo( 'name' ); ?></h1>
-      <?php endif; ?>
 
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-      endif;
-      ?>
+        <button class="button navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="navbar-menu">
+        <?php
+        if (has_nav_menu('primary_navigation')) :
+          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
+        endif;
+        ?>
+      </div>
     </nav>
+  </div>
+  <div class="backbar">
+    <p class="phone_number">CALL 24/7 <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
   </div>
 </header>
