@@ -24,6 +24,37 @@ $s = isset($_REQUEST['s']) ? urlencode( wp_unslash( $_REQUEST['s'] ) ) : '';
 $_SERVER['REQUEST_URI'] = remove_query_arg(array('error', 'deleted', 'activate', 'activate-multi', 'deactivate', 'deactivate-multi', '_error_nonce'), $_SERVER['REQUEST_URI']);
 
 wp_enqueue_script( 'updates' );
+add_action('admin_notices', 'showAdminMessages');
+
+function showAdminMessages()
+{
+    $plugin_messages = array();
+    $aRequired_plugins = array();
+
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+    $aRequired_plugins = array(
+		array('name'=>'Advanced Custom Fields', 'download'=>'http://wordpress.org/plugins/advanced-custom-fields/', 'path'=>'advanced-custom-fields/acf.php'),
+    );
+    
+    foreach($aRequired_plugins as $aPlugin){
+        // Check if plugin exists
+        if(!is_plugin_active( $aPlugin['path'] ))
+        {
+            $plugin_messages[] = 'This theme requires you to install the '.$aPlugin['name'].' plugin, download it from here.'.$aPlugin['download'];
+        }
+    }
+
+    if(count($plugin_messages) > 0)
+    {
+        echo '';
+            foreach($plugin_messages as $message)
+            {
+                echo ''.$message.'';
+            }
+        echo '';
+    }
+}
 
 if ( $action ) {
 

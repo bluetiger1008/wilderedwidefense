@@ -1,4 +1,4 @@
-<header class="banner">
+<header class="header--fixed">
   <div class="forebar">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">

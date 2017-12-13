@@ -11,7 +11,6 @@
  * ======================================================================== */
 
 (function($) {
-
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
   var Sage = {
@@ -19,6 +18,22 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        /* header class change on scrolling */
+        var myElement = document.querySelector("header");
+        var headroom  = new Headroom(myElement);
+        headroom.init();
+
+        /* homepage sliding text */
+        var slides = document.querySelectorAll('#slides .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide,3000);
+        
+        function nextSlide(){
+          slides[currentSlide].className = 'slide';
+          currentSlide = (currentSlide+1)%slides.length;
+          slides[currentSlide].className = 'slide showing';
+        }
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

@@ -9,3 +9,16 @@
       box-shadow: $top $left $blur $color;
     }
 }
+@mixin shapedBar($zIndex, $width, $height, $color, $shapedStyle, $clipedWidth, $shadowColor) {
+  z-index: $zIndex;
+  width: $width;
+  border-top: $height solid $color;
+  @if $shapedStyle == 'right' {
+    border-right: $clipedWidth solid transparent;
+  } @else {
+    border-left: $clipedWidth solid transparent;
+  }
+  @if $shadowColor {
+    filter: drop-shadow(0px 2px 4px $shadowColor);
+  }
+}

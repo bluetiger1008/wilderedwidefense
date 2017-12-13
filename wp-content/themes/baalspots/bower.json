@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "popper.js": "^1.12.3",
-    "bulma": "^0.6.1"
+    "bulma": "^0.6.1",
+    "headroom": "https://unpkg.com/headroom.js"
   }
 }

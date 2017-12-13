@@ -102,5 +102,6 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_script('sage/header_js', Assets\asset_path('scripts/headroom.js'));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
