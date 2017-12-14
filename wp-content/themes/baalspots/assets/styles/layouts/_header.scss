@@ -18,7 +18,7 @@ header {
     }
     .forebar {
         position: relative;
-        @include shapedBar(999, 75%, 80px, white, right, 30px, rgba(0,0,0,.2));
+        @include shapedBar(999, 75%, 80px, white, right, 30px, 0 2px 4px rgba(0,0,0,0.2));
         .navbar {
             position: absolute;
             width: 100%;
@@ -40,6 +40,7 @@ header {
                             color: #000;
                             letter-spacing: 1px;
                             font-size: 15px;
+                            font-weight: 500;
                             line-height: 80px;
                             text-transform: uppercase;
                         }

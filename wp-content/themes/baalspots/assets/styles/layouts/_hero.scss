@@ -6,7 +6,7 @@
         }
         &.img-man {
             position: absolute;
-            bottom: 100px;
+            bottom: 150px;
             right: 200px;
         }
     }
@@ -44,5 +44,67 @@
                 }
             }
         }
+    }
+    .awards-backbar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include shapedBar(997, 85%, 150px, $blue, left, 50px, null); 
+    }
+    .awards-forebar {
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        @include shapedBar(998, 90%, 140px, white, left, 50px, 	0 2px 10px rgba(0,0,0,0.1));
+        .slider {
+            width: 1200px;
+            position: relative;
+            margin-bottom: -140px;
+            height: 140px;
+            margin-left: 95px;
+            .frame {
+                /**
+                 * (optional) wrapper width, specifies width of the slider frame.
+                 */
+                width: 100%;
+                position: relative;
+                font-size: 0;
+                line-height: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                .slides {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 140px;
+                    li {
+                        position: relative;
+                        display: inline-block;
+                        text-align: center;
+                        /**
+                         * (optional) if the content inside the slide element has a defined size.
+                         */
+                        width: 200px;
+                    }
+                } 
+            }
+            .prev, .next {
+                position: absolute;
+                top: 50%;
+                margin-top: -10px;
+                display: block;
+                cursor: pointer;
+                img {
+                    width: 25px;
+                    height: 20px;
+                }
+            }   
+            .next {
+                right: -25px;
+            }
+            .prev {
+                left: -25px;
+            }
+        }       
     }
 }

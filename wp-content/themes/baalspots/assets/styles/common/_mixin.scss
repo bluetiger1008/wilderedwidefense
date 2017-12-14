@@ -9,16 +9,19 @@
       box-shadow: $top $left $blur $color;
     }
 }
-@mixin shapedBar($zIndex, $width, $height, $color, $shapedStyle, $clipedWidth, $shadowColor) {
-  z-index: $zIndex;
+@mixin shapedBar($zIndex, $width, $height, $color, $shapedStyle, $clipedWidth, $shadow) {
+  @if $zIndex {
+    z-index: $zIndex;
+  }
   width: $width;
-  border-top: $height solid $color;
   @if $shapedStyle == 'right' {
     border-right: $clipedWidth solid transparent;
+    border-top: $height solid $color;
   } @else {
     border-left: $clipedWidth solid transparent;
+    border-bottom: $height solid $color;
   }
-  @if $shadowColor {
-    filter: drop-shadow(0px 2px 4px $shadowColor);
+  @if $shadow {
+    filter: drop-shadow($shadow);
   }
 }

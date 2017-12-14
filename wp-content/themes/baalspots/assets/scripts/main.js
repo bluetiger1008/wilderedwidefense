@@ -22,8 +22,16 @@
         /* header class change on scrolling */
         var myElement = document.querySelector("header");
         var headroom  = new Headroom(myElement);
-        headroom.init();
-
+        headroom.init();       
+      },
+      finalize: function() {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+      }
+    },
+    // Home page
+    'home': {
+      init: function() {
+        // JavaScript to be fired on the home page
         /* homepage sliding text */
         var slides = document.querySelectorAll('#slides .slide');
         var currentSlide = 0;
@@ -34,18 +42,18 @@
           currentSlide = (currentSlide+1)%slides.length;
           slides[currentSlide].className = 'slide showing';
         }
-      },
-      finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
-      }
-    },
-    // Home page
-    'home': {
-      init: function() {
-        // JavaScript to be fired on the home page
+
+        /* homepage awards slider */
+        var multiSlides  = document.querySelector('.js_multislides');
+        // http://easings.net/
+        lory(multiSlides, {
+          infinite: 6,
+          slidesToScroll: 1
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+        console.log('bcd');
       }
     },
     // About us page, note the change from about-us to about_us.

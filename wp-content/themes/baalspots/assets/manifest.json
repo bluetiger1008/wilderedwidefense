@@ -22,6 +22,9 @@
     },
     "headroom.js": {
       "bower": ["headroom"]
+    },
+    "lory.js": {
+      "bower": ["lory"]
     }
   },
   "config": {

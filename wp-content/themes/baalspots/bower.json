@@ -9,6 +9,7 @@
   "dependencies": {
     "popper.js": "^1.12.3",
     "bulma": "^0.6.1",
-    "headroom": "https://unpkg.com/headroom.js"
+    "headroom": "https://unpkg.com/headroom.js",
+    "lory": "^2.3.4"
   }
 }
