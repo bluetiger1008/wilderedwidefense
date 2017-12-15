@@ -63,6 +63,7 @@ Template Post Type: post, page, event
                     <?php the_content(); ?>
                 </div>
                 <div class="column">
+                    <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/contact_us__sidebar"></script>
                 </div>
             </div>
         </div>

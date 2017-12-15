@@ -55,7 +55,7 @@ function custom_post_types() {
     'description'   => 'Notable Victories',
     'public'        => true,
     'menu_position' => 5,
-    'supports'      => array( 'title', 'editor' ),
+    'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
     'has_archive'   => true,
   );
   $args_awards = array(
@@ -82,14 +82,24 @@ function listing_victories_shortcode( $atts ) {
         'orderby' => 'title',
     ) );
     if ( $query->have_posts() ) { ?>
-        <ul class="victories-listing">
-            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-            <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php the_title(); ?>
-            </li>
-            <?php endwhile;
-            wp_reset_postdata(); ?>
-        </ul>
+      <div class="notable_victories">
+        <p class="txt-red text-xs">Notable Victories</p>
+        <div class="slider js_simple_dots simple">
+          <div class="frame js_frame">
+            <ul class="slides js_slides">
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <li class="js_slide">
+                  <p class="post-header"><?php echo  get_the_excerpt(); ?></p>
+                  <p class="post-title"><?php the_title(); ?></p>
+                  <?php the_content();?>
+                </li>
+                <?php endwhile;
+                wp_reset_postdata(); ?>
+            </ul>
+          </div>
+          <ul class="js_dots dots"></ul>
+        </div>
+      </div>
     <?php $myvariable = ob_get_clean();
     return $myvariable;
     }
