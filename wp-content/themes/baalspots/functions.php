@@ -72,8 +72,8 @@ function custom_post_types() {
 
 add_action( 'init', 'custom_post_types' );
 
-add_shortcode( 'list-victories', 'listing_victories_shortcode' );
-function listing_victories_shortcode( $atts ) {
+add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
+function listing_victories_carousel_shortcode( $atts ) {
     ob_start();
     $query = new WP_Query( array(
         'post_type'=>'notable_victories',
@@ -83,7 +83,7 @@ function listing_victories_shortcode( $atts ) {
     ) );
     if ( $query->have_posts() ) { ?>
       <div class="notable_victories">
-        <p class="txt-red text-xs">Notable Victories</p>
+        <p class="txt-red txt-xs">Notable Victories</p>
         <div class="slider js_simple_dots simple">
           <div class="frame js_frame">
             <ul class="slides js_slides">
@@ -104,6 +104,70 @@ function listing_victories_shortcode( $atts ) {
     return $myvariable;
     }
 }
+
+add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
+function latest_victories_tiles_shortcode( $atts ) {
+    ob_start();
+    $query = new WP_Query( array(
+        'post_type'=>'notable_victories',
+        'posts_per_page' => 3,
+    ) );
+    if ( $query->have_posts() ) { ?>
+      <div class="tile-victories">
+        <?php 
+        $index = 0;
+        while ( $query->have_posts() ) : $query->the_post(); $index++;?>
+          <?php if($index == 1) : ?>
+            <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+            <div class="tile-left" style="background: url('<?php echo $backgroundImg[0]; ?>');">
+              <div class="tile-left-container">
+                <div class="tile-title">Notable <br> Victories</div>
+              </div>
+              <div class="tile-summary">
+                <p class="post-header"><?php echo get_the_excerpt(); ?></p>
+                <p class="post-title"><?php the_title(); ?></p>
+                <div class="post-summary"<?php the_content();?></div>
+              </div>
+            </div>
+            <div class="tile-right">
+          <?php else: ?>
+            <div class="tile-<?php echo ($index==2 ? 'right-top' : 'right-bottom'); ?>">
+              <div class="tile-img-<?php echo ($index==2 ? 'left' : 'right'); ?>">
+                <?php the_post_thumbnail(); ?>
+                <?php if($index == 3): ?>
+                  <div class="post-all">
+                    <a>View All</a>
+                    <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
+                  </div>
+                <?php endif; ?>
+              </div>
+              <div class="tile-summary">
+                <p class="post-header"><?php echo get_the_excerpt(); ?></p>
+                <p class="post-title"><?php the_title(); ?></p>
+                <div class="post-summary"><?php the_content();?></div>
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+        </div>
+      </div>
+    <?php $myvariable = ob_get_clean();
+    return $myvariable;
+    }
+}
+
+function victories_tiles_init() {
+    register_sidebar( array(
+      'name'          => 'Victories Tiles',
+      'id'            => 'victories_tiles',
+      'before_widget' => '<div>',
+      'after_widget'  => '</div>',
+      'before_title'  => '<span class="hidden">',
+      'after_title'   => '</span>',
+    ) );
+}
+add_action( 'widgets_init', 'victories_tiles_init' );
 
 foreach ($sage_includes as $file) {
   if (!$filepath = locate_template($file)) {

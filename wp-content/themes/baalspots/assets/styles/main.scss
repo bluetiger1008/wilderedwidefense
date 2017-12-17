@@ -8,15 +8,17 @@
 @import "../../bower_components/bulma/bulma.sass";
 // endbower
 
-@import "common/global";
-@import "common/mixin";
 @import "common/variables";
+@import "common/mixin";
+@import "common/global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/grid";
 @import "components/slides";
+@import "components/post-tiles";
 @import "components/wp-classes";
+@import "components/days-left";
 @import "layouts/header";
 @import "layouts/hero";
 @import "layouts/sidebar";

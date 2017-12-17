@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="36px" height="29px" viewBox="0 0 36 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
-    <title>Mask</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M33.9729079,12.4770286 C35.0774774,12.4770286 35.9729079,13.3724591 35.9729079,14.4770286 C35.9729079,15.5815981 35.0774774,16.4770286 33.9729079,16.4770286 L6.88467908,16.4770286 L16.0873024,25.5451199 C16.4645278,25.9193293 16.6767062,26.4286797 16.6767062,26.9600286 C16.6767062,27.4913776 16.4645278,28.000728 16.0824053,28.3797731 C15.7064996,28.7492668 15.2004388,28.9562273 14.6945446,28.9558867 C14.1613223,28.9632233 13.6472509,28.7573068 13.2641201,28.3815032 L0.597020908,15.9003728 C0.215134729,15.5254287 0,15.012711 0,14.4775286 C0,13.9423463 0.215134729,13.4296286 0.595248525,13.0564276 L13.2689627,0.571804137 C14.0502505,-0.191080764 15.2975653,-0.191080764 16.0817949,0.574684516 C16.463681,0.949628613 16.6788158,1.46234631 16.6788158,1.99752865 C16.6788158,2.53271098 16.463681,3.04542868 16.0835529,3.41864386 L6.88773879,12.4770286 L33.9729079,12.4770286 Z" id="path-1"></path>
-    </defs>
-    <g id="Icons/arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Palette/primary">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-        </g>
-    </g>
-</svg>
+<svg width="36" height="29" viewBox="0 0 36 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Mask</title><defs><path d="M33.973 12.477a2 2 0 1 1 0 4H6.885l9.202 9.068a1.993 1.993 0 0 1-.005 2.835c-.376.37-.882.576-1.387.576a2.002 2.002 0 0 1-1.43-.574L.596 15.9a1.994 1.994 0 0 1-.002-2.844L13.27.572a2.012 2.012 0 0 1 2.813.003 1.994 1.994 0 0 1 .002 2.844l-9.196 9.058h27.085z" id="path-1"/></defs><g id="Icons/arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Palette/primary"><mask id="mask-2" fill="#fff"><use xlink:href="#path-1"/></mask><use id="Mask" fill="#000" fill-rule="nonzero" xlink:href="#path-1"/></g></g></svg>

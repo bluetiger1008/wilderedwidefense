@@ -63,9 +63,29 @@ Template Post Type: post, page, event
                     <?php the_content(); ?>
                 </div>
                 <div class="column">
-                    <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/contact_us__sidebar"></script>
+                    <?php the_field('form_script') ?>
+                    <?php the_field('form_comment') ?>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <?php if ( is_active_sidebar( 'victories_tiles' ) ) : ?>
+        <?php dynamic_sidebar( 'victories_tiles' ); ?>
+    <?php endif; ?>
+
+    <section class="days-left" style="background-image: url('<?php the_field('background_image') ?>');">
+        <div class="container is-vertical">
+            <div class="columns">
+                <div class="column is-half">
+                    <h1><?php the_field('title') ?></h1>
+                    <p><?php the_field('description') ?></p>
+                    <a href="" class="button btn-red btn-rounded">Act Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="thumb-days">
+            <p><?php the_field('left_days') ?><span>days</span></p>
         </div>
     </div>
 </div>
