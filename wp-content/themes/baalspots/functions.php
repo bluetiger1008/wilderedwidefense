@@ -15,64 +15,10 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php' // Theme customizer
+  'lib/customizer.php', // Theme customizer
+  'lib/postTypes.php',  //Custom Post Types
 ];
 
-function custom_post_types() {
-  $labels_awards = array(
-    'name'               => _x( '', 'post type general name' ),
-    'singular_name'      => _x( 'Logo', 'post type singular name' ),
-    'add_new'            => _x( 'Add New', 'Award' ),
-    'add_new_item'       => __( 'Add New Award' ),
-    'edit_item'          => __( 'Edit Award' ),
-    'new_item'           => __( 'New Award' ),
-    'all_items'          => __( 'All Awards' ),
-    'view_item'          => __( 'View Award' ),
-    'search_items'       => __( 'Search Awards' ),
-    'not_found'          => __( 'No Awards found' ),
-    'not_found_in_trash' => __( 'No Awards found in the Trash' ), 
-    'parent_item_colon'  => '',
-    'menu_name'          => 'Awards'
-  );
-  $labels_notable_victories = array(
-    'name'               => _x( '', 'post type general name' ),
-    'singular_name'      => _x( 'Victory', 'post type singular name' ),
-    'add_new'            => _x( 'Add New', 'Victory' ),
-    'add_new_item'       => __( 'Add New Victory' ),
-    'edit_item'          => __( 'Edit Victory' ),
-    'new_item'           => __( 'New Victory' ),
-    'all_items'          => __( 'All Victories' ),
-    'view_item'          => __( 'View Victory' ),
-    'search_items'       => __( 'Search Victories' ),
-    'not_found'          => __( 'No Victories found' ),
-    'not_found_in_trash' => __( 'No Victories found in the Trash' ), 
-    'parent_item_colon'  => '',
-    'menu_name'          => 'Notable Victories'
-  );
-
-  $args_notable_victories = array(
-    'labels'        => $labels_notable_victories,
-    'description'   => 'Notable Victories',
-    'public'        => true,
-    'menu_position' => 5,
-    'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
-    'has_archive'   => true,
-  );
-  $args_awards = array(
-    'labels'        => $labels_awards,
-    'description'   => 'Awards',
-    'public'        => true,
-    'menu_position' => 4,
-    'supports'      => array( 'title', 'thumbnail'),
-    'has_archive'   => true,
-  );
-  register_post_type( 'notable_victories', $args_notable_victories ); 
-  register_post_type( 'award', $args_awards ); 
-};
-
-add_action( 'init', 'custom_post_types' );
-
-add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
 function listing_victories_carousel_shortcode( $atts ) {
     ob_start();
     $query = new WP_Query( array(
@@ -105,7 +51,6 @@ function listing_victories_carousel_shortcode( $atts ) {
     }
 }
 
-add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
 function latest_victories_tiles_shortcode( $atts ) {
     ob_start();
     $query = new WP_Query( array(
@@ -156,6 +101,50 @@ function latest_victories_tiles_shortcode( $atts ) {
     return $myvariable;
     }
 }
+
+function listing_award_team( $atts ) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'award_winning_team',
+      'posts_per_page' => 3,
+  ) );
+  if ( $query->have_posts() ) { ?>
+    <div class="award-team">
+      <div class="columns">
+        <?php 
+        $index = 0;
+        while ( $query->have_posts() ) : $query->the_post(); $index++;?>
+          <div class="column is-one-third">
+            <div class="member-photo <?php echo ($index==2 ? 'middle': ''); ?>">
+              <div>
+                <?php the_post_thumbnail('full'); ?>
+              </div>
+            </div>
+            <div class="member-role">
+              <?php
+              $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+              foreach ( $terms as $term ) {
+                echo $term->name;
+              }
+              ?>
+            </div>
+            <div class="member-name"><?php the_title(); ?></div>
+            <div class="about-member has-text-centered"><?php the_content(); ?></div>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+      </div>
+      <div class="has-text-centered">
+        <a class="read-more">Read More</a>
+      </div>
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
+add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
+add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
+add_shortcode( 'list-award-team', 'listing_award_team' );
 
 function victories_tiles_init() {
     register_sidebar( array(

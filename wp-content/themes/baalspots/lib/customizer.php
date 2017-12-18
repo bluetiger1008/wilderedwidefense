@@ -1,9 +1,5 @@
 <?php
 
-namespace Roots\Sage\Customizer;
-
-use Roots\Sage\Assets;
-
 /**
  * Add postMessage support
  */

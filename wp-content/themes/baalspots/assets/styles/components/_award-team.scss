@@ -1,0 +1,68 @@
+section.meet-team {
+    padding: 144px 0 100px;
+    h1 {
+        color: #131313;
+    }
+    p {
+        color: #151515;
+        line-height: 26px;
+        font-weight: 300;
+    }
+    .award-team {
+        margin-top: 60px;
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .member-photo {
+                height: 320px;
+                display: flex;
+                align-items: flex-end;
+                &.middle {
+                    div {
+                        width: 320px;
+                        height: 320px;
+                    }
+                }
+                div {
+                    width: 230px;
+                    height: 230px;
+                    position: relative;
+                    background-color: #e8e8e8;
+                    border-radius: 50%;
+                    img {
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+            }
+            .member-role {
+                margin-top: 24px;
+                color: $red;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            .member-name {
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 32px;
+                color: #333333;
+            }
+            .about-member {
+                margin: 25px 0 45px;
+                p {
+                    color: #393939;
+                }
+            }
+        }
+        .read-more {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            color: #000000;
+            border-bottom: 2px solid #FAC627;
+        }
+    }
+}

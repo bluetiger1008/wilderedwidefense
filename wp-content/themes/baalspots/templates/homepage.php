@@ -87,5 +87,12 @@ Template Post Type: post, page, event
         <div class="thumb-days">
             <p><?php the_field('left_days') ?><span>days</span></p>
         </div>
-    </div>
+    </section>
+
+    <section class="meet-team">
+        <?php the_field('meet_award_team_header') ?>
+        <div class="container">
+            <?php the_field('meet_award_team_members') ?>
+        </div>
+    </section>
 </div>
