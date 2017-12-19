@@ -50,11 +50,11 @@
           infinite: 6,
           slidesToScroll: 1
         });
+
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
         var simple_dots       = document.querySelector('.js_simple_dots');
-        var frame             = simple_dots.querySelector('.js_frame');
         var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
         var dot_container     = simple_dots.querySelector('.js_dots');
         var dot_list_item     = document.createElement('li');
@@ -62,6 +62,7 @@
         function handleDotEvent(e) {
             if (e.type === 'before.lory.init') {
               //set li width same as slider width
+              var frame = simple_dots.querySelector('.js_frame');
               var frameWidth = frame.offsetWidth;
               frame.querySelector('.js_slides>li').style.width = frameWidth + "px";
 
@@ -100,6 +101,24 @@
         var dot_navigation_slider = lory(simple_dots, {
             infinite: 1,
             enableMouseEvents: true
+        });
+
+        //Testimonial Slider
+        var testimonial_slider = document.querySelector('.js_testimonial_slider');
+       
+        testimonial_slider.addEventListener('before.lory.init', LoadTestimonialSlider);
+        
+        function LoadTestimonialSlider(e) {
+          if (e.type === 'before.lory.init') {
+            //set li width same as slider width
+            var frame = testimonial_slider.querySelector('.js_frame');
+            var frameWidth = frame.offsetWidth;
+            frame.querySelector('.js_slides>li').style.width = frameWidth + "px";
+          }
+        }
+
+        lory(testimonial_slider, {
+            infinite: 1
         });
       }
     },

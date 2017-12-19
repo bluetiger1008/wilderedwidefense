@@ -49,6 +49,21 @@ function custom_post_types() {
     'parent_item_colon'  => '',
     'menu_name'          => 'Award Winning Team'
   );
+  $labels_testimonial = array(
+    'name'               => _x( '', 'post type general name' ),
+    'singular_name'      => _x( 'Testimonial', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'Testimonial' ),
+    'add_new_item'       => __( 'Add New Testimonial' ),
+    'edit_item'          => __( 'Edit Testimonial' ),
+    'new_item'           => __( 'New Testimonial' ),
+    'all_items'          => __( 'All Testimonials' ),
+    'view_item'          => __( 'View Testimonial' ),
+    'search_items'       => __( 'Search Testimonials' ),
+    'not_found'          => __( 'No Testimonials found' ),
+    'not_found_in_trash' => __( 'No Testimonials found in the Trash' ), 
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Testimonials'
+  );
 
   $args_notable_victories = array(
     'labels'        => $labels_notable_victories,
@@ -74,10 +89,19 @@ function custom_post_types() {
     'supports'      => array( 'title', 'editor', 'thumbnail'),
     'has_archive'   => true,
   );
+  $args_testimonials = array(
+    'labels'        => $labels_testimonial,
+    'description'   => 'Testimonial',
+    'public'        => true,
+    'menu_position' => 6,
+    'supports'      => array( 'title', 'editor'),
+    'has_archive'   => true,
+  );
 
   register_post_type( 'notable_victories', $args_notable_victories ); 
   register_post_type( 'award', $args_awards ); 
   register_post_type( 'award_winning_team', $args_award_winning_team);
+  register_post_type( 'testimonial', $args_testimonials);
 };
 
 function award_winning_taxonomies() {

@@ -1,0 +1,22 @@
+section.subscribe {
+    margin-bottom: 100px;
+    .container {
+        padding: 57px 0 64px 87px;
+        background-size: cover;
+        border-left: 10px solid $dark-yellow;
+        h1, p {
+            color: white;
+        }
+        form {
+            input {
+                width: 298px;
+                height: 48px;                
+            }
+            button {
+                height: 48px;
+                width: 153px;
+                background-color: $red;
+            }
+        }
+    }
+}

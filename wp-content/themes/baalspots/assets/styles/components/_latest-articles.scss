@@ -1,0 +1,41 @@
+section.latest-articles {
+    margin-top: 200px;
+    .articles-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 30px;
+        margin-bottom: 40px;
+        .view-all {
+            a {
+                @include btnViewAll();
+                color: black;
+            }
+            img {
+                margin-left: 15px;
+                width: 17px;
+            }
+        }
+    }
+    .column {
+        .article-photo {
+            height: 200px;
+            background-size: cover;
+        }
+        .article-summary {
+            padding: 40px;
+            .article-title {
+                color: #333333;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 28px;
+                margin-bottom: 20px;
+            }
+            .article-description {
+                color: #333333;
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+}

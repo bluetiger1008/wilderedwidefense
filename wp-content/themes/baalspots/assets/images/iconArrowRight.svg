@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="22px" viewBox="0 0 13 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>iconArrowRight</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Section-/-Testimonials-/-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-682.000000, -416.000000)">
+        <g fill="#FFFFFF" id="arrows">
+            <g transform="translate(613.000000, 402.000000)">
+                <g id="iconArrowRight" transform="translate(69.000000, 14.000000)">
+                    <rect id="Rectangle-4" transform="translate(6.500000, 6.096774) rotate(45.000000) translate(-6.500000, -6.096774) " x="-1.18181818" y="5.22580645" width="15.3636364" height="1.74193548" rx="0.870967742"></rect>
+                    <rect id="Rectangle-4" transform="translate(6.500000, 15.534028) scale(-1, 1) rotate(45.000000) translate(-6.500000, -15.534028) " x="-1.18181818" y="14.6630603" width="15.3636364" height="1.74193548" rx="0.870967742"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

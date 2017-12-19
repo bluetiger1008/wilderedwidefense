@@ -95,4 +95,66 @@ Template Post Type: post, page, event
             <?php the_field('meet_award_team_members') ?>
         </div>
     </section>
+
+    <section class="subscribe">
+        <div class="container" style="background-image: url('<?php the_field('newsletter_form_background') ?>');">
+            <h1><?php the_field('newsletter_form_title') ?></h1>
+            <p><?php the_field('sign_up_text') ?></p>
+            <form action="https://baalspots.createsend.com/t/i/s/atdgj/" method="post" id="subForm">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="email" name="cm-atdgj-atdgj" required />
+                    </div>
+                    <div class="control">
+                        <button class="button is-info" type="submit">
+                        Subscribe
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <?php if( have_rows('testimoinals') ): 
+                while( have_rows('testimoinals') ): the_row(); 
+                    
+                    // vars
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $script = get_sub_field('testimonial_script');
+                    
+                    ?>
+                    <div class="columns is-gapless">
+                        <div class="column is-half">
+                            <div class="testimonial-title">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                <h1><?php echo $title; ?></h1>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="testimonial-content">
+                                <?php echo $script; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+                
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <section class="latest-articles">
+        <div class="container">
+            <div class="articles-header">
+                <h1>Latest Articles</h1>
+                <div class="view-all">
+                    <a>View All Articles</a>
+                    <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
+                </div>
+            </div>
+            <?php the_field('article_script'); ?>
+        </div>
+    </section>
 </div>

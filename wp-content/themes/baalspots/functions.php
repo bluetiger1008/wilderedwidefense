@@ -142,9 +142,83 @@ function listing_award_team( $atts ) {
   }
 }
 
+function listing_testimonials( $atts ) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'testimonial',
+      'posts_per_page' => -1,
+  ) );
+  if ( $query->have_posts() ) { ?>
+    <div class="wrapper">
+      <div class="slider js_testimonial_slider simple">
+        <div class="frame js_frame">
+          <ul class="slides js_slides">
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+              <li class="js_slide">
+                <?php the_content();?>
+              </li>
+              <?php endwhile;
+              wp_reset_postdata(); ?>
+          </ul>
+        </div>
+        <div class="slider_nav">
+          <span class="js_prev prev">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowLeft.svg">
+          </span>
+          <span class="js_next next">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowRight.svg">
+          </span>
+        </div>
+      </div>
+      <div class="testimonial-all">
+        <a class="">View All</a>
+        <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
+      </div>
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
+function listing_articles( $atts ) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'post',
+      'posts_per_page' => 3,
+  ) );
+  if ( $query->have_posts() ) { ?>
+      <div class="columns">
+        <?php 
+        $index = 0;
+        while ( $query->have_posts() ) : $query->the_post(); $index++;?>
+          <div class="column is-one-third">
+            <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
+            </div>
+            <div class="article-summary">
+              <div class="category">
+                <?php
+                $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+                foreach ( $terms as $term ) {
+                  echo $term->name;
+                }
+                ?>
+              </div>
+              <div class="article-title"><?php the_title(); ?></div>
+              <div class="article-description"><?php the_content(); ?></div>
+            </div>
+          </div>
+        <?php endwhile; wp_reset_postdata(); ?>
+      </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
 add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
 add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
 add_shortcode( 'list-award-team', 'listing_award_team' );
+add_shortcode( 'list-testimonials', 'listing_testimonials');
+add_shortcode( 'list-articles', 'listing_articles');
 
 function victories_tiles_init() {
     register_sidebar( array(
