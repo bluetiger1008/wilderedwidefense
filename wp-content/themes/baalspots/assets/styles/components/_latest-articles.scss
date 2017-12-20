@@ -1,5 +1,8 @@
 section.latest-articles {
-    margin-top: 200px;
+    padding-top: 200px;
+    padding-bottom: 140px;
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
+    background-color: #E6E6E6;
     .articles-header {
         display: flex;
         justify-content: space-between;
@@ -18,23 +21,26 @@ section.latest-articles {
         }
     }
     .column {
-        .article-photo {
-            height: 200px;
-            background-size: cover;
-        }
-        .article-summary {
-            padding: 40px;
-            .article-title {
-                color: #333333;
-                font-size: 22px;
-                font-weight: bold;
-                line-height: 28px;
-                margin-bottom: 20px;
+        .article {
+            @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
+            .article-photo {
+                height: 200px;
+                background-size: cover;
             }
-            .article-description {
-                color: #333333;
-                font-size: 16px;
-                line-height: 26px;
+            .article-summary {
+                padding: 40px;
+                .article-title {
+                    color: #333333;
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: 28px;
+                    margin-bottom: 20px;
+                }
+                .article-description {
+                    color: #333333;
+                    font-size: 16px;
+                    line-height: 26px;
+                }
             }
         }
     }

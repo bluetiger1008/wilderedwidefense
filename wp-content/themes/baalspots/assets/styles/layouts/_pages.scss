@@ -1,6 +1,7 @@
 .home {    
     .pg-content {
         padding: 112px 0 87px;
+        background-color: $bg-primary;
         .notable_victories {
             margin: 45px 0 50px;
             text-align: center;
@@ -28,6 +29,26 @@
                 }
                 .dots {
                     margin-top: 28px;
+                }
+            }
+        }
+    }
+    section.consultation {
+        background-color: #1B1B1B;
+        img {
+            width: 100%;
+        }
+        .form {
+            padding: 75px 0;
+            .wrapper {
+                max-width: 700px;
+                text-align: center;
+                margin: 0 auto;
+                h1 {
+                    color: white;
+                }
+                p {
+                    color: #686868;
                 }
             }
         }

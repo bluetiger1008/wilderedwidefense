@@ -192,19 +192,21 @@ function listing_articles( $atts ) {
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <div class="column is-one-third">
-            <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
-            </div>
-            <div class="article-summary">
-              <div class="category">
-                <?php
-                $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
-                foreach ( $terms as $term ) {
-                  echo $term->name;
-                }
-                ?>
+            <div class="article">
+              <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
               </div>
-              <div class="article-title"><?php the_title(); ?></div>
-              <div class="article-description"><?php the_content(); ?></div>
+              <div class="article-summary">
+                <div class="category">
+                  <?php
+                  $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+                  foreach ( $terms as $term ) {
+                    echo $term->name;
+                  }
+                  ?>
+                </div>
+                <div class="article-title"><?php the_title(); ?></div>
+                <div class="article-description"><?php the_content(); ?></div>
+              </div>
             </div>
           </div>
         <?php endwhile; wp_reset_postdata(); ?>

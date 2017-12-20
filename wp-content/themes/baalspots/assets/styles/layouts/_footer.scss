@@ -1,0 +1,45 @@
+footer {
+    background-color: #1B1B1B;
+    padding: 100px 0;
+    .social-share {
+        text-align: center;
+        a {
+            margin: 0 10px;
+            img {
+                height: 15px;
+            }
+        }
+    }
+    .widget_nav_menu {
+        margin-top: 40px;
+        margin-bottom: 50px;
+        h3 {
+            display: none;
+        }
+        .menu-footer-menu-container {
+            .menu {
+                display: flex;
+                justify-content: center;
+                li {
+                    margin: 0 10px;
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .widget_text {
+        h3 {
+            display: none;
+        }
+        .textwidget {
+            text-align: center;
+            p {
+                font-size: 12px;
+                line-height: 25px;
+                text-align: center;
+            }
+        }
+    }
+}
