@@ -1,15 +1,51 @@
 body {
-    
+    font-family: 'Open Sans';
 }
-h1 {
-    font-size: 44px;
+a {
+    &:hover {
+        color: white;
+    }
 }
-p {
+.button {
+    font-family: 'Poppins';
+    font-weight: bold;
+    letter-spacing: 1px;
     font-size: 16px;
+    &:hover {
+        color: white;
+    }
+}
+.txt-red {
+    color: $red;
 }
 .txt-xs {
     font-size: 14px;
 }
-.txt-red {
-    color: $red;
+.btn-cta {
+    height: 48px;
+    font-size: 14px !important;
+    line-height: 22px !important;
+    padding: 0 40px;
+    background-color:#DA2128;
+    color: white;
+    border-radius: 21.5px;
+    border: none;
+}
+.content {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+    h1 {
+        font-size: 44px;
+        line-height: 48px;
+        font-family: 'Trueno';
+        font-weight: bold;
+    }
+    p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 30px;
+        font-family: 'Trueno';
+        font-weight: 300;
+    }
 }

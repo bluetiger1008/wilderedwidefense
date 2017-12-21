@@ -1,5 +1,7 @@
 .hero {
     position: relative;
+    height: 900px;
+    background-size: cover;
     img {
         &.hero-background {
             width: 100%;
@@ -12,7 +14,7 @@
     }
     .hero-text {
         position: absolute;
-        left: 150px;
+        left: 0px;
         top: 320px;
         width: 50%;
         color: white;
@@ -37,9 +39,15 @@
                 }
                 h1 {
                     color: white;
+                    margin-bottom: 18px;
                 }
                 p {
                     font-size: 22px;
+                    margin-bottom: 30px;
+                }
+                a {
+                    width: 244px;
+                    height: 46px;
                 }
             }
         }

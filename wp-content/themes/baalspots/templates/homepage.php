@@ -5,26 +5,32 @@ Template Post Type: post, page, event
 */
 ?>
 <div class="home">
-    <div class="hero">
-        <img src="<?php the_field('hero_image') ?>" class="hero-background">
-        <img src="<?php the_field('man_image') ?>" class="img-man">
-        <div class="hero-text">
-            <ul id="slides">
-                <li class="slide showing">
-                    <h1><?php the_field('hero_title') ?></h1>
-                    <p><?php the_field('hero_description') ?></p>
-                    <a href="" class="button btn-red btn-rounded">Get Started Now</a>
-                </li>
-                <li class="slide">
-                    <h1>Slide 2</h1>
-                    <p>lorem ipsum</p>
-                </li>
-                <li class="slide">
-                    <h1>Slide 3</h1>
-                    <p>lorem ipsum</p>
-                </li>
-            </ul>
+    <div class="hero" style="background-image: url('<?php the_field('hero_image') ?>');">
+        <div class="container">
+            <div class="hero-text">
+                <?php if( have_rows('hero_slider') ): ?>
+                <ul id="slides">
+                <?php while( have_rows('hero_slider') ): the_row(); 
+                    // vars
+                    $title = get_sub_field('slider_title');
+                    $description = get_sub_field('slider_description');
+                    $link = get_sub_field('get_start_link');
+                    ?>
+                    <li class="slide">
+                        <h1><?php echo $title; ?></h1>
+                        <p><?php echo $description; ?></p>
+                        <?php if( $link ): ?>
+                            <a href="<?php echo $link; ?>" class="button btn-cta">
+                                Get Started Now
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                <?php endwhile; ?>
+                </ul>
+                <?php endif; ?>
+            </div>
         </div>
+        <img src="<?php the_field('attorney_image') ?>" class="img-man">
         <div class="awards-backbar">  
         </div>
         <div class="awards-forebar">
@@ -74,18 +80,18 @@ Template Post Type: post, page, event
         <?php dynamic_sidebar( 'victories_tiles' ); ?>
     <?php endif; ?>
 
-    <section class="days-left" style="background-image: url('<?php the_field('background_image') ?>');">
+    <section class="days-left" style="background-image: url('<?php the_field('left_days_background_image') ?>');">
         <div class="container is-vertical">
             <div class="columns">
                 <div class="column is-half">
-                    <h1><?php the_field('title') ?></h1>
-                    <p><?php the_field('description') ?></p>
-                    <a href="" class="button btn-red btn-rounded">Act Now</a>
+                    <h1><?php the_field('left_days_header') ?></h1>
+                    <p><?php the_field('left_days_description') ?></p>
+                    <a href="" class="button btn-cta">Act Now</a>
                 </div>
             </div>
         </div>
         <div class="thumb-days">
-            <p><?php the_field('left_days') ?><span>days</span></p>
+            <p><?php the_field('left_days_number') ?><span>days</span></p>
         </div>
     </section>
 
@@ -165,6 +171,7 @@ Template Post Type: post, page, event
                 <div class="wrapper">
                     <h1><?php the_field('consult_form_header'); ?></h1>
                     <p><?php the_field('consult_form_description'); ?></p>
+                    <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/contact_us_main_pre_footer"></script>
                 </div>
             </div>
         </div>

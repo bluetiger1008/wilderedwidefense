@@ -155,7 +155,7 @@ function listing_testimonials( $atts ) {
           <ul class="slides js_slides">
               <?php while ( $query->have_posts() ) : $query->the_post(); ?>
               <li class="js_slide">
-                <?php the_content();?>
+                <p><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></p>
               </li>
               <?php endwhile;
               wp_reset_postdata(); ?>
@@ -205,7 +205,7 @@ function listing_articles( $atts ) {
                   ?>
                 </div>
                 <div class="article-title"><?php the_title(); ?></div>
-                <div class="article-description"><?php the_content(); ?></div>
+                <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
               </div>
             </div>
           </div>

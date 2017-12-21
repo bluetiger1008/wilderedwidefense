@@ -64,8 +64,11 @@
               //set li width same as slider width
               var frame = simple_dots.querySelector('.js_frame');
               var frameWidth = frame.offsetWidth;
-              frame.querySelector('.js_slides>li').style.width = frameWidth + "px";
-
+              var slides = frame.querySelectorAll('.js_slides>li');
+              console.log('slides', slides);
+              for(var i=0; i<slides.length; i++) {
+                slides[i].style.width = frameWidth + "px";
+              }
               for (var i = 0, len = dot_count; i < len; i++) {
                 var clone = dot_list_item.cloneNode();              
                 dot_container.appendChild(clone);

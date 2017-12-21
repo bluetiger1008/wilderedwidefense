@@ -1,5 +1,16 @@
 .home {    
     .pg-content {
+        h1 {
+            font-size: 34px;
+            line-height: 42px;
+        }
+        h3 {
+            font-size: 18px;
+            line-height: 28px;
+        }
+        p {
+            line-height: 26px;
+        }
         padding: 112px 0 87px;
         background-color: $bg-primary;
         .notable_victories {

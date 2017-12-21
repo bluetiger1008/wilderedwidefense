@@ -9,6 +9,7 @@
             .post-header {
                 font-size: 16px;
                 color: $red;
+                font-weight: bold;
                 line-height: 19px;
             }
             .post-title {
@@ -19,8 +20,9 @@
             }
             .post-summary {
                 color: #393939;
-                font-size: 16px;
                 line-height: 26px;
+                font-size: 16px;
+                font-family: "Open Sans";
             }
         }
         &-left {
@@ -29,10 +31,12 @@
                 max-width: 600px;
                 margin-left: auto;
                 .tile-title {
+                    font-family: 'Trueno';
                     margin-top: 150px;
                     border-left: 10px solid #FAC627;
                     padding-left: 20px;
                     font-size: 60px;
+                    line-height: 60px;
                     color: white;
                 }
             }
