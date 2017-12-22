@@ -78,4 +78,37 @@ section.testimonials {
             }
         }
     }
+    @include mobile {
+        .container {
+            padding: 0;
+        }
+        .column {
+            .testimonial-title {
+                padding: 60px 40px;
+                background-size: 100% auto;
+                h1 {
+                    font-size: 40px;
+                    line-height: 40px;
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    margin: 0;
+                }
+            }
+            .testimonial-content {
+                position: relative;
+                width: 100%;
+                top: 0;
+                height: 500px;
+                .wrapper {
+                    padding: 40px 40px 70px;
+                    .js_testimonial_slider {
+                        .slider_nav {
+                            margin-top: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,5 +1,5 @@
 .home {    
-    .pg-content {
+    .wp-content {
         h1 {
             font-size: 34px;
             line-height: 42px;
@@ -7,6 +7,9 @@
         h3 {
             font-size: 18px;
             line-height: 28px;
+            color: #686868;
+            margin-top: 19px;
+            margin-bottom: 29px;
         }
         p {
             line-height: 26px;
@@ -60,6 +63,30 @@
                 }
                 p {
                     color: #686868;
+                }
+            }
+        }
+    }
+    @include mobile {
+        .wp-content {
+            padding-top: 46px;
+            padding-bottom: 30px;
+            ul {
+                margin-left: 20px;
+            }
+        }
+        section {
+            &.consultation {
+                .form {
+                    padding: 36px 0 0;
+                    .wrapper {
+                        >p, >h1 {
+                            padding: 0 20px;
+                        }
+                        >p {
+                            margin-bottom: 80px;
+                        }
+                    }
                 }
             }
         }

@@ -110,5 +110,42 @@
                 }
             }
         }
-    }        
+    }
+    @include mobile {
+        display: block;
+        .tile {
+            &-left {
+                &-container {
+                    padding: 60px 40px;
+                    .tile-title {
+                        margin-top: 0;
+                        font-size: 40px;
+                        line-height: 40px;
+                    }
+                }
+                .tile-summary {
+                    width: 100%;
+                    position: relative;
+                }
+            }       
+            &-right {
+                &-top {
+                    flex-direction: column;
+                    .tile-img-left {
+                        height: 350px;
+                        background-size: cover;
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+                &-bottom {
+                    flex-direction: column;
+                    .tile-img-right {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }   
 }

@@ -47,11 +47,7 @@ header {
                         }
                     }
                 }
-            }
-            @include mobile {
-                padding-left: 0;
-            }
-                
+            }                
         }    
     }
     .backbar {
@@ -70,6 +66,50 @@ header {
             color: #1B1B1B;
             a {
                 color: #1B1B1B;
+            }
+        }
+    }
+    @include mobile {
+        .backbar {
+            width: 100%;
+            border-top: none;
+            border-right: none;
+            margin-top: 0;
+            background-color: $dark-yellow;
+            height: 85px;
+            margin-top: -80px;
+            display: flex;
+            align-items: center;
+            .phone_number {
+                display: none;
+            }
+            .navbar-burger {
+                margin-right: 20px;
+                background: transparent;
+                border: none;
+                width: 26px;
+                span {
+                    width: 100%;
+                    height: 2px;
+                    &:first-child {
+                        top: calc(50% - 3px);
+                    }
+                    &:nth-child(2) {
+                        top: calc(50% + 3px);
+                    }
+                }
+            }
+        }
+        .forebar {
+            width: calc(100vw - 50px);
+            .navbar {
+                padding-left: 0;
+                .navbar-brand {
+                    height: 100%;
+                    .navbar-item {
+                        padding-left: 20px;
+                    }
+                }
             }
         }
     }

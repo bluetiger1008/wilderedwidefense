@@ -25,9 +25,24 @@
             color: $dark-yellow;
             line-height: 1;
             font-weight: bold;
+            text-align: center;
             span {
                 display: block;
                 font-size: 20px;
+            }
+        }
+    }
+    @include mobile {
+        background-image: url('../images/dayleft-banner.jpg') !important;
+        .thumb-days {
+            width: 65px;
+            height: 65px;
+            right: 20px;
+            p {
+                font-size: 30px;
+                span {
+                    font-size: 15px;
+                }
             }
         }
     }

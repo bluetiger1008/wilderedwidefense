@@ -1,12 +1,13 @@
 <div class="sticky-footer">
   <div class="sticky-footer-left">
     <img src="<?= get_template_directory_uri(); ?>/dist/images/man.png">
-    <p>We’re here to help! Get in Touch</p>
+    <p class="is-hidden-mobile">We’re here to help! Get in Touch</p>
+    <p class="is-hidden-desktop">Get in touch</p>
   </div>
   <div class="sticky-footer-right">
-    <a class="cta btn-call"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png">Call</a>
-    <a class="cta btn-chat"><img src="<?= get_template_directory_uri(); ?>/dist/images/chat.png">Chat</a>
-    <a class="cta btn-email"><img src="<?= get_template_directory_uri(); ?>/dist/images/email.png">Email</a>
+    <a class="cta btn-call"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png"><p>Call</p></a>
+    <a class="cta btn-chat"><img src="<?= get_template_directory_uri(); ?>/dist/images/chat.png"><p>Chat</p></a>
+    <a class="cta btn-email"><img src="<?= get_template_directory_uri(); ?>/dist/images/email.png"><p>Email</p></a>
   </div>
 </div>
 <footer class="content-info">

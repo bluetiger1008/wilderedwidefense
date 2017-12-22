@@ -43,10 +43,35 @@
             background-color: $red;
         }
         .btn-chat {
-            background-color: rgba(255,255,255,0.1);           
+            background-color: #2e2e2e;
         }
         .btn-email {
             background-color: #181818;
+        }
+    }
+    @include mobile {
+        height: 50px;
+        &-left {
+            padding-left: 0;
+            img {
+                display: none;
+            }
+            p {
+                margin-left: 20px;
+                line-height: 50px;
+            }
+        }
+        &-right {
+            .cta {
+                width: 50px;
+                height: 50px;
+                p {
+                    display: none;
+                }
+                img {
+                    margin-right: 0;
+                }
+            }
         }
     }
 }

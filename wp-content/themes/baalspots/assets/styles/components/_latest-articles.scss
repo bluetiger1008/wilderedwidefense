@@ -9,6 +9,9 @@ section.latest-articles {
         align-items: flex-start;
         padding: 0 30px;
         margin-bottom: 40px;
+        h1 {
+            margin-bottom: 0;
+        }
         .view-all {
             a {
                 @include btnViewAll();
@@ -43,6 +46,13 @@ section.latest-articles {
                     line-height: 26px;
                 }
             }
+        }
+    }
+    @include mobile {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        .articles-header {
+            padding: 0 10px;
         }
     }
 }

@@ -10,12 +10,6 @@
             <?php bloginfo( 'name' ); ?>
           <?php endif; ?>
         </a>
-
-        <button class="button navbar-burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
       <div class="navbar-menu">
         <?php
@@ -27,6 +21,10 @@
     </nav>
   </div>
   <div class="backbar">
+    <button class="button navbar-burger">
+      <span></span>
+      <span></span>
+    </button>
     <p class="phone_number">CALL 24/7 <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
   </div>
 </header>

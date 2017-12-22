@@ -4,3 +4,8 @@
         width: 1140px;
     }
 }
+@include mobile {
+    .container {
+        padding: 0 20px;
+    }
+}

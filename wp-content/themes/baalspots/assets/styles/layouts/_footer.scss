@@ -1,6 +1,7 @@
 footer {
     background-color: #1B1B1B;
     padding: 100px 0;
+    font-family: 'Trueno';
     .social-share {
         text-align: center;
         a {
@@ -39,6 +40,21 @@ footer {
                 font-size: 12px;
                 line-height: 25px;
                 text-align: center;
+                font-family: 'Trueno';
+            }
+        }
+    }
+    @include mobile {
+        padding: 60px 0 120px;
+        .widget_nav_menu {
+            .menu-footer-menu-container {
+                .menu {
+                    flex-direction: column;
+                    align-items: center;
+                    li {
+                        margin: 3px 0;
+                    }
+                }
             }
         }
     }

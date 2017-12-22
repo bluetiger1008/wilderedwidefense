@@ -18,7 +18,7 @@ Template Post Type: post, page, event
                     ?>
                     <li class="slide">
                         <h1><?php echo $title; ?></h1>
-                        <p><?php echo $description; ?></p>
+                        <p class="is-hidden-mobile"><?php echo $description; ?></p>
                         <?php if( $link ): ?>
                             <a href="<?php echo $link; ?>" class="button btn-cta">
                                 Get Started Now
@@ -62,7 +62,7 @@ Template Post Type: post, page, event
         </div>
     </div>
     
-    <div class="pg-content">
+    <div class="wp-content">
         <div class="container">
             <div class="columns">
                 <div class="column is-two-thirds">
@@ -91,7 +91,7 @@ Template Post Type: post, page, event
             </div>
         </div>
         <div class="thumb-days">
-            <p><?php the_field('left_days_number') ?><span>days</span></p>
+            <p class="is-uppercase"><?php the_field('left_days_number') ?><span>days</span></p>
         </div>
     </section>
 
@@ -134,8 +134,8 @@ Template Post Type: post, page, event
                     ?>
                     <div class="columns is-gapless">
                         <div class="column is-half">
-                            <div class="testimonial-title">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <div class="testimonial-title" style="background-image: url('<?php echo $image['url']; ?>');">
+                                <img class="is-hidden-mobile" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                                 <h1><?php echo $title; ?></h1>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ Template Post Type: post, page, event
         <div class="container">
             <div class="articles-header">
                 <h1>Latest Articles</h1>
-                <div class="view-all">
+                <div class="view-all is-hidden-mobile">
                     <a>View All Articles</a>
                     <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
                 </div>

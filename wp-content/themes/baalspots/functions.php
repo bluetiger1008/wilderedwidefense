@@ -29,7 +29,7 @@ function listing_victories_carousel_shortcode( $atts ) {
     ) );
     if ( $query->have_posts() ) { ?>
       <div class="notable_victories">
-        <p class="txt-red txt-xs">Notable Victories</p>
+        <p class="txt-red txt-xs is-uppercase">Notable Victories</p>
         <div class="slider js_simple_dots simple">
           <div class="frame js_frame">
             <ul class="slides js_slides">
@@ -76,8 +76,9 @@ function latest_victories_tiles_shortcode( $atts ) {
             </div>
             <div class="tile-right">
           <?php else: ?>
+            <?php $bgImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
             <div class="tile-<?php echo ($index==2 ? 'right-top' : 'right-bottom'); ?>">
-              <div class="tile-img-<?php echo ($index==2 ? 'left' : 'right'); ?>">
+              <div class="tile-img-<?php echo ($index==2 ? 'left' : 'right'); ?>" style="background: url('<?php echo $bgImg[0]; ?>');">
                 <?php the_post_thumbnail(); ?>
                 <?php if($index == 3): ?>
                   <div class="post-all">

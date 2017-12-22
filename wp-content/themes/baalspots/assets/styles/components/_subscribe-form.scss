@@ -19,4 +19,29 @@ section.subscribe {
             }
         }
     }
+    @include mobile {
+        padding: 0 16px;
+        margin-bottom: 60px;
+        .container {
+            padding: 60px 40px;
+            form {
+                margin-top: 32px;
+                .field.has-addons {
+                    flex-direction: column;
+                    button {
+                        width: 100%;
+                        margin-top: 15px;
+                    }
+                }
+            }
+            h1 {
+                font-size: 34px;
+                line-height: 48px;
+                margin-bottom: 0;
+            }
+            p {
+                line-height: 19px;
+            }
+        }
+    }
 }

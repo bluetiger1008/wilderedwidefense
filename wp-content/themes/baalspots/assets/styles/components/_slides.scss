@@ -22,7 +22,7 @@
         overflow: hidden;
         white-space: nowrap;
         .slides {
-            display: inline-block;
+            display: inline-flex;
             li {
                 position: relative;
                 display: inline-block;
