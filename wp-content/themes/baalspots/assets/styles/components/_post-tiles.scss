@@ -65,7 +65,7 @@
                     }
                 }
                 .tile-summary {
-                    background-color: #1B1B1B;
+                    background-color: $bg-black;
                     flex: 1;
                     .post-title, .post-summary {
                         color: white;
@@ -87,7 +87,7 @@
                         position: absolute;
                         width: 156px;
                         height: 100px;
-                        background-color: #1B1B1B;
+                        background-color: $bg-black;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -126,6 +126,7 @@
                 .tile-summary {
                     width: 100%;
                     position: relative;
+                    height: auto;
                 }
             }       
             &-right {
@@ -141,8 +142,13 @@
                 }
                 &-bottom {
                     flex-direction: column;
+                    height: auto;
                     .tile-img-right {
                         display: none;
+                    }
+                    .tile-summary {
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }

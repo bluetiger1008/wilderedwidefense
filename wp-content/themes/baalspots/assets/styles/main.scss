@@ -2,6 +2,7 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
+@import "../../bower_components/animatewithsass/animate.scss";
 // endbower
 
 // bower:sass
@@ -9,7 +10,6 @@
 // endbower
 
 @import "common/fonts";
-@import "common/variables";
 @import "common/mixin";
 @import "common/global";
 @import "components/buttons";
@@ -17,6 +17,7 @@
 @import "components/forms";
 @import "components/grid";
 @import "components/slides";
+@import "components/sliding-menu";
 @import "components/post-tiles";
 @import "components/wp-classes";
 @import "components/days-left";

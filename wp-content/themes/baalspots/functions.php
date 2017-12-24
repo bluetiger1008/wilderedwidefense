@@ -78,7 +78,7 @@ function latest_victories_tiles_shortcode( $atts ) {
           <?php else: ?>
             <?php $bgImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
             <div class="tile-<?php echo ($index==2 ? 'right-top' : 'right-bottom'); ?>">
-              <div class="tile-img-<?php echo ($index==2 ? 'left' : 'right'); ?>" style="background: url('<?php echo $bgImg[0]; ?>');">
+              <div class="tile-img-<?php echo ($index==2 ? 'left' : 'right'); ?>" style="background-image: url('<?php echo $bgImg[0]; ?>');">
                 <?php the_post_thumbnail(); ?>
                 <?php if($index == 3): ?>
                   <div class="post-all">
@@ -111,7 +111,7 @@ function listing_award_team( $atts ) {
   ) );
   if ( $query->have_posts() ) { ?>
     <div class="award-team">
-      <div class="columns">
+      <div class="columns is-hidden-mobile">
         <?php 
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
@@ -133,6 +133,39 @@ function listing_award_team( $atts ) {
             <div class="about-member has-text-centered"><?php the_content(); ?></div>
           </div>
         <?php endwhile; wp_reset_postdata(); ?>
+      </div>
+      <div class="slider js_slider js_award_team_slider is-hidden-desktop">
+          <div class="frame js_frame">
+              <ul class="slides js_slides">
+                <?php 
+                $index = 0;
+                while ( $query->have_posts() ) : $query->the_post(); $index++;?>
+                  <li class="js_slide">
+                    <div class="member-photo">
+                      <div>
+                        <?php the_post_thumbnail('full'); ?>
+                      </div>
+                    </div>
+                    <div class="member-role">
+                      <?php
+                      $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+                      foreach ( $terms as $term ) {
+                        echo $term->name;
+                      }
+                      ?>
+                    </div>
+                    <div class="member-name"><h1><?php the_title(); ?></h1></div>
+                    <div class="about-member has-text-centered"><?php the_content(); ?></div>
+                  </li>
+                <?php endwhile; wp_reset_postdata(); ?>
+              </ul>
+          </div>
+          <span class="js_prev prev">
+              <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
+          </span>
+          <span class="js_next next">
+              <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+          </span>
       </div>
       <div class="has-text-centered">
         <a class="read-more">Read More</a>

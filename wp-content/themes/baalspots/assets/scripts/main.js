@@ -22,11 +22,24 @@
         /* header class change on scrolling */
         var myElement = document.querySelector("header");
         var headroom  = new Headroom(myElement);
+
+        /* nav menu for mobile devices */
+        var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+        showRight = document.getElementById( 'showRight' );
+        closeMenu = document.getElementById( 'closeMenu' );
+        showRight.onclick = function() {
+          classie.toggle( menuRight, 'cbp-spmenu-open' );
+        };
+        closeMenu.onclick = function() {
+          console.log('close menu');
+          classie.toggle( menuRight, 'cbp-spmenu-open' );
+        };
+
         headroom.init();       
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
-      }
+      }      
     },
     // Home page
     'home': {
@@ -51,6 +64,12 @@
           slidesToScroll: 1
         });
 
+        /* award team slider */
+        var award_team_slider = document.querySelector('.js_award_team_slider');
+
+        lory(award_team_slider, {
+            infinite: 1
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

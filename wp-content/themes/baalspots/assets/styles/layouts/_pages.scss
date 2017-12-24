@@ -48,7 +48,7 @@
         }
     }
     section.consultation {
-        background-color: #1B1B1B;
+        background-color: $bg-black;
         img {
             width: 100%;
         }
@@ -71,7 +71,7 @@
         .wp-content {
             padding-top: 46px;
             padding-bottom: 30px;
-            ul {
+            >ul {
                 margin-left: 20px;
             }
         }
