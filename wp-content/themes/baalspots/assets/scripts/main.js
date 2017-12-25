@@ -73,21 +73,14 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-        var simple_dots       = document.querySelector('.js_simple_dots');
-        var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
-        var dot_container     = simple_dots.querySelector('.js_dots');
-        var dot_list_item     = document.createElement('li');
-
+        var victory_slider       = document.querySelector('.js_simple_dots'),
+          testimonial_slider = document.querySelector('.js_testimonial_slider'),
+          dot_count         = victory_slider.querySelectorAll('.js_slide').length,
+          dot_container     = victory_slider.querySelector('.js_dots'),
+          dot_list_item     = document.createElement('li');
+          
         function handleDotEvent(e) {
             if (e.type === 'before.lory.init') {
-              //set li width same as slider width
-              var frame = simple_dots.querySelector('.js_frame');
-              var frameWidth = frame.offsetWidth;
-              var slides = frame.querySelectorAll('.js_slides>li');
-              console.log('slides', slides);
-              for(var i=0; i<slides.length; i++) {
-                slides[i].style.width = frameWidth + "px";
-              }
               for (var i = 0, len = dot_count; i < len; i++) {
                 var clone = dot_list_item.cloneNode();              
                 dot_container.appendChild(clone);
@@ -115,30 +108,16 @@
                 dot_container.childNodes[0].classList.add('active');
             }
         }
-        simple_dots.addEventListener('before.lory.init', handleDotEvent);
-        simple_dots.addEventListener('after.lory.init', handleDotEvent);
-        simple_dots.addEventListener('after.lory.slide', handleDotEvent);
-        simple_dots.addEventListener('on.lory.resize', handleDotEvent);
+        victory_slider.addEventListener('before.lory.init', handleDotEvent);
+        victory_slider.addEventListener('after.lory.init', handleDotEvent);
+        victory_slider.addEventListener('after.lory.slide', handleDotEvent);
+        victory_slider.addEventListener('on.lory.resize', handleDotEvent);
 
-        var dot_navigation_slider = lory(simple_dots, {
+        var dot_navigation_slider = lory(victory_slider, {
             infinite: 1,
             enableMouseEvents: true
         });
-
-        //Testimonial Slider
-        var testimonial_slider = document.querySelector('.js_testimonial_slider');
-       
-        testimonial_slider.addEventListener('before.lory.init', LoadTestimonialSlider);
         
-        function LoadTestimonialSlider(e) {
-          if (e.type === 'before.lory.init') {
-            //set li width same as slider width
-            var frame = testimonial_slider.querySelector('.js_frame');
-            var frameWidth = frame.offsetWidth;
-            frame.querySelector('.js_slides>li').style.width = frameWidth + "px";
-          }
-        }
-
         lory(testimonial_slider, {
             infinite: 1
         });

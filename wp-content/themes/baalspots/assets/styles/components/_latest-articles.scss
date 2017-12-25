@@ -3,56 +3,58 @@ section.latest-articles {
     padding-bottom: 140px;
     background: linear-gradient(0deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
     background-color: #E6E6E6;
-    .articles-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 0 30px;
-        margin-bottom: 40px;
-        h1 {
-            margin-bottom: 0;
-        }
-        .view-all {
-            a {
-                @include btnViewAll();
-                color: black;
-            }
-            img {
-                margin-left: 15px;
-                width: 17px;
+    .container {
+        position: relative;
+        .articles-header {
+            padding: 0 30px;
+            margin-bottom: 40px;
+            h1 {
+                margin-bottom: 0;
             }
         }
-    }
-    .column {
-        .article {
-            @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
-            .article-photo {
-                height: 200px;
-                background-size: cover;
-            }
-            .article-summary {
-                padding: 40px;
-                min-height: 250px;
-                .article-title {
-                    color: #333333;
-                    font-size: 22px;
-                    font-weight: bold;
-                    line-height: 28px;
-                    margin-bottom: 20px;
+        .anchor-view-all {
+            position: absolute;
+            top: 0;
+            right: 40px;
+        }
+        .column {
+            .article {
+                @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
+                .article-photo {
+                    height: 200px;
+                    background-size: cover;
                 }
-                .article-description {
-                    color: #333333;
-                    font-size: 16px;
-                    line-height: 26px;
+                .article-summary {
+                    padding: 40px;
+                    min-height: 250px;
+                    .article-title {
+                        color: #333333;
+                        font-size: 22px;
+                        font-weight: bold;
+                        line-height: 28px;
+                        margin-bottom: 20px;
+                    }
+                    .article-description {
+                        color: #333333;
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
                 }
             }
         }
     }
+    
     @include mobile {
         padding-top: 80px;
         padding-bottom: 40px;
         .articles-header {
             padding: 0 10px;
+        }
+        .anchor-view-all {
+            position: relative;
+            text-align: center;
+            right: 0;
+            margin-top: 28px;
         }
     }
 }

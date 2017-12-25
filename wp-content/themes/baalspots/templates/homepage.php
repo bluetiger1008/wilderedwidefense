@@ -69,8 +69,16 @@ Template Post Type: post, page, event
                     <?php the_content(); ?>
                 </div>
                 <div class="column">
-                    <?php the_field('form_script') ?>
-                    <?php the_field('form_comment') ?>
+                    <div class="form-consult">
+                        <?php the_field('consultation_form_script') ?>
+                        <?php if(get_field('consultation_form_quote')) : ?>
+                            <div class="form-quote">
+                                <img class="icon-quote" src="<?= get_template_directory_uri(); ?>/dist/images/icon-quote.png">
+                                <p class="quote"><?php the_field('consultation_form_quote') ?></p>
+                                <p class="verdict"><?php the_field('consultation_form_verdict') ?></p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,16 +104,15 @@ Template Post Type: post, page, event
     </section>
 
     <section class="meet-team">
-        <?php the_field('meet_award_team_header') ?>
         <div class="container">
-            <?php the_field('meet_award_team_members') ?>
+            <?php the_field('award_team_content') ?>
         </div>
     </section>
 
     <section class="subscribe">
-        <div class="container" style="background-image: url('<?php the_field('newsletter_form_background') ?>');">
-            <h1><?php the_field('newsletter_form_title') ?></h1>
-            <p><?php the_field('sign_up_text') ?></p>
+        <div class="container">
+            <h1><?php the_field('newsletter_form_header') ?></h1>
+            <p><?php the_field('subscribe_description') ?></p>
             <form action="https://baalspots.createsend.com/t/i/s/atdgj/" method="post" id="subForm">
                 <div class="field has-addons">
                     <div class="control">
@@ -155,12 +162,12 @@ Template Post Type: post, page, event
         <div class="container">
             <div class="articles-header">
                 <h1>Latest Articles</h1>
-                <div class="view-all is-hidden-mobile">
-                    <a>View All Articles</a>
-                    <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
-                </div>
             </div>
             <?php the_field('article_script'); ?>
+            <div class="anchor-view-all">
+                <a>View All Articles</a>
+                <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+            </div>
         </div>
     </section>
 

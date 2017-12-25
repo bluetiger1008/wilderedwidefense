@@ -2,6 +2,7 @@ section.subscribe {
     margin-bottom: 100px;
     .container {
         padding: 57px 0 64px 87px;
+        background-image: url('../images/bg-stay-desktop.jpg') !important;
         background-size: cover;
         border-left: 10px solid $dark-yellow;
         h1, p {
@@ -24,6 +25,10 @@ section.subscribe {
         margin-bottom: 60px;
         .container {
             padding: 60px 40px;
+            background-image: url('../images/bg-stay-mobile.jpg') !important;
+            background-size: 100% 100%;
+            border-left: none;
+            border-bottom: 10px solid $dark-yellow;
             form {
                 margin-top: 32px;
                 .field.has-addons {

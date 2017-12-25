@@ -52,3 +52,13 @@ a {
         font-weight: 300;
     }
 }
+.anchor-view-all {
+    a {
+        @include btnViewAll();
+        color: black;
+    }
+    img {
+        margin-left: 15px;
+        width: 17px;
+    }
+}

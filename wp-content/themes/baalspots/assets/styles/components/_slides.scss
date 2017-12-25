@@ -10,6 +10,7 @@
                     background: white;
                     color: #222222;
                     padding: 25px 30px;
+                    width: 100%;
                 }
             }
         }
@@ -22,12 +23,13 @@
         overflow: hidden;
         white-space: nowrap;
         .slides {
-            display: inline-flex;
+            display: block;
             li {
                 position: relative;
                 display: inline-block;
+                vertical-align: top;
                 margin-top: 0;
-                width: 880px;
+                width: 100%;
                 p {
                     white-space: pre-wrap; 
                 }

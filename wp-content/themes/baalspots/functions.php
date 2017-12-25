@@ -65,13 +65,13 @@ function latest_victories_tiles_shortcode( $atts ) {
           <?php if($index == 1) : ?>
             <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
             <div class="tile-left" style="background: url('<?php echo $backgroundImg[0]; ?>');">
-              <div class="tile-left-container">
+              <div class="tile-left-container" style="background: url('<?php echo $backgroundImg[0]; ?>');">
                 <div class="tile-title">Notable <br> Victories</div>
               </div>
               <div class="tile-summary">
                 <p class="post-header"><?php echo get_the_excerpt(); ?></p>
                 <p class="post-title"><?php the_title(); ?></p>
-                <div class="post-summary"<?php the_content();?></div>
+                <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></div>
               </div>
             </div>
             <div class="tile-right">
@@ -90,7 +90,13 @@ function latest_victories_tiles_shortcode( $atts ) {
               <div class="tile-summary">
                 <p class="post-header"><?php echo get_the_excerpt(); ?></p>
                 <p class="post-title"><?php the_title(); ?></p>
-                <div class="post-summary"><?php the_content();?></div>
+                <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
+                <?php if($index == 3): ?>
+                  <div class="anchor-view-all is-hidden-desktop">
+                      <a>View All</a>
+                      <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+                  </div>
+                <?php endif; ?>
               </div>
             </div>
           <?php endif; ?>
@@ -130,7 +136,7 @@ function listing_award_team( $atts ) {
               ?>
             </div>
             <div class="member-name"><?php the_title(); ?></div>
-            <div class="about-member has-text-centered"><?php the_content(); ?></div>
+            <div class="about-member has-text-centered"><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></div>
           </div>
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
@@ -155,7 +161,7 @@ function listing_award_team( $atts ) {
                       ?>
                     </div>
                     <div class="member-name"><h1><?php the_title(); ?></h1></div>
-                    <div class="about-member has-text-centered"><?php the_content(); ?></div>
+                    <div class="about-member has-text-centered"><p><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></p></div>
                   </li>
                 <?php endwhile; wp_reset_postdata(); ?>
               </ul>

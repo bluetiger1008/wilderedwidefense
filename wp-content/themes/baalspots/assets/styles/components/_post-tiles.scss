@@ -30,6 +30,7 @@
             &-container {
                 max-width: 600px;
                 margin-left: auto;
+                background: none !important;
                 .tile-title {
                     font-family: 'Trueno';
                     margin-top: 150px;
@@ -66,6 +67,7 @@
                 }
                 .tile-summary {
                     background-color: $bg-black;
+                    padding: 40px 80px 40px 40px;
                     flex: 1;
                     .post-title, .post-summary {
                         color: white;
@@ -108,6 +110,9 @@
                     height: 360px;
                     background-color: $bg-primary;
                 }
+                .anchor-view-all {
+                    margin-top: 60px;
+                }
             }
         }
     }
@@ -117,6 +122,7 @@
             &-left {
                 &-container {
                     padding: 60px 40px;
+                    background-size: cover !important;
                     .tile-title {
                         margin-top: 0;
                         font-size: 40px;
