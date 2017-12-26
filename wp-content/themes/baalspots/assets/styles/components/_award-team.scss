@@ -8,6 +8,12 @@ section.meet-team {
         line-height: 26px;
         font-weight: 300;
     }
+    .container {
+        >p {
+            max-width: 590px;
+            margin: 0 auto;
+        }
+    }
     .award-team {
         margin-top: 60px;
         .column {
@@ -104,12 +110,8 @@ section.meet-team {
                                     border-radius: 50%;
                                     position: relative;
                                     img {
-                                        position: absolute;
-                                        bottom: 0;
-                                        left: 50%;
-                                        transform: translateX(-50%);
-                                        max-width: 250px;
                                         max-height: 260px;
+                                        width: auto;
                                     }
                                 }
                             }

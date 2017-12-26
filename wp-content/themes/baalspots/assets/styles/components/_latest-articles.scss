@@ -51,9 +51,9 @@ section.latest-articles {
             padding: 0 10px;
         }
         .anchor-view-all {
-            position: relative;
+            position: relative !important;
             text-align: center;
-            right: 0;
+            right: 0 !important;
             margin-top: 28px;
         }
     }

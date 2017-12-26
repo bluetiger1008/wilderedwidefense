@@ -3,6 +3,7 @@ section.testimonials {
         position: relative;
         .testimonial-title {
             position: relative;
+            font-size: 0;
             img {
                 width: 100%;
             }
@@ -99,7 +100,6 @@ section.testimonials {
                 position: relative;
                 width: 100%;
                 top: 0;
-                height: 500px;
                 .wrapper {
                     padding: 40px 40px 70px;
                     .js_testimonial_slider {

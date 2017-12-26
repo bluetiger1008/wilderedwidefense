@@ -112,4 +112,25 @@ header {
             }
         }
     }
+    @include desktop-only {
+        .forebar {
+            .navbar {
+                .navbar-menu {
+                    .menu-items {
+                        li {
+                            margin: 0 10px;
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .backbar {
+            .phone_number {
+                font-size: 10px;
+            }
+        }
+    }
 }

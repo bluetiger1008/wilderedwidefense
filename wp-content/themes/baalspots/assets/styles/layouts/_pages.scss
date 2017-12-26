@@ -39,6 +39,7 @@
                     }
                 }
                 .frame {
+                    background-color: white;
                     @include box-shadow(0,0,24px,rgba(0,0,0,0.04));
                 }
                 .dots {
