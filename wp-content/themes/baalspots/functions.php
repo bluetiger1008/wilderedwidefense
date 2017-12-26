@@ -129,11 +129,12 @@ function listing_award_team( $atts ) {
             </div>
             <div class="member-role">
               <?php
-              $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+              $terms = get_terms( array( 'taxonomy' => 'award_winning_team_member_role', 'parent' => 0 ) );
               foreach ( $terms as $term ) {
                 echo $term->name;
               }
               ?>
+              
             </div>
             <div class="member-name"><?php the_title(); ?></div>
             <div class="about-member has-text-centered"><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></div>
@@ -154,7 +155,7 @@ function listing_award_team( $atts ) {
                     </div>
                     <div class="member-role">
                       <?php
-                      $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
+                      $terms = get_terms( array( 'taxonomy' => 'award_winning_team_member_role', 'parent' => 0 ) );
                       foreach ( $terms as $term ) {
                         echo $term->name;
                       }

@@ -35,4 +35,11 @@
     wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
   endif;
   ?>
+  <div class="search-box">
+    <div class="control">
+      <input type="text" placeholder="This search box  is not to be me">
+      <span class="btn-cancel"><img src="<?= get_template_directory_uri(); ?>/dist/images/cancel.png"></span>
+    </div>
+    <span class="btn-search"><img src="<?= get_template_directory_uri(); ?>/dist/images/search.png"></span>
+  </div>
 </nav>

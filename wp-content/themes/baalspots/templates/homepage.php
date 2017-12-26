@@ -70,6 +70,7 @@ Template Post Type: post, page, event
                 </div>
                 <div class="column">
                     <div class="form-consult">
+                        <div class="form-consult-title"><?php the_field('consultation_form_title'); ?></div>
                         <?php the_field('consultation_form_script') ?>
                         <?php if(get_field('consultation_form_quote')) : ?>
                             <div class="form-quote">
@@ -176,9 +177,9 @@ Template Post Type: post, page, event
         <div class="form">
             <div class="container">
                 <div class="wrapper">
-                    <h1><?php the_field('consult_form_header'); ?></h1>
-                    <p><?php the_field('consult_form_description'); ?></p>
-                    <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/contact_us_main_pre_footer"></script>
+                    <h1><?php the_field('footer_consultation_form_header'); ?></h1>
+                    <p><?php the_field('footer_consultation_form_description'); ?></p>
+                    <?php the_field('footer_consultation_form_script'); ?></p>
                 </div>
             </div>
         </div>

@@ -112,8 +112,22 @@ section.meet-team {
                                     img {
                                         max-height: 260px;
                                         width: auto;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);                                   
                                     }
                                 }
+                            }
+                            .member-role {
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                color: $red;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
                             }
                             .member-name {
                                 h1 {
