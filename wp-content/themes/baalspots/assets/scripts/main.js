@@ -36,6 +36,17 @@
         };
 
         headroom.init();       
+
+        /* homepage sliding text */
+        var slides = document.querySelectorAll('#hero-text-slider .slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide,3000);
+        
+        function nextSlide(){
+          slides[currentSlide].className = 'slide';
+          currentSlide = (currentSlide+1)%slides.length;
+          slides[currentSlide].className = 'slide showing';
+        }        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -45,17 +56,6 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        /* homepage sliding text */
-        var slides = document.querySelectorAll('#slides .slide');
-        var currentSlide = 0;
-        var slideInterval = setInterval(nextSlide,3000);
-        
-        function nextSlide(){
-          slides[currentSlide].className = 'slide';
-          currentSlide = (currentSlide+1)%slides.length;
-          slides[currentSlide].className = 'slide showing';
-        }
-
         /* homepage awards slider */
         var multiSlides  = document.querySelector('.js_multislides');
         // http://easings.net/

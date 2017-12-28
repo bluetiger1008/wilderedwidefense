@@ -1,3 +1,4 @@
+<!-- fixed navbar -->
 <header class="header--fixed">
   <div class="forebar">
     <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -43,3 +44,65 @@
     <span class="btn-search"><img src="<?= get_template_directory_uri(); ?>/dist/images/search.png"></span>
   </div>
 </nav>
+
+<!-- hero -->
+<div class="hero" style="background-image: url('<?php the_field('hero_image') ?>');">
+  <div class="content">
+    <div class="container">
+        <div class="hero-text">
+            <?php if( have_rows('hero_slider') ): ?>
+            <ul id="hero-text-slider">
+            <?php while( have_rows('hero_slider') ): the_row(); 
+                // vars
+                $title = get_sub_field('slider_title');
+                $description = get_sub_field('slider_description');
+                $link = get_sub_field('get_start_link');
+                ?>
+                <li class="slide">
+                    <h1><?php echo $title; ?></h1>
+                    <p class="is-hidden-mobile"><?php echo $description; ?></p>
+                    <?php if( $link ): ?>
+                        <a href="<?php echo $link; ?>" class="button btn-cta">
+                            Get Started Now
+                        </a>
+                    <?php endif; ?>
+                </li>
+            <?php endwhile; ?>
+            </ul>
+            <?php endif; ?>
+        </div>
+    </div>
+    <?php if (is_front_page()) : ?>
+      <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
+      <div class="awards-backbar">  
+      </div>
+      <div class="awards-forebar">
+          <?php 
+          // the query
+          $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+          <?php if ( $wpb_all_query->have_posts() ) : ?>
+          <div class="slider js_multislides">
+              <div class="frame js_frame">
+                  <ul class="slides js_slides">
+                      <!-- the loop -->
+                      <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+                          <li class="js_slide"><?php the_post_thumbnail(); ?></li>
+                      <?php endwhile; ?>
+                      <!-- end of the loop -->     
+                  </ul>
+              </div>
+              <span class="js_prev prev">
+                  <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
+              </span>
+              <span class="js_next next">
+                  <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+              </span>
+          </div>
+          <?php wp_reset_postdata(); ?>       
+          <?php else : ?>
+              <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+          <?php endif; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+</div>

@@ -4,64 +4,7 @@ Template Name: Home Page
 Template Post Type: post, page, event
 */
 ?>
-<div class="home">
-    <div class="hero" style="background-image: url('<?php the_field('hero_image') ?>');">
-        <div class="container">
-            <div class="hero-text">
-                <?php if( have_rows('hero_slider') ): ?>
-                <ul id="slides">
-                <?php while( have_rows('hero_slider') ): the_row(); 
-                    // vars
-                    $title = get_sub_field('slider_title');
-                    $description = get_sub_field('slider_description');
-                    $link = get_sub_field('get_start_link');
-                    ?>
-                    <li class="slide">
-                        <h1><?php echo $title; ?></h1>
-                        <p class="is-hidden-mobile"><?php echo $description; ?></p>
-                        <?php if( $link ): ?>
-                            <a href="<?php echo $link; ?>" class="button btn-cta">
-                                Get Started Now
-                            </a>
-                        <?php endif; ?>
-                    </li>
-                <?php endwhile; ?>
-                </ul>
-                <?php endif; ?>
-            </div>
-        </div>
-        <img src="<?php the_field('attorney_image') ?>" class="img-man">
-        <div class="awards-backbar">  
-        </div>
-        <div class="awards-forebar">
-            <?php 
-            // the query
-            $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
-            <?php if ( $wpb_all_query->have_posts() ) : ?>
-            <div class="slider js_multislides">
-                <div class="frame js_frame">
-                    <ul class="slides js_slides">
-                        <!-- the loop -->
-                        <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-                            <li class="js_slide"><?php the_post_thumbnail(); ?></li>
-                        <?php endwhile; ?>
-                        <!-- end of the loop -->     
-                    </ul>
-                </div>
-                <span class="js_prev prev">
-                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
-                </span>
-                <span class="js_next next">
-                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
-                </span>
-            </div>
-            <?php wp_reset_postdata(); ?>       
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-            <?php endif; ?>
-        </div>
-    </div>
-    
+<div class="home">  
     <div class="wp-content">
         <div class="container">
             <div class="columns">
@@ -109,25 +52,8 @@ Template Post Type: post, page, event
             <?php the_field('award_team_content') ?>
         </div>
     </section>
-
-    <section class="subscribe">
-        <div class="container">
-            <h1><?php the_field('newsletter_form_header') ?></h1>
-            <p><?php the_field('subscribe_description') ?></p>
-            <form action="https://baalspots.createsend.com/t/i/s/atdgj/" method="post" id="subForm">
-                <div class="field has-addons">
-                    <div class="control">
-                        <input class="input" type="email" name="cm-atdgj-atdgj" required />
-                    </div>
-                    <div class="control">
-                        <button class="button is-info" type="submit">
-                        Subscribe
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+    
+    <?php get_template_part('templates/section', 'subscribe'); ?>
 
     <section class="testimonials">
         <div class="container">
