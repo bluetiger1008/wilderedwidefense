@@ -5,28 +5,7 @@ Template Post Type: post, page, event
 */
 ?>
 <div class="home">  
-    <div class="wp-content">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-two-thirds">
-                    <?php the_content(); ?>
-                </div>
-                <div class="column">
-                    <div class="form-consult">
-                        <div class="form-consult-title"><?php the_field('consultation_form_title'); ?></div>
-                        <?php the_field('consultation_form_script') ?>
-                        <?php if(get_field('consultation_form_quote')) : ?>
-                            <div class="form-quote">
-                                <img class="icon-quote" src="<?= get_template_directory_uri(); ?>/dist/images/icon-quote.png">
-                                <p class="quote"><?php the_field('consultation_form_quote') ?></p>
-                                <p class="verdict"><?php the_field('consultation_form_verdict') ?></p>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part('templates/section', 'content'); ?>
 
     <?php if ( is_active_sidebar( 'victories_tiles' ) ) : ?>
         <?php dynamic_sidebar( 'victories_tiles' ); ?>
@@ -105,7 +84,7 @@ Template Post Type: post, page, event
                 <div class="wrapper">
                     <h1><?php the_field('footer_consultation_form_header'); ?></h1>
                     <p><?php the_field('footer_consultation_form_description'); ?></p>
-                    <?php the_field('footer_consultation_form_script'); ?></p>
+                    <?php the_field('footer_consultation_form_script'); ?>
                 </div>
             </div>
         </div>

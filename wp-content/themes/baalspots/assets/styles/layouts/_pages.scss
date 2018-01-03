@@ -16,37 +16,6 @@
         }
         padding: 112px 0 87px;
         background-color: $bg-primary;
-        .notable_victories {
-            margin: 45px 0 50px;
-            text-align: center;
-            .js_simple_dots {
-                margin-top: 20px;
-                .slides {
-                    li {
-                        .post-header {
-                            color: $dark-blue;
-                            font-size: 22px;
-                        }
-                        p {
-                            font-size: 16px;
-                            color: #222222;
-                            line-height: 26px;
-                            font-weight: 300;
-                        }
-                        .post-title {
-                            color: $grey;
-                        }
-                    }
-                }
-                .frame {
-                    background-color: white;
-                    @include box-shadow(0,0,24px,rgba(0,0,0,0.04));
-                }
-                .dots {
-                    margin-top: 28px;
-                }
-            }
-        }
     }
     section.consultation {
         background-color: $bg-black;
@@ -54,7 +23,7 @@
             width: 100%;
         }
         .form {
-            padding: 75px 0;
+            padding-top: 75px;
             .wrapper {
                 max-width: 700px;
                 text-align: center;
@@ -64,6 +33,10 @@
                 }
                 p {
                     color: #686868;
+                }
+                form {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
                 }
             }
         }

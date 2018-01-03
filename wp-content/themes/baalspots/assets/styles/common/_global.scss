@@ -74,3 +74,37 @@ a {
 :-moz-placeholder { /* Firefox 18- */
     color: #151515;
 }
+.wp-content {
+    padding: 80px 0 60px;
+    .notable_victories {
+        margin: 45px 0 50px;
+        text-align: center;
+        .js_simple_dots {
+            margin-top: 20px;
+            .slides {
+                li {
+                    .post-header {
+                        color: $dark-blue;
+                        font-size: 22px;
+                    }
+                    p {
+                        font-size: 16px;
+                        color: #222222;
+                        line-height: 26px;
+                        font-weight: 300;
+                    }
+                    .post-title {
+                        color: $grey;
+                    }
+                }
+            }
+            .frame {
+                background-color: white;
+                @include box-shadow(0,0,24px,rgba(0,0,0,0.04));
+            }
+            .dots {
+                margin-top: 28px;
+            }
+        }
+    }
+}

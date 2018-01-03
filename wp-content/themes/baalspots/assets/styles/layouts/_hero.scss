@@ -1,6 +1,9 @@
 .hero {
     position: relative;
-    height: 900px;
+    height: 600px;
+    &.homepage-hero {
+        height: 900px;
+    }
     background-size: cover;
     img {
         &.hero-background {
@@ -115,7 +118,11 @@
         }
     }
     @include mobile {
-        height: 785px;
+        height: 500px;
+        background-position: center;
+        &.homepage-hero {
+            height: 785px;
+        }
         .container {
             width: 100%;
             padding-left: 40px;
@@ -126,7 +133,7 @@
                 left: 0;
             }
         }
-        img.img-man {
+        img.img-attorney {
             left: 40px;
             bottom: 133px;
             width: 190px;

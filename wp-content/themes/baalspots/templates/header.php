@@ -46,7 +46,7 @@
 </nav>
 
 <!-- hero -->
-<div class="hero" style="background-image: url('<?php the_field('hero_image') ?>');">
+<div class="hero <?php echo is_front_page() ? 'homepage-hero' : ''; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <div class="content">
     <div class="container">
         <div class="hero-text">

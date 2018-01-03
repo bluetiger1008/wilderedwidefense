@@ -64,8 +64,8 @@ function latest_victories_tiles_shortcode( $atts ) {
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <?php if($index == 1) : ?>
             <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
-            <div class="tile-left" style="background: url('<?php echo $backgroundImg[0]; ?>');">
-              <div class="tile-left-container" style="background: url('<?php echo $backgroundImg[0]; ?>');">
+            <div class="tile-left" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
+              <div class="tile-left-container" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
                 <div class="tile-title">Notable <br> Victories</div>
               </div>
               <div class="tile-summary">
