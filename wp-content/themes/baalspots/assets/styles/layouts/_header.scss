@@ -1,7 +1,7 @@
 header {
     &.header--fixed {
         position: fixed;
-        z-index: 999;
+        z-index: 9999;
         right: 0;
         left: 0;
         top: 0;
@@ -26,15 +26,18 @@ header {
             top: -80px;
             right: 0;
             background: transparent;
-            .navbar-item img {
-                max-height: 2.75rem;
+            .navbar-brand {
+                margin-right: 100px;
+                .navbar-item img {
+                    max-height: 2.75rem;
+                }
             }
             .navbar-menu {
                 justify-content: flex-end;
                 .menu-items {
                     display: flex;
                     li {
-                        margin: 0 30px;
+                        margin: 0 20px;
                         a {
                             color: #000;
                             letter-spacing: 1px;
@@ -63,12 +66,14 @@ header {
             font-family: 'Trueno';
             font-weight: bold;
             color: $bg-black;
+            width: 16%;
+            text-align: center;
             a {
                 color: $bg-black;
             }
         }
     }
-    @include mobile {
+    @include touch {
         .backbar {
             width: 100%;
             border-top: none;
@@ -100,7 +105,7 @@ header {
             }
         }
         .forebar {
-            width: calc(100vw - 50px);
+            width: calc(100% - 50px);
             .navbar {
                 left: 0;
                 .navbar-brand {
@@ -114,11 +119,15 @@ header {
     }
     @include desktop-only {
         .forebar {
+            width: 85%;
             .navbar {
+                .navbar-brand {
+                    margin-right: 50px;
+                }
                 .navbar-menu {
                     .menu-items {
                         li {
-                            margin: 0 10px;
+                            margin: 0 20px;
                             a {
                                 font-size: 12px;
                             }
@@ -129,7 +138,28 @@ header {
         }
         .backbar {
             .phone_number {
-                font-size: 10px;
+                display: none;
+            }
+        }
+    }
+    @include widescreen-only {
+        .backbar {
+            .phone_number {
+                font-size: 11px;
+            }
+        }
+        .forebar {
+            .navbar {
+                .navbar-brand {
+                    margin-right: 50px;
+                }
+                .navbar-menu {
+                    .menu-items {
+                        li {
+                            margin: 0 15px;
+                        }
+                    }
+                }
             }
         }
     }

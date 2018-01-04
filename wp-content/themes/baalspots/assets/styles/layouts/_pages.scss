@@ -1,45 +1,7 @@
 .home {    
     .wp-content {
-        h1 {
-            font-size: 34px;
-            line-height: 42px;
-        }
-        h3 {
-            font-size: 18px;
-            line-height: 28px;
-            color: #686868;
-            margin-top: 19px;
-            margin-bottom: 29px;
-        }
-        p {
-            line-height: 26px;
-        }
         padding: 112px 0 87px;
         background-color: $bg-primary;
-    }
-    section.consultation {
-        background-color: $bg-black;
-        img {
-            width: 100%;
-        }
-        .form {
-            padding-top: 75px;
-            .wrapper {
-                max-width: 700px;
-                text-align: center;
-                margin: 0 auto;
-                h1 {
-                    color: white;
-                }
-                p {
-                    color: #686868;
-                }
-                form {
-                    margin-bottom: 0;
-                    padding-bottom: 0;
-                }
-            }
-        }
     }
     @include mobile {
         .wp-content {
@@ -47,21 +9,6 @@
             padding-bottom: 60px;
             >ul {
                 margin-left: 20px;
-            }
-        }
-        section {
-            &.consultation {
-                .form {
-                    padding: 36px 0 0;
-                    .wrapper {
-                        >p, >h1 {
-                            padding: 0 20px;
-                        }
-                        >p {
-                            margin-bottom: 80px;
-                        }
-                    }
-                }
             }
         }
     }

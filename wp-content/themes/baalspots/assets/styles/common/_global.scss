@@ -23,12 +23,11 @@ a {
 }
 .btn-cta {
     height: 48px;
-    font-size: 14px !important;
     line-height: 22px !important;
-    padding: 0 40px;
+    padding: 0 45px;
     background-color:#DA2128;
     color: white;
-    border-radius: 21.5px;
+    border-radius: 80px;
     border: none;
 }
 .content {
@@ -38,18 +37,47 @@ a {
     }
     h1 {
         font-size: 44px;
-        line-height: 48px;
+        line-height: 1.1em;
+    }
+    h2 {
+        font-size: 34px;
+        line-height: 1.2em;
     }
     h3 {
         font-size: 18px;
-        line-height: 28px;
+        line-height: 1.5em;
     }
     p {
         font-size: 16px;
         font-weight: 300;
-        line-height: 30px;
+        line-height: 1.8em;
         font-family: 'Trueno';
         font-weight: 300;
+    }
+    ul {
+        font-family: 'Trueno';
+    }
+    @media screen and (max-width:374px) {
+        h1 {
+            font-size: 34px;
+        }
+        h3 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    @include tablet-only {
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 12px;
+        }
     }
 }
 .anchor-view-all {
@@ -106,5 +134,12 @@ a {
                 margin-top: 28px;
             }
         }
+    }
+}
+ul.check-list {
+    li {
+        background: url('../images/icon-check.svg') no-repeat left center !important;
+        padding-left: 30px;
+        list-style: none;
     }
 }

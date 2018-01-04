@@ -2,10 +2,9 @@
     .container {
         max-width: 1140px;
         width: 1140px;
+        padding: 0 !important;
     }
 }
-@include mobile {
-    .container {
-        padding: 0 20px;
-    }
+.container {
+    padding: 0 20px;
 }

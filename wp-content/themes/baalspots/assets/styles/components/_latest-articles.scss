@@ -19,6 +19,8 @@ section.latest-articles {
         }
         .column {
             .article {
+                height: 100%;
+                background-color: white;
                 @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
                 .article-photo {
                     height: 200px;
@@ -55,6 +57,18 @@ section.latest-articles {
             text-align: center;
             right: 0 !important;
             margin-top: 28px;
+        }
+    }
+
+    @include tablet-only {
+        .container {
+            .column {
+                .article {
+                    .article-summary {
+                        padding: 20px;
+                    }
+                }
+            }
         }
     }
 }

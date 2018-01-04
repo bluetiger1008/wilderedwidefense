@@ -9,13 +9,13 @@ section.testimonials {
             }
             h1 {
                 position: absolute;
-                left: 60px;
-                top: 60px;
+                left: 1em;
+                top: 1em;
                 font-size: 60px;
                 border-left: 10px solid #FAC627;
-                padding-left: 20px;
+                padding-left: 0.3em;
                 color: white;
-                line-height: 60px;
+                line-height: 1em;
             }
         }
         .testimonial-content {
@@ -79,6 +79,15 @@ section.testimonials {
             }
         }
     }
+    @media screen and (max-width:320px) {
+        .column {
+            .testimonial-title {
+                h1 {
+                    font-size: 30px !important;
+                }
+            }
+        }
+    }
     @include mobile {
         .container {
             padding: 0;
@@ -107,6 +116,20 @@ section.testimonials {
                             margin-top: 60px;
                         }
                     }
+                }
+            }
+        }
+    }
+    @include tablet-only {
+        .column {
+            .testimonial-title {
+                h1 {
+                    font-size: 40px;
+                }
+            }
+            .testimonial-content {
+                .wrapper {
+                    padding: 40px;
                 }
             }
         }

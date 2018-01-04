@@ -71,7 +71,7 @@ function latest_victories_tiles_shortcode( $atts ) {
               <div class="tile-summary">
                 <p class="post-header"><?php echo get_the_excerpt(); ?></p>
                 <p class="post-title"><?php the_title(); ?></p>
-                <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></div>
+                <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
               </div>
             </div>
             <div class="tile-right">
@@ -92,7 +92,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <p class="post-title"><?php the_title(); ?></p>
                 <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 <?php if($index == 3): ?>
-                  <div class="anchor-view-all is-hidden-desktop">
+                  <div class="anchor-view-all is-hidden-desktop is-hidden-tablet">
                       <a>View All</a>
                       <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
                   </div>
@@ -141,7 +141,7 @@ function listing_award_team( $atts ) {
           </div>
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
-      <div class="slider js_slider js_award_team_slider is-hidden-desktop">
+      <div class="slider js_slider js_award_team_slider is-hidden-desktop is-hidden-tablet">
           <div class="frame js_frame">
               <ul class="slides js_slides">
                 <?php 
@@ -257,11 +257,26 @@ function listing_articles( $atts ) {
   }
 }
 
+function black_comment($atts=[], $content=null, $tag='') {
+  ob_start();
+  if (!is_null($content)) { ?>
+    <div class="black-comment">
+      <img src="<?= get_template_directory_uri(); ?>/dist/images/icon-quote-white.png" class="icon-quote">
+      <p><?php echo do_shortcode($content); ?></p>
+      <a href="" class="button btn-cta">View our Victories</a>
+      <img src="<?= get_template_directory_uri(); ?>/dist/images/man.png" class="img-doug">
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
 add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
 add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
 add_shortcode( 'list-award-team', 'listing_award_team' );
 add_shortcode( 'list-testimonials', 'listing_testimonials');
 add_shortcode( 'list-articles', 'listing_articles');
+add_shortcode( 'black-comment', 'black_comment');
 
 function victories_tiles_init() {
     register_sidebar( array(

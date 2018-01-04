@@ -14,7 +14,7 @@ Template Post Type: post, page, event
     <section class="days-left" style="background-image: url('<?php the_field('left_days_background_image') ?>');">
         <div class="container is-vertical">
             <div class="columns">
-                <div class="column is-half">
+                <div class="column is-half-desktop is-12-tablet">
                     <h1><?php the_field('left_days_header') ?></h1>
                     <p><?php the_field('left_days_description') ?></p>
                     <a href="" class="button btn-cta">Act Now</a>

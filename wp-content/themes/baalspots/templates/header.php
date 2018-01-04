@@ -46,7 +46,7 @@
 </nav>
 
 <!-- hero -->
-<div class="hero <?php echo is_front_page() ? 'homepage-hero' : ''; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+<div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <div class="content">
     <div class="container">
         <div class="hero-text">
@@ -74,10 +74,12 @@
     </div>
     <?php if (is_front_page()) : ?>
       <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
-      <div class="awards-backbar">  
-      </div>
-      <div class="awards-forebar">
-          <?php 
+      <div class="awards-container">
+        <div class="awards-backbar">  
+        </div>
+        <div class="awards-forebar">
+        </div>
+        <?php 
           // the query
           $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
           <?php if ( $wpb_all_query->have_posts() ) : ?>

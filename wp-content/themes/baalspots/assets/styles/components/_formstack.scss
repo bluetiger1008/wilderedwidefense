@@ -28,17 +28,22 @@
 } 
 .form-consult {
     &-title {
-        height: 80px;
         background-color: #252525;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
         color: white;
-        text-transform: uppercase;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
+        text-align: left;
+        padding: 35px 25px;
+        h3 {
+            color: white;
+            font-size: 28px;
+            line-height: 1;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 14px;
+        }
         @include mobile {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
@@ -87,6 +92,18 @@
 section.consultation {
     .form {
 
+    }
+}
+@include tablet-only {
+    .form-consult {
+        .fsBody {
+            .fsForm {
+                padding: 20px;
+                .fsSubmitButton {
+                    width: 100% !important;
+                }
+            }
+        }
     }
 }
 @include mobile {
