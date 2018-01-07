@@ -1,32 +1,29 @@
 section.subscribe {
     margin-bottom: 100px;
-    .container {
-        .subscribe-content {
-            padding: 57px 0 64px 87px;
-            background-image: url('../images/bg-stay-desktop.jpg') !important;
-            background-size: cover;
-            border-left: 10px solid $dark-yellow;
-            h1, p {
-                color: white;
-            }
-            form {
-                input {
-                    width: 298px;
-                    height: 48px;                
-                }
-                button {
-                    height: 48px;
-                    width: 153px;
-                    background-color: $red;
-                    &:hover {
-                        background-color: $red !important;
-                    }
-                }
-            }    
+    .subscribe-content {
+        padding: 57px 0 64px 87px;
+        background-image: url('../images/bg-stay-desktop.jpg') !important;
+        background-size: cover;
+        border-left: 10px solid $dark-yellow;
+        h1, p {
+            color: white;
         }
+        form {
+            input {
+                width: 298px;
+                height: 48px;                
+            }
+            button {
+                height: 48px;
+                width: 153px;
+                background-color: $red;
+                &:hover {
+                    background-color: $red !important;
+                }
+            }
+        }    
     }
     @include mobile {
-        padding: 0 16px;
         margin-bottom: 60px;
         .subscribe-content {
             padding: 60px 40px;
@@ -56,8 +53,5 @@ section.subscribe {
                 line-height: 19px;
             }
         }
-    }
-    @include tablet-only {
-        padding: 0 20px;
     }
 }
