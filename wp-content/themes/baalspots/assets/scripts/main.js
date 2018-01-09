@@ -49,7 +49,23 @@
 
         var slideInterval = setInterval(nextSlide,3000);
 
-        
+        /* sticky footer cta button actions */
+        var btnCall = document.querySelector(".btn-call"),
+          btnEmail = document.querySelector(".btn-email"),
+          btnCloseModal = document.getElementsByClassName("modal-close");
+
+        btnCall.onclick = function() {
+          document.getElementById('call-modal').classList.add('is-active');
+        };
+       
+        btnEmail.onclick = function() {
+          document.getElementById('email-modal').classList.add('is-active');
+        };
+
+        $('.delete').click(function() {
+          console.log('close modal');
+          document.querySelector(".modal.is-active").classList.remove('is-active'); 
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -58,7 +74,7 @@
           dot_count         = victory_slider.querySelectorAll('.js_slide').length,
           dot_container     = victory_slider.querySelector('.js_dots'),
           dot_list_item     = document.createElement('li');
-        
+
         victory_slider.addEventListener('before.lory.init', handleDotEvent);
         victory_slider.addEventListener('after.lory.init', handleDotEvent);
         victory_slider.addEventListener('after.lory.slide', handleDotEvent);
@@ -135,7 +151,82 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    'page_template_template_default': {
+      init: function() {
+        // JavaScript to be fired on the about us page
+        var wp_content = document.querySelector('.wp-content');
+        var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
+        var form_consult = document.querySelector('.form-consult');
+
+        function offset(el) {
+            var rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return { top: rect.top + scrollTop, left: rect.left + scrollLeft, width: rect.width, height: rect.height };
+        }
+
+        if(sticky_consultation_form) {
+          var sticky_form_offset =  offset(sticky_consultation_form);  
+        }
+
+        /* sticky side consultation form */
+        function resetConsultationFormPosition() {
+          var form_consult_offset = offset(form_consult);
+          if(sticky_form_offset) {
+            if( window.screen.width > 769 ) {
+              if(document.documentElement.scrollTop > sticky_form_offset.top) {
+                sticky_consultation_form.style.position = "fixed";
+                sticky_consultation_form.style.top = "50px";
+                sticky_consultation_form.style.left = form_consult_offset.left + "px";
+                sticky_consultation_form.style.width = form_consult_offset.width + "px";
+                form_consult.style.position = "relative";
+                form_consult.style.left = "0px";
+              } else if(document.documentElement.scrollTop < sticky_form_offset.top) {
+                form_consult.style.position = "relative";
+                form_consult.style.left = "0px";
+                form_consult.style.bottom = "0px";
+                sticky_consultation_form.style.position = "relative";
+                sticky_consultation_form.style.top = "0px";
+                sticky_consultation_form.style.left = "0px";
+                sticky_consultation_form.style.width = "100%";
+                document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "44px";
+              }
+              if(sticky_consultation_form.getBoundingClientRect().bottom >= wp_content.getBoundingClientRect().bottom - 72) {           
+                form_consult.style.position = "absolute";
+                form_consult.style.bottom = ".75rem";
+                form_consult.style.left = ".75rem";
+                sticky_consultation_form.style.position = "relative";
+                sticky_consultation_form.style.top = "0px";
+                sticky_consultation_form.style.left = "0px";
+                sticky_consultation_form.style.width = form_consult_offset + "px";
+                document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
+              }  
+            } else {
+              form_consult.style.position = "relative";
+              form_consult.style.left = "0px";
+              form_consult.style.bottom = "0px";
+              sticky_consultation_form.style.position = "relative";
+              sticky_consultation_form.style.top = "0px";
+              sticky_consultation_form.style.left = "0px";
+              sticky_consultation_form.style.width = "100%";
+            }
+          }
+        }
+
+        resetConsultationFormPosition();
+
+        window.addEventListener('scroll', function(e) {
+          resetConsultationFormPosition();
+        });
+        
+        window.onresize = function() {
+          resetConsultationFormPosition();
+        };
+      }
     }
+
+
   };
 
   // The routing fires all common scripts, followed by the page specific scripts.

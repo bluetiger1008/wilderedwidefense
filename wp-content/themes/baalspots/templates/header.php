@@ -26,7 +26,7 @@
       <span></span>
       <span></span>
     </button>
-    <p class="phone_number">CALL 24/7 <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
+    <p class="phone_number"><span>CALL 24/7</span> <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
   </div>
 </header>
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -56,14 +56,14 @@
                 // vars
                 $title = get_sub_field('slider_title');
                 $description = get_sub_field('slider_description');
-                $link = get_sub_field('get_start_link');
+                $link = get_sub_field('link_url');
                 ?>
                 <li class="slide">
                     <h1><?php echo $title; ?></h1>
                     <p class="is-hidden-mobile"><?php echo $description; ?></p>
                     <?php if( $link ): ?>
                         <a href="<?php echo $link; ?>" class="button btn-cta">
-                            Get Started Now
+                          <?php echo get_sub_field('link_text'); ?>
                         </a>
                     <?php endif; ?>
                 </li>

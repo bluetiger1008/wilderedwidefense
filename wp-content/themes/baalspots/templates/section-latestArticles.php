@@ -1,7 +1,7 @@
 <section class="latest-articles-rows">
     <div class="container">
         <div class="columns">
-            <div class="column is-two-thirds is-12-desktop is-12-tablet is-12-mobile">
+            <div class="column is-two-thirds-desktop is-12-tablet is-12-mobile">
                 <h1>Latest Articles</h1>
                 <?php $query = new WP_Query( array(
                     'post_type'=>'post',
@@ -26,8 +26,6 @@
                     <?php endwhile;
                         wp_reset_postdata(); ?>
                 <?php endif;?>
-            </div>
-            <div class="column">
             </div>
         </div>
     </div>

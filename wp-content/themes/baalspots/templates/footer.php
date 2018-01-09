@@ -10,6 +10,7 @@
     <a class="cta btn-email"><img src="<?= get_template_directory_uri(); ?>/dist/images/email.png"><p>Email</p></a>
   </div>
 </div>
+
 <footer class="content-info">
   <div class="container">
     <div class="social-share">
@@ -21,3 +22,30 @@
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
 </footer>
+
+<div id="call-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <h3>DO YOU HAVE A LEGAL QUESTION?</h3>
+      <p>Enter your phone number in the boxes below and we will call you immediately.</p>
+      <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/phone_number_sticky_global"></script>
+      <p>Call us anytime toll Free 1-855-326-0000</p>
+    </section>
+  </div>
+</div>
+
+<div id="email-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <script type="text/javascript" src="https://550groupllc.formstack.com/forms/js.php/contact_us_sticky_global"></script>
+    </section>
+  </div>
+</div>

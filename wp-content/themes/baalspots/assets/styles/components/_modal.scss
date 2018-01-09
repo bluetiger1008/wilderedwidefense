@@ -1,0 +1,34 @@
+.modal {
+	z-index: 102;
+	.modal-card {
+		&-head {
+			justify-content: flex-end;
+			border-bottom: none;
+		}
+		&-body {
+			text-align: center;
+			padding: 20px 100px;
+			h3 {
+				color: $dark-yellow;
+				font-size: 25px;
+			}
+			.fsBody {
+				background-color: white !important;
+				.fsForm {
+					margin: 0;
+					.fsSubmit {
+						margin-top: 0;
+						padding: 0;
+					}
+				}
+			}
+		}
+	}	
+	@include mobile {
+		.modal-card {
+			&-body {
+				padding: 20px;
+			}
+		}
+	}
+}
