@@ -47,7 +47,7 @@
           slides[currentSlide].className = 'slide showing';
         }
 
-        var slideInterval = setInterval(nextSlide,3000);
+        var slideInterval = setInterval(nextSlide,500);
 
         /* sticky footer cta button actions */
         var btnCall = document.querySelector(".btn-call"),
@@ -132,10 +132,11 @@
 
         /* award team slider */
         var award_team_slider = document.querySelector('.js_award_team_slider');
-
-        lory(award_team_slider, {
+        var lory_team_slider = lory(award_team_slider, {
             infinite: 1
         });
+        var child_slider = award_team_slider.querySelectorAll('.js_slide');
+        lory_team_slider.slideTo(1);
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

@@ -147,7 +147,7 @@ function listing_award_team( $atts ) {
                 <?php 
                 $index = 0;
                 while ( $query->have_posts() ) : $query->the_post(); $index++;?>
-                  <li class="js_slide">
+                  <li class="js_slide <?php echo $index == 2 ? 'middle' : '' ?>">
                     <div class="member-photo">
                       <div>
                         <?php the_post_thumbnail('full'); ?>

@@ -30,7 +30,7 @@
   </div>
 </header>
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-  <a class="btn-close" id="closeMenu"><img src="<?= get_template_directory_uri(); ?>/dist/images/close.png"></a>
+  <a class="btn-close" id="closeMenu"><img src="<?= get_template_directory_uri(); ?>/dist/images/close.svg"></a>
   <?php
   if (has_nav_menu('primary_navigation')) :
     wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
@@ -38,7 +38,7 @@
   ?>
   <div class="search-box">
     <div class="control">
-      <input type="text" placeholder="This search box  is not to be me">
+      <input type="text" placeholder="Search">
       <span class="btn-cancel"><img src="<?= get_template_directory_uri(); ?>/dist/images/cancel.png"></span>
     </div>
     <span class="btn-search"><img src="<?= get_template_directory_uri(); ?>/dist/images/search.png"></span>

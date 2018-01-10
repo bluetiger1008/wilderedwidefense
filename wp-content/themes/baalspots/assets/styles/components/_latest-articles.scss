@@ -78,6 +78,8 @@ section.latest-articles-rows {
     .container {
         h1 {
             margin-bottom: 40px;
+            font-size: 34px;
+            line-height: 1.2em;
         }
         .article {
             display: flex;
@@ -88,6 +90,11 @@ section.latest-articles-rows {
             }
             &-summary {
                 margin-left: 30px;
+                h2 {
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: #302F35;
+                }
             }
         }
     }
