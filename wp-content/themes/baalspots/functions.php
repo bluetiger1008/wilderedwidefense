@@ -129,10 +129,16 @@ function listing_award_team( $atts ) {
             </div>
             <div class="member-role">
               <?php
-              $terms = get_terms( array( 'taxonomy' => 'award_winning_team_member_role', 'parent' => 0 ) );
-              foreach ( $terms as $term ) {
-                echo $term->name;
-              }
+               $terms = get_the_terms( $post->ID , 'role' );
+               // Loop over each item since it's an array
+               if ( $terms != null ){
+               foreach( $terms as $term ) {
+                // Print the name method from $term which is an OBJECT
+                print $term->name ;
+               }
+               // Get rid of the other data stored in the object, since it's not needed
+               unset($term);
+               }
               ?>
               
             </div>
@@ -155,10 +161,16 @@ function listing_award_team( $atts ) {
                     </div>
                     <div class="member-role">
                       <?php
-                      $terms = get_terms( array( 'taxonomy' => 'award_winning_team_member_role', 'parent' => 0 ) );
-                      foreach ( $terms as $term ) {
-                        echo $term->name;
-                      }
+                       $terms = get_the_terms( $post->ID , 'role' );
+                       // Loop over each item since it's an array
+                       if ( $terms != null ){
+                       foreach( $terms as $term ) {
+                        // Print the name method from $term which is an OBJECT
+                        print $term->name ;
+                       }
+                       // Get rid of the other data stored in the object, since it's not needed
+                       unset($term);
+                       }
                       ?>
                     </div>
                     <div class="member-name"><h1><?php the_title(); ?></h1></div>

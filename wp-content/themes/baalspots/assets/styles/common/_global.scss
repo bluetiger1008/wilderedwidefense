@@ -30,6 +30,9 @@ a {
     border-radius: 80px;
     border: none;
     text-transform: uppercase;
+    &:hover {
+        background-color: rgba(218,33,40,0.9);
+    }
 }
 .content {
     h1, h2, h3, h4, h5, h6 {

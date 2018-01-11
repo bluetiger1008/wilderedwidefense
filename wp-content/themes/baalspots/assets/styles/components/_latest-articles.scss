@@ -84,16 +84,31 @@ section.latest-articles-rows {
         .article {
             display: flex;
             margin-bottom: 30px;
+            align-items: center;
             img.article-image {
                 width: 270px;
                 height: 140px;
             }
             &-summary {
                 margin-left: 30px;
+                p {
+                    margin-bottom: 0;
+                    a {
+                        color: #D8252F;    
+                        font-size: 16px;
+                        line-height: 19px;
+                        font-family: "Trueno";
+                        font-weight: 800;
+                        &:hover {
+                            color: #D8252F;
+                        }
+                    }
+                }
                 h2 {
                     font-size: 28px;
                     line-height: 32px;
                     color: #302F35;
+                    margin: 0;
                 }
             }
         }

@@ -47,7 +47,7 @@
           slides[currentSlide].className = 'slide showing';
         }
 
-        var slideInterval = setInterval(nextSlide,500);
+        var slideInterval = setInterval(nextSlide,5000);
 
         /* sticky footer cta button actions */
         var btnCall = document.querySelector(".btn-call"),

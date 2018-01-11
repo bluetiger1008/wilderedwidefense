@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default Page Template
+ * Template Name: Internal Page Template
  */
 ?>
 

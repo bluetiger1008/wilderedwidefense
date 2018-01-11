@@ -17,6 +17,9 @@
             text-transform: uppercase;
             font-weight: 900;
             border-radius: 100px !important;
+            &:hover {
+                    background-color: rgba(218,33,40,.9) !important;
+            }
         }
     }
 }

@@ -106,7 +106,7 @@ function custom_post_types() {
 
 function award_winning_taxonomies() {
     register_taxonomy(
-        'award_winning_team_member_role',
+        'role',
         'award_winning_team',
         array(
             'labels' => array(
