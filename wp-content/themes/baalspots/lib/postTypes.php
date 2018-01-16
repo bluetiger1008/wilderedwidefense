@@ -64,6 +64,21 @@ function custom_post_types() {
     'parent_item_colon'  => '',
     'menu_name'          => 'Testimonials'
   );
+  $labels_dwi = array(
+    'name'               => _x( '', 'post type general name' ),
+    'singular_name'      => _x( 'DWI', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'DWI' ),
+    'add_new_item'       => __( 'Add New DWI' ),
+    'edit_item'          => __( 'Edit DWI' ),
+    'new_item'           => __( 'New DWI' ),
+    'all_items'          => __( 'All DWI' ),
+    'view_item'          => __( 'View DWI' ),
+    'search_items'       => __( 'Search DWI' ),
+    'not_found'          => __( 'No DWI found' ),
+    'not_found_in_trash' => __( 'No DWI found in the Trash' ), 
+    'parent_item_colon'  => '',
+    'menu_name'          => 'DWI'
+  );
 
   $args_notable_victories = array(
     'labels'        => $labels_notable_victories,
@@ -97,11 +112,20 @@ function custom_post_types() {
     'supports'      => array( 'title', 'editor'),
     'has_archive'   => true,
   );
+  $args_dwi = array(
+    'labels'        => $labels_dwi,
+    'description'   => 'DWI',
+    'public'        => true,
+    'menu_position' => 6,
+    'supports'      => array( 'title', 'editor'),
+    'has_archive'   => true,
+  );
 
   register_post_type( 'notable_victories', $args_notable_victories ); 
   register_post_type( 'award', $args_awards ); 
   register_post_type( 'award_winning_team', $args_award_winning_team);
   register_post_type( 'testimonial', $args_testimonials);
+  register_post_type( 'dwi', $args_dwi);
 };
 
 function award_winning_taxonomies() {

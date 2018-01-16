@@ -46,7 +46,12 @@
 </nav>
 
 <!-- hero -->
-<div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+<?php if(get_field('hero_image')): ?>
+  <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+<?php else: ?>
+  <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
+<?php endif; ?>
+
   <div class="content">
     <div class="container">
         <div class="hero-text">
