@@ -48,7 +48,7 @@
           console.log('checkin', document.querySelectorAll('#hero-text-slider .slide'));
           var slides = document.querySelectorAll('#hero-text-slider .slide');
           var currentSlide = 0;     
-          var slideInterval = setInterval(function(){nextSlide(slides, currentSlide)},5000);  
+          var slideInterval = setInterval(function(){nextSlide(slides, currentSlide);},5000);  
         }
         
         /* sticky footer cta button actions */

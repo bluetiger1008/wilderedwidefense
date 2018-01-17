@@ -92,7 +92,7 @@ function custom_post_types() {
     'labels'        => $labels_awards,
     'description'   => 'Awards',
     'public'        => true,
-    'menu_position' => 4,
+    'menu_position' => 5,
     'supports'      => array( 'title', 'thumbnail'),
     'has_archive'   => true,
   );
@@ -108,7 +108,7 @@ function custom_post_types() {
     'labels'        => $labels_testimonial,
     'description'   => 'Testimonial',
     'public'        => true,
-    'menu_position' => 6,
+    'menu_position' => 5,
     'supports'      => array( 'title', 'editor'),
     'has_archive'   => true,
   );
@@ -116,7 +116,7 @@ function custom_post_types() {
     'labels'        => $labels_dwi,
     'description'   => 'DWI',
     'public'        => true,
-    'menu_position' => 6,
+    'menu_position' => 5,
     'supports'      => array( 'title', 'editor'),
     'has_archive'   => true,
   );

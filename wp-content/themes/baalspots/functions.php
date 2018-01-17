@@ -35,9 +35,9 @@ function listing_victories_carousel_shortcode( $atts ) {
             <ul class="slides js_slides">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                 <li class="js_slide">
-                  <p class="post-header"><?php echo  get_the_excerpt(); ?></p>
+                  <p class="post-header">NOT GUILTY</p>
                   <p class="post-title"><?php the_title(); ?></p>
-                  <?php the_content();?>
+                  <p><?php echo wp_trim_words( get_the_content(), 30, $more = '… ' ); ?></p>
                 </li>
                 <?php endwhile;
                 wp_reset_postdata(); ?>
@@ -56,6 +56,8 @@ function latest_victories_tiles_shortcode( $atts ) {
     $query = new WP_Query( array(
         'post_type'=>'notable_victories',
         'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order'   => 'ASC',
     ) );
     if ( $query->have_posts() ) { ?>
       <div class="tile-victories">
@@ -69,7 +71,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <div class="tile-title">Notable <br> Victories</div>
               </div>
               <div class="tile-summary">
-                <p class="post-header"><?php echo get_the_excerpt(); ?></p>
+                <p class="post-header">NOT GUILTY</p>
                 <p class="post-title"><?php the_title(); ?></p>
                 <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
               </div>
@@ -88,7 +90,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <?php endif; ?>
               </div>
               <div class="tile-summary">
-                <p class="post-header"><?php echo get_the_excerpt(); ?></p>
+                <p class="post-header">NOT GUILTY</p>
                 <p class="post-title"><?php the_title(); ?></p>
                 <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 <?php if($index == 3): ?>
