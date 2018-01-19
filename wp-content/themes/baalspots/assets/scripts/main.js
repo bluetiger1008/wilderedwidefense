@@ -36,20 +36,6 @@
         };
 
         headroom.init();       
-
-        /* homepage sliding text */
-        function nextSlide(slides, currentSlide){
-          slides[currentSlide].className = 'slide';
-          currentSlide = (currentSlide+1)%slides.length;
-          slides[currentSlide].className = 'slide showing';
-        }
-
-        if(document.querySelectorAll('#hero-text-slider .slide').length !== 0) {
-          console.log('checkin', document.querySelectorAll('#hero-text-slider .slide'));
-          var slides = document.querySelectorAll('#hero-text-slider .slide');
-          var currentSlide = 0;     
-          var slideInterval = setInterval(function(){nextSlide(slides, currentSlide);},5000);  
-        }
         
         /* sticky footer cta button actions */
         var btnCall = document.querySelector(".btn-call"),
@@ -127,6 +113,19 @@
       init: function() {
         // JavaScript to be fired on the home page
         /* homepage awards slider */
+
+        /* jshint ignore:start */
+        var slides = document.querySelectorAll('#hero-text-slider .slide');
+        var currentSlide = 0;     
+        var slideInterval = setInterval(nextSlide,5000);  
+
+        function nextSlide(){
+          slides[currentSlide].className = 'slide';
+          currentSlide = (currentSlide+1)%slides.length;
+          slides[currentSlide].className = 'slide showing';
+        }
+        /* jshint ignore:end */
+        
         var multiSlides  = document.querySelector('.js_multislides');
         // http://easings.net/
         lory(multiSlides, {

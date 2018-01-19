@@ -57,13 +57,14 @@
         <div class="hero-text">
             <?php if( have_rows('hero_slider') ): ?>
             <ul id="hero-text-slider">
-            <?php while( have_rows('hero_slider') ): the_row(); 
+            <?php $index = 0; while( have_rows('hero_slider') ): the_row(); 
                 // vars
                 $title = get_sub_field('slider_title');
                 $description = get_sub_field('slider_description');
                 $link = get_sub_field('link_url');
+                $index++;
                 ?>
-                <li class="slide">
+                <li class="slide <?php echo ($index==1 ? 'showing' : null); ?>">
                     <h1><?php echo $title; ?></h1>
                     <p class="is-hidden-mobile"><?php echo $description; ?></p>
                     <?php if( $link ): ?>

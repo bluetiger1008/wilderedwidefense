@@ -79,6 +79,21 @@ function custom_post_types() {
     'parent_item_colon'  => '',
     'menu_name'          => 'DWI'
   );
+  $labels_criminal_defense = array(
+    'name'               => _x( '', 'post type general name' ),
+    'singular_name'      => _x( 'Criminal Defense', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'Criminal Defense' ),
+    'add_new_item'       => __( 'Add New Criminal Defense' ),
+    'edit_item'          => __( 'Edit Criminal Defense' ),
+    'new_item'           => __( 'New Criminal Defense' ),
+    'all_items'          => __( 'All Criminal Defense' ),
+    'view_item'          => __( 'View Criminal Defense' ),
+    'search_items'       => __( 'Search Criminal Defense' ),
+    'not_found'          => __( 'No Criminal Defense found' ),
+    'not_found_in_trash' => __( 'No Criminal Defense found in the Trash' ), 
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Criminal Defense'
+  );
 
   $args_notable_victories = array(
     'labels'        => $labels_notable_victories,
@@ -120,12 +135,21 @@ function custom_post_types() {
     'supports'      => array( 'title', 'editor'),
     'has_archive'   => true,
   );
+  $args_criminal_defense = array(
+    'labels'        => $labels_criminal_defense,
+    'description'   => 'Criminal Defense',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor'),
+    'has_archive'   => true,
+  );
 
   register_post_type( 'notable_victories', $args_notable_victories ); 
   register_post_type( 'award', $args_awards ); 
   register_post_type( 'award_winning_team', $args_award_winning_team);
   register_post_type( 'testimonial', $args_testimonials);
   register_post_type( 'dwi', $args_dwi);
+  register_post_type( 'criminal_defense', $args_criminal_defense);
 };
 
 function award_winning_taxonomies() {
