@@ -60,7 +60,7 @@ function latest_victories_tiles_shortcode( $atts ) {
         'order'   => 'ASC',
     ) );
     if ( $query->have_posts() ) { ?>
-      <div class="tile-victories">
+      <div data-aos="fade-up" class="tile-victories">
         <?php 
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
@@ -247,22 +247,15 @@ function listing_articles( $atts ) {
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <div class="column is-one-third">
-            <div class="article">
+            <article>
               <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
               </div>
               <div class="article-summary">
-                <div class="category">
-                  <?php
-                  $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
-                  foreach ( $terms as $term ) {
-                    echo $term->name;
-                  }
-                  ?>
-                </div>
-                <div class="article-title"><?php the_title(); ?></div>
+                <p class="tags"><?php the_tags('',','); ?></p>
+                <div class="article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
               </div>
-            </div>
+            </article>
           </div>
         <?php endwhile; wp_reset_postdata(); ?>
       </div>

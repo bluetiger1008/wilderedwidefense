@@ -13,3 +13,23 @@
         }
     }
 }
+
+.pg-blog {
+    padding: 150px 0;
+    background-color: $bg-grey;
+    .columns {
+        flex-wrap: wrap;
+    }
+    h2.screen-reader-text {
+        display: none;
+    }
+    .posts-navigation {
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            a {
+                color: #363636;
+            }
+        }
+    }
+}

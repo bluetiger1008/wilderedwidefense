@@ -1,4 +1,4 @@
-<section class="wp-content">
+<section data-aos="fade-down" data-aos-delay="500" class="wp-content">
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">

@@ -18,7 +18,8 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-
+        AOS.init();
+        
         /* header class change on scrolling */
         var myElement = document.querySelector("header");
         var headroom  = new Headroom(myElement);

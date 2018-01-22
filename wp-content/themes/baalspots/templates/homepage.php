@@ -11,7 +11,7 @@ Template Post Type: post, page, event
         <?php dynamic_sidebar( 'victories_tiles' ); ?>
     <?php endif; ?>
 
-    <section class="days-left" style="background-image: url('<?php the_field('left_days_background_image') ?>');">
+    <section class="days-left" data-aos="fade-up" data-aos-delay="300" style="background-image: url('<?php the_field('left_days_background_image') ?>');">
         <div class="container is-vertical">
             <div class="columns">
                 <div class="column is-half-desktop is-12-tablet">
@@ -26,7 +26,7 @@ Template Post Type: post, page, event
         </div>
     </section>
 
-    <section class="meet-team">
+    <section data-aos="fade-up" data-aos-delay="300" class="meet-team">
         <div class="container">
             <?php the_field('award_team_content') ?>
         </div>
@@ -64,7 +64,7 @@ Template Post Type: post, page, event
         </div>
     </section>
 
-    <section class="latest-articles">
+    <section data-aos="fade-up" data-aos-delay="300" class="latest-articles">
         <div class="container">
             <div class="articles-header">
                 <h1>Latest Articles</h1>
@@ -77,7 +77,7 @@ Template Post Type: post, page, event
         </div>
     </section>
 
-    <section class="consultation">
+    <section data-aos="fade-up" data-aos-delay="300" class="consultation">
         <img src="<?= get_template_directory_uri(); ?>/dist/images/dark-city.jpg">
         <div class="form">
             <div class="container">

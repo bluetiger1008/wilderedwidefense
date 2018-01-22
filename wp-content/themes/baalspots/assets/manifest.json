@@ -12,6 +12,9 @@
       ],
       "main": true
     },
+    "aos.css": {
+      "bower": ["aos"]
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
@@ -28,6 +31,9 @@
     },
     "lory.js": {
       "bower": ["lory"]
+    },
+    "aos.js": {
+      "bower": ["aos"]
     }
   },
   "config": {
