@@ -46,9 +46,12 @@ section.latest-articles-rows {
             display: flex;
             margin-bottom: 30px;
             align-items: center;
-            img.article-image {
+            .article-photo {
                 width: 270px;
                 height: 140px;
+                &.empty {
+                    background-color: #a9a9a9;
+                }
             }
             &-summary {
                 margin-left: 30px;

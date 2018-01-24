@@ -1,7 +1,7 @@
-<section data-aos="fade-down" data-aos-delay="500" class="wp-content">
+<section class="wp-content">
     <div class="container">
         <div class="columns">
-            <div class="column is-two-thirds">
+            <div class="column is-two-thirds" data-aos="fade-down">
                 <?php the_content(); ?>
             </div>
             <div class="column" style="position: relative;">

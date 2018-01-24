@@ -25,6 +25,7 @@ section.testimonials {
             background-color: $bg-black;
             top: 5%;
             right: 0;
+            z-index: 98;
             .wrapper {
                 position: relative;
                 padding: 130px 70px;
@@ -63,6 +64,7 @@ section.testimonials {
                     height: 77px;
                     right: 20px;
                     bottom: -20px;
+                    z-index: 99;
                     background-color: $bg-black;
                     display: flex;
                     align-items: center;

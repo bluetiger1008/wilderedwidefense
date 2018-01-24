@@ -15,6 +15,8 @@
 			<?php endwhile; ?>
 		</div>
 
-		<?php the_posts_navigation(); ?>
+		<div class="posts-navigation">
+			<?php posts_nav_link("<span class='separator'></span>","<span class='nav-button left'><i class='fa fa-angle-left' aria-hidden='true'></i></span>Older posts","Newer posts<span class='nav-button right'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"); ?>
+		</div>
 	</div>
 </div>

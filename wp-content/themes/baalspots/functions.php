@@ -248,7 +248,7 @@ function listing_articles( $atts ) {
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <div class="column is-one-third">
             <article>
-              <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
+              <div class="article-photo <?php echo has_post_thumbnail()? '': 'empty'; ?>" style="background-image: url('<?php echo has_post_thumbnail()? the_post_thumbnail_url( 'full' ) : null; ?>')">
               </div>
               <div class="article-summary">
                 <p class="tags"><?php the_tags('',','); ?></p>

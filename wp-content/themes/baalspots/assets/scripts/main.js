@@ -183,6 +183,7 @@
               if(document.documentElement.scrollTop > sticky_form_offset.top) {
                 sticky_consultation_form.style.position = "fixed";
                 sticky_consultation_form.style.top = "50px";
+                form_consult.style.width = "100%";
                 sticky_consultation_form.style.left = form_consult_offset.left + "px";
                 sticky_consultation_form.style.width = form_consult_offset.width + "px";
                 form_consult.style.position = "relative";
@@ -191,6 +192,7 @@
                 form_consult.style.position = "relative";
                 form_consult.style.left = "0px";
                 form_consult.style.bottom = "0px";
+                form_consult.style.width = "100%";
                 sticky_consultation_form.style.position = "relative";
                 sticky_consultation_form.style.top = "0px";
                 sticky_consultation_form.style.left = "0px";
@@ -201,10 +203,11 @@
                 form_consult.style.position = "absolute";
                 form_consult.style.bottom = ".75rem";
                 form_consult.style.left = ".75rem";
+                form_consult.style.width = "calc(100% - 1.5rem)";
                 sticky_consultation_form.style.position = "relative";
                 sticky_consultation_form.style.top = "0px";
                 sticky_consultation_form.style.left = "0px";
-                sticky_consultation_form.style.width = form_consult_offset + "px";
+                sticky_consultation_form.style.width = "100%";
                 document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
               }  
             } else {

@@ -13,6 +13,7 @@
     "lory": "^2.3.4",
     "animatewithsass": "^3.2.2",
     "classie": "^1.0.1",
-    "aos": "^2.2.0"
+    "aos": "^2.2.0",
+    "font-awesome": "fontawesome#^4.7.0"
   }
 }
