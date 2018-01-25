@@ -2,16 +2,36 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/animatewithsass/animate.scss";
 // endbower
 
+// bower:sass
+@import "../../bower_components/bulma/bulma.sass";
+// endbower
+
+@import "common/fonts";
+@import "common/mixin";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/grid";
-@import "components/wp-classes";
+@import "components/awards-slider";
+@import "components/slides";
+@import "components/sliding-menu";
+@import "components/post-tiles";
+@import "components/days-left";
+@import "components/award-team";
+@import "components/subscribe-form";
+@import "components/black-comment";
+@import "components/testimonial";
+@import "components/latest-articles";
+@import "components/sticky-footer";
+@import "components/formstack";
+@import "components/consultation";
+@import "components/modal";
 @import "layouts/header";
+@import "layouts/hero";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";

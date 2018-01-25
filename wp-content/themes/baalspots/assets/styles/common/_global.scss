@@ -1,1 +1,149 @@
-
+body {
+    font-family: 'Open Sans';
+}
+a {
+    &:hover {
+        color: white;
+    }
+}
+.button {
+    font-family: $buttonPrimaryFont;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+    &:hover {
+        color: white;
+    }
+}
+.txt-red {
+    color: $alizarin-crimson;
+}
+.txt-xs {
+    font-size: 14px;
+}
+.btn-cta {
+    height: 48px;
+    line-height: 22px !important;
+    padding: 0 45px;
+    background-color:#DA2128;
+    color: white;
+    border-radius: 80px;
+    border: none;
+    text-transform: uppercase;
+    &:hover {
+        background-color: rgba(218,33,40,0.9);
+    }
+}
+.content {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        font-family: 'Trueno';
+    }
+    h1 {
+        font-size: 44px;
+        line-height: 1.1em;
+    }
+    h2 {
+        font-size: 34px;
+        line-height: 1.2em;
+    }
+    h3 {
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+    p {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.8em;
+        font-family: 'Trueno';
+        font-weight: 300;
+    }
+    ul {
+        font-family: 'Trueno';
+    }
+    @media screen and (max-width:374px) {
+        h1 {
+            font-size: 34px;
+        }
+        h3 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    @include tablet-only {
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+}
+.anchor-view-all {
+    a {
+        @include btnViewAll();
+        color: black;
+    }
+    img {
+        margin-left: 15px;
+        width: 17px;
+    }
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #151515;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #151515;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #151515;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #151515;
+}
+.wp-content {
+    padding: 80px 0 60px;
+    .notable_victories {
+        margin: 45px 0 50px;
+        text-align: center;
+        .js_simple_dots {
+            margin-top: 20px;
+            .slides {
+                li {
+                    .post-header {
+                        color: $san-juan;
+                        font-size: 22px;
+                    }
+                    p {
+                        font-size: 16px;
+                        color: #222222;
+                        line-height: 26px;
+                        font-weight: 300;
+                    }
+                    .post-title {
+                        color: $gray;
+                    }
+                }
+            }
+            .frame {
+                background-color: white;
+                @include box-shadow(0,0,24px,rgba(0,0,0,0.04));
+            }
+            .dots {
+                margin-top: 28px;
+            }
+        }
+    }
+}
+ul.check-list {
+    li {
+        background: url('../images/icon-check.svg') no-repeat left center !important;
+        padding-left: 30px;
+        list-style: none;
+    }
+}

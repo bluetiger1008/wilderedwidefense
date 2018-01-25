@@ -7,7 +7,11 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
-    "popper.js": "^1.12.3"
+    "popper.js": "^1.12.3",
+    "bulma": "^0.6.1",
+    "headroom": "https://unpkg.com/headroom.js",
+    "lory": "^2.3.4",
+    "animatewithsass": "^3.2.2",
+    "classie": "^1.0.1"
   }
 }

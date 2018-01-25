@@ -19,9 +19,18 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "classie.js": {
+      "bower": ["classie"]
+    },
+    "headroom.js": {
+      "bower": ["headroom"]
+    },
+    "lory.js": {
+      "bower": ["lory"]
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://localhost:8888/wordpress"
   }
 }

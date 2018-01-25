@@ -1,0 +1,168 @@
+header {
+    &.header--fixed {
+        position: fixed;
+        z-index: 100;
+        right: 0;
+        left: 0;
+        top: 0;
+    }
+    &.headroom {
+        will-change: transform;
+        transition: transform 200ms linear;
+    }
+    &.headroom--pinned {
+        transform: translateY(0%);
+    }
+    &.headroom--unpinned {
+        transform: translateY(-100%);
+    }
+    .forebar {
+        position: relative;
+        @include shapedBar(99, 75%, 80px, white, right, 30px, 0 2px 4px rgba(0,0,0,0.2));
+        .navbar {
+            position: absolute;
+            max-width: 1000px;
+            height: 80px;
+            top: -80px;
+            right: 0;
+            background: transparent;
+            .navbar-brand {
+                margin-right: 100px;
+                .navbar-item img {
+                    max-height: 2.75rem;
+                }
+            }
+            .navbar-menu {
+                justify-content: flex-end;
+                .menu-items {
+                    display: flex;
+                    li {
+                        margin: 0 20px;
+                        a {
+                            color: #000;
+                            letter-spacing: 1px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            line-height: 80px;
+                            text-transform: uppercase;
+                            font-family: 'Roboto';
+                        }
+                    }
+                }
+            }                
+        }    
+    }
+    .backbar {
+        position: relative;
+        margin-top: -60px;
+        @include shapedBar(98, 90%, 70px, $lightening-yellow, right, 30px, null);
+        .phone_number {
+            position: absolute;
+            right: 0px;
+            margin-top: -70px;
+            line-height: 70px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-family: 'Trueno';
+            font-weight: bold;
+            color: $bg-black;
+            width: 16%;
+            text-align: center;
+            a {
+                color: $bg-black;
+            }
+        }
+    }
+    @include touch {
+        .backbar {
+            width: 100%;
+            border-top: none;
+            border-right: none;
+            margin-top: 0;
+            background-color: $lightening-yellow;
+            height: 85px;
+            margin-top: -80px;
+            display: flex;
+            align-items: center;
+            .phone_number {
+                display: none;
+            }
+            .navbar-burger {
+                margin-right: 20px;
+                background: transparent;
+                border: none;
+                width: 26px;
+                span {
+                    width: 100%;
+                    height: 2px;
+                    &:first-child {
+                        top: calc(50% - 3px);
+                    }
+                    &:nth-child(2) {
+                        top: calc(50% + 3px);
+                    }
+                }
+            }
+        }
+        .forebar {
+            width: calc(100% - 50px);
+            .navbar {
+                left: 0;
+                .navbar-brand {
+                    height: 100%;
+                    .navbar-item {
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @include desktop-only {
+        .forebar {
+            width: 85%;
+            .navbar {
+                .navbar-brand {
+                    margin-right: 50px;
+                }
+                .navbar-menu {
+                    .menu-items {
+                        li {
+                            margin: 0 20px;
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .backbar {
+            .phone_number {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width:1480px) and (min-width: 1216px) {
+        .backbar {
+            .phone_number {
+                span {
+                    display: none;
+                }
+            }
+        }
+        .forebar {
+            .navbar {
+                .navbar-brand {
+                    margin-right: 50px;
+                }
+                .navbar-menu {
+                    .menu-items {
+                        li {
+                            margin: 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

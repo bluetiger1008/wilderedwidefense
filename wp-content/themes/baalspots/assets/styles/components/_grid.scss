@@ -1,16 +1,15 @@
-// Grid system
-.main {
-  @include make-col-ready();
-  @include media-breakpoint-up(sm) {
-    @include make-col($main-sm-columns);
-    .sidebar-primary & {
-      @include make-col($main-sm-columns - $sidebar-sm-columns);
+@include from($fullhd) {
+    .container {
+        max-width: 1140px;
+        width: 1140px;
+        padding: 0 !important;
     }
-  }
 }
-.sidebar {
-  @include make-col-ready();
-  @include media-breakpoint-up(sm) {
-    @include make-col($sidebar-sm-columns);
-  }
+@include desktop-only {
+	.container {
+		padding: 0 !important;
+	}
+}
+.container {
+    padding: 0 20px;
 }

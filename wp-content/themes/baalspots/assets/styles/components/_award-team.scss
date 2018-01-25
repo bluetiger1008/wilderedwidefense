@@ -1,0 +1,172 @@
+section.meet-team {
+    padding: 144px 0 100px;
+    h1 {
+        color: #131313;
+    }
+    p {
+        color: #151515;
+        line-height: 26px;
+        font-weight: 300;
+    }
+    .container {
+        >p {
+            max-width: 590px;
+            margin: 0 auto;
+        }
+    }
+    .award-team {
+        margin-top: 60px;
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .member-photo {
+                height: 320px;
+                display: flex;
+                align-items: flex-end;
+                &.middle {
+                    div {
+                        width: 320px;
+                        height: 320px;
+                    }
+                }
+                div {
+                    width: 230px;
+                    height: 230px;
+                    position: relative;
+                    background-color: #e8e8e8;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+            }
+            .member-role {
+                margin-top: 24px;
+                color: $alizarin-crimson;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            .member-name {
+                font-size: 28px;
+                font-family: "Trueno";
+                font-weight: bold;
+                line-height: 32px;
+                color: #333333;
+                text-align: center;
+            }
+            .about-member {
+                margin: 25px 0 45px;
+                p {
+                    color: #393939;
+                }
+            }
+        }
+        .read-more {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            color: #000000;
+            border-bottom: 2px solid #FAC627;
+        }
+    }
+    @include mobile {
+        margin: 60px 0;
+        padding: 0;
+        >h1, >p {
+            padding: 0 40px;
+        }
+        h1 {
+            font-size: 34px;
+            line-height: 34px;
+        }
+        p {
+            br {
+                display: none;
+            }
+        }
+        .award-team {
+            margin-top: 0;
+            .js_award_team_slider {
+                position: relative;
+                margin-bottom: 45px;
+                .frame {
+                    margin: 0 auto;
+                    width: 100%;
+                    .slides {
+                        .js_slide {
+                            .member-photo {
+                                text-align: center;
+                                margin-bottom: 20px;
+                                display: flex;
+                                align-items: flex-end;
+                                justify-content: center;
+                                height: 270px;
+                                div {
+                                    width: 250px;
+                                    height: 250px;
+                                    background-color: #e8e8e8;
+                                    border-radius: 50%;
+                                    position: relative;
+                                    img {
+                                        max-height: 260px;
+                                        width: auto;
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 50%;
+                                        transform: translateX(-50%);                                   
+                                    }
+                                }
+                            }
+                            .member-role {
+                                margin-top: 20px;
+                                margin-bottom: 20px;
+                                color: $alizarin-crimson;
+                                text-align: center;
+                                font-size: 14px;
+                                font-weight: bold;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                            }
+                            .member-name {
+                                h1 {
+                                    margin-bottom: 22px;
+                                    white-space: pre-wrap;
+                                    text-align: center;
+                                }   
+                            }
+                            .about-member {
+                                p {
+                                    color: #393939;
+                                }
+                            }
+                        }
+                    }
+                }
+                .js_next, .js_prev {
+                    width: 20px;
+                }
+            }
+        }
+    }
+    @include tablet-only {
+        .award-team {
+            .column {
+                .member-photo {
+                    div {
+                        width: 200px;
+                        height: 200px;
+                    }
+                    &.middle {
+                        div {
+                            width: 250px;
+                            height: 250px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

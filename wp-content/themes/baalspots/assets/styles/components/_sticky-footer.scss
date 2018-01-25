@@ -1,0 +1,77 @@
+.sticky-footer {
+    position: fixed;
+    z-index: 101;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background: linear-gradient(270deg, #F9C53C 0%, #ECB82E 100%);
+    &-left {
+        position: relative;
+        padding-left: 216px;
+        img {
+            position: absolute;
+            width: 140px;
+            left: 38px;
+            bottom: 0px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 21px;
+            color: #131313;
+            line-height: 70px;
+        }
+    }
+    &-right {
+        display: flex;
+        .cta {
+            width: 134px;
+            height: 70px;
+            background-color: #181818;
+            box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.5), 0 0 10px 0 rgba(0,0,0,0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-right: 10px;
+            }
+        }
+        .btn-call {
+            background-color: $alizarin-crimson;
+        }
+        .btn-chat {
+            background-color: #2e2e2e;
+        }
+        .btn-email {
+            background-color: #181818;
+        }
+    }
+    @include mobile {
+        height: 50px;
+        &-left {
+            padding-left: 0;
+            img {
+                display: none;
+            }
+            p {
+                margin-left: 20px;
+                line-height: 50px;
+            }
+        }
+        &-right {
+            .cta {
+                width: 50px;
+                height: 50px;
+                p {
+                    display: none;
+                }
+                img {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

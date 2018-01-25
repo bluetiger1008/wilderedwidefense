@@ -1,0 +1,57 @@
+section.subscribe {
+    margin-bottom: 100px;
+    .subscribe-content {
+        padding: 57px 0 64px 87px;
+        background-image: url('../images/bg-stay-desktop.jpg') !important;
+        background-size: cover;
+        border-left: 10px solid $lightening-yellow;
+        h1, p {
+            color: white;
+        }
+        form {
+            input {
+                width: 298px;
+                height: 48px;                
+            }
+            button {
+                height: 48px;
+                width: 153px;
+                background-color: $alizarin-crimson;
+                &:hover {
+                    background-color: $alizarin-crimson !important;
+                }
+            }
+        }    
+    }
+    @include mobile {
+        margin-bottom: 60px;
+        .subscribe-content {
+            padding: 60px 40px;
+            background-image: url('../images/bg-stay-mobile.jpg') !important;
+            background-size: 100% 100%;
+            border-left: none;
+            border-bottom: 10px solid $lightening-yellow;
+            form {
+                margin-top: 32px;
+                .field.has-addons {
+                    flex-direction: column;
+                    input {
+                        width: 100%;
+                    }
+                    button {
+                        width: 100%;
+                        margin-top: 15px;
+                    }
+                }
+            }
+            h1 {
+                font-size: 34px;
+                line-height: 48px;
+                margin-bottom: 0;
+            }
+            p {
+                line-height: 19px;
+            }
+        }
+    }
+}

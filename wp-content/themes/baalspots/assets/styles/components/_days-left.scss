@@ -1,0 +1,61 @@
+.days-left {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    padding: 110px 0;
+    position: relative;
+    h1 {
+        color: white;
+        margin-bottom: 30px;
+    }
+    p {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 2.6em !important;
+    }
+    .thumb-days {
+        position: absolute;
+        width: 116px;
+        height: 116px;
+        background-color: $bg-black;
+        right: 160px;
+        top: -11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-size: 40px;
+            color: $lightening-yellow;
+            line-height: 1;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0 !important;
+            span {
+                display: block;
+                font-size: 20px;
+            }
+        }
+    }
+    @include mobile {
+        background-image: url('../images/dayleft-banner.jpg') !important;
+        .thumb-days {
+            width: 65px;
+            height: 65px;
+            right: 20px;
+            p {
+                font-size: 30px;
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    @include tablet-only {
+        .thumb-days {
+            right: 40px;
+        }
+    }
+    @include desktop-only {
+        
+    }
+}

@@ -1,0 +1,37 @@
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      box-shadow: $top $left $blur $color;
+    }
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    box-shadow: $top $left $blur $color;
+  }
+}
+@mixin shapedBar($zIndex, $width, $height, $color, $shapedStyle, $clipedWidth, $shadow) {
+  @if $zIndex {
+    z-index: $zIndex;
+  }
+  width: $width;
+  @if $shapedStyle == 'right' {
+    border-right: $clipedWidth solid transparent;
+    border-top: $height solid $color;
+  } @else {
+    border-left: $clipedWidth solid transparent;
+    border-bottom: $height solid $color;
+  }
+  @if $shadow {
+    filter: drop-shadow($shadow);
+  }
+}
+@mixin btnViewAll() {
+  color: white;
+  border-bottom: 2px solid $lightening-yellow;
+  font-size: 16px;
+  padding-bottom: 1px;
+  font-weight: bold;
+}
