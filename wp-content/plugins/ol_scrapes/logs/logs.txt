@@ -1,0 +1,17 @@
+2018-01-25 15:38:52 TASK ID: 0 - PID: 15485 - RAM: 22.23MB - 1 Scrapes activated
+2018-01-25 15:38:52 TASK ID: 0 - PID: 15485 - RAM: 22.24MB - 1 Website Name: baal&amp;spots
+Wordpress URL: http://localhost:8888/wordpress
+Site URL: http://localhost:8888/wordpress
+Wordpress Version: 4.9.1
+Multisite: no
+Theme: Sage Starter Theme
+PHP Version: 7.1.8
+PHP Extensions: ["Core","date","libxml","openssl","pcre","sqlite3","zlib","bcmath","bz2","calendar","ctype","curl","dom","hash","fileinfo","filter","ftp","gd","SPL","iconv","intl","json","ldap","mbstring","session","standard","mysqlnd","PDO","pdo_mysql","pdo_sqlite","Phar","posix","Reflection","mysqli","SimpleXML","soap","sockets","exif","tokenizer","wddx","xml","xmlreader","xmlrpc","xmlwriter","xsl","zip","apache2handler","imap","mcrypt","gettext","pgsql","pdo_pgsql"]
+MySQL Version: 5.6.35
+Server Info: Apache/2.2.32 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.1.8 mod_ssl/2.2.32 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0
+WP Memory Limit: 40M
+WP Admin Memory Limit: 256M
+PHP Memory Limit: 256M
+Wordpress Plugins: {"advanced-custom-fields-pro\/acf.php":{"Name":"Advanced Custom Fields PRO","PluginURI":"https:\/\/www.advancedcustomfields.com\/","Version":"5.6.7","Description":"Customise WordPress with powerful, professional and intuitive fields.","Author":"Elliot Condon","AuthorURI":"http:\/\/www.elliotcondon.com\/","TextDomain":"acf","DomainPath":"\/lang","Network":false,"Title":"Advanced Custom Fields PRO","AuthorName":"Elliot Condon"},"akismet\/akismet.php":{"Name":"Akismet Anti-Spam","PluginURI":"https:\/\/akismet.com\/","Version":"4.0.1","Description":"Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam<\/strong>. It keeps your site protected even while you sleep. To get started: activate the Akismet plugin and then go to your Akismet Settings page to set up your API key.","Author":"Automattic","AuthorURI":"https:\/\/automattic.com\/wordpress-plugins\/","TextDomain":"akismet","DomainPath":"","Network":false,"Title":"Akismet Anti-Spam","AuthorName":"Automattic"},"hello.php":{"Name":"Hello Dolly","PluginURI":"http:\/\/wordpress.org\/plugins\/hello-dolly\/","Version":"1.6","Description":"This is not just a plugin, it symbolizes the hope and enthusiasm of an entire generation summed up in two words sung most famously by Louis Armstrong: Hello, Dolly. When activated you will randomly see a lyric from <cite>Hello, Dolly<\/cite> in the upper right of your admin screen on every page.","Author":"Matt Mullenweg","AuthorURI":"http:\/\/ma.tt\/","TextDomain":"","DomainPath":"","Network":false,"Title":"Hello Dolly","AuthorName":"Matt Mullenweg"},"ol_scrapes\/ol_scrapes.php":{"Name":"Octolooks Scrapes","PluginURI":"","Version":"1.4.3","Description":"Copy content from websites into WordPress automatically.","Author":"Octolooks","AuthorURI":"https:\/\/codecanyon.net\/user\/octolooks?ref=Octolooks","TextDomain":"ol-scrapes","DomainPath":"\/languages","Network":false,"Title":"Octolooks Scrapes","AuthorName":"Octolooks"}}
+Wordpress Active Plugins: ["advanced-custom-fields-pro\/acf.php"]
+
