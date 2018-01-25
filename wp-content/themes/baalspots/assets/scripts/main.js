@@ -31,7 +31,6 @@
           classie.toggle( menuRight, 'cbp-spmenu-open' );
         };
         closeMenu.onclick = function() {
-          console.log('close menu');
           classie.toggle( menuRight, 'cbp-spmenu-open' );
         };
 
@@ -51,7 +50,6 @@
         };
 
         $('.delete').click(function() {
-          console.log('close modal');
           document.querySelector(".modal.is-active").classList.remove('is-active'); 
         });
       },
