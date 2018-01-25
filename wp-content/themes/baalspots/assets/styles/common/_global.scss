@@ -7,7 +7,7 @@ a {
     }
 }
 .button {
-    font-family: 'Poppins';
+    font-family: $buttonPrimaryFont;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 16px;
@@ -16,7 +16,7 @@ a {
     }
 }
 .txt-red {
-    color: $red;
+    color: $alizarin-crimson;
 }
 .txt-xs {
     font-size: 14px;
@@ -116,7 +116,7 @@ a {
             .slides {
                 li {
                     .post-header {
-                        color: $dark-blue;
+                        color: $san-juan;
                         font-size: 22px;
                     }
                     p {
@@ -126,7 +126,7 @@ a {
                         font-weight: 300;
                     }
                     .post-title {
-                        color: $grey;
+                        color: $gray;
                     }
                 }
             }

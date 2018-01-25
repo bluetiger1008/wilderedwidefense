@@ -4,7 +4,7 @@ section.subscribe {
         padding: 57px 0 64px 87px;
         background-image: url('../images/bg-stay-desktop.jpg') !important;
         background-size: cover;
-        border-left: 10px solid $dark-yellow;
+        border-left: 10px solid $lightening-yellow;
         h1, p {
             color: white;
         }
@@ -16,9 +16,9 @@ section.subscribe {
             button {
                 height: 48px;
                 width: 153px;
-                background-color: $red;
+                background-color: $alizarin-crimson;
                 &:hover {
-                    background-color: $red !important;
+                    background-color: $alizarin-crimson !important;
                 }
             }
         }    
@@ -30,7 +30,7 @@ section.subscribe {
             background-image: url('../images/bg-stay-mobile.jpg') !important;
             background-size: 100% 100%;
             border-left: none;
-            border-bottom: 10px solid $dark-yellow;
+            border-bottom: 10px solid $lightening-yellow;
             form {
                 margin-top: 32px;
                 .field.has-addons {

@@ -55,7 +55,7 @@ header {
     .backbar {
         position: relative;
         margin-top: -60px;
-        @include shapedBar(98, 90%, 70px, $dark-yellow, right, 30px, null);
+        @include shapedBar(98, 90%, 70px, $lightening-yellow, right, 30px, null);
         .phone_number {
             position: absolute;
             right: 0px;
@@ -79,7 +79,7 @@ header {
             border-top: none;
             border-right: none;
             margin-top: 0;
-            background-color: $dark-yellow;
+            background-color: $lightening-yellow;
             height: 85px;
             margin-top: -80px;
             display: flex;
