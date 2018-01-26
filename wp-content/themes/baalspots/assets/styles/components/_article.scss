@@ -1,23 +1,28 @@
 article {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: white;
     @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
     .article-photo {
-        height: 200px;
-        background-size: cover;
-        &.empty {
-            background-color: #a9a9a9;
+        figure {
+            margin: 0;
+            background-color: lightgray;
         }
     }
     .article-summary {
         padding: 40px;
-        min-height: 250px;
-        p.tags {
-            a {
-                color: $red;
-            }
-        }
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
         .article-title {
+            p.categories {
+                a {
+                    font-size: 14px;
+                    color: $alizarin-crimson;    
+                }
+            }
             a {
                 color: #333333;
                 font-size: 22px;
