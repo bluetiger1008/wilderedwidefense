@@ -60,7 +60,7 @@ function latest_victories_tiles_shortcode( $atts ) {
         'order'   => 'ASC',
     ) );
     if ( $query->have_posts() ) { ?>
-      <div class="tile-victories">
+      <div data-aos="fade-up" class="tile-victories">
         <?php 
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
@@ -247,22 +247,29 @@ function listing_articles( $atts ) {
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <div class="column is-one-third">
-            <div class="article">
-              <div class="article-photo" style="background-image: url('<?php echo the_post_thumbnail_url( 'full' ); ?>')">
+            <article>
+              <div class="article-photo">
+                <figure class="image is-3by2">
+                  <?php if ( has_post_thumbnail() ) : ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>"/>
+                  <?php endif; ?>
+                </figure>
               </div>
               <div class="article-summary">
-                <div class="category">
-                  <?php
-                  $terms = get_the_terms( $post->ID , array( 'award_winning_team_member_role') );
-                  foreach ( $terms as $term ) {
-                    echo $term->name;
-                  }
-                  ?>
+                <div class="article-content">
+                  <p class="categories">
+                    <?php
+                    $categories = get_the_category();
+                    if ( ! empty( $categories ) ) {
+                        echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                    }
+                    ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 </div>
-                <div class="article-title"><?php the_title(); ?></div>
-                <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
               </div>
-            </div>
+            </article>
           </div>
         <?php endwhile; wp_reset_postdata(); ?>
       </div>

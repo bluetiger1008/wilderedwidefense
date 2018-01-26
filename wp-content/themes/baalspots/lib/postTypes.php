@@ -148,7 +148,7 @@ function custom_post_types() {
   register_post_type( 'award', $args_awards ); 
   register_post_type( 'award_winning_team', $args_award_winning_team);
   register_post_type( 'testimonial', $args_testimonials);
-  register_post_type( 'dwi', $args_dwi);
+  register_post_type( 'cpt_dwi', $args_dwi);
   register_post_type( 'criminal_defense', $args_criminal_defense);
 };
 

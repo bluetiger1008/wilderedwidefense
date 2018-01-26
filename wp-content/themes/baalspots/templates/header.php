@@ -46,71 +46,73 @@
 </nav>
 
 <!-- hero -->
-<?php if(get_field('hero_image')): ?>
-  <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
-<?php else: ?>
-  <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
-<?php endif; ?>
+<?php if(!is_home()): ?>
+  <?php if(get_field('hero_image')): ?>
+    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+  <?php else: ?>
+    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
+  <?php endif; ?>
 
-  <div class="content">
-    <div class="container">
-        <div class="hero-text">
-            <?php if( have_rows('hero_slider') ): ?>
-            <ul id="hero-text-slider">
-            <?php $index = 0; while( have_rows('hero_slider') ): the_row(); 
-                // vars
-                $title = get_sub_field('slider_title');
-                $description = get_sub_field('slider_description');
-                $link = get_sub_field('link_url');
-                $index++;
-                ?>
-                <li class="slide <?php echo ($index==1 ? 'showing' : null); ?>">
-                    <h1><?php echo $title; ?></h1>
-                    <p class="is-hidden-mobile"><?php echo $description; ?></p>
-                    <?php if( $link ): ?>
-                        <a href="<?php echo $link; ?>" class="button btn-cta">
-                          <?php echo get_sub_field('link_text'); ?>
-                        </a>
-                    <?php endif; ?>
-                </li>
-            <?php endwhile; ?>
-            </ul>
+    <div class="content">
+      <div class="container">
+          <div class="hero-text">
+              <?php if( have_rows('hero_slider') ): ?>
+              <ul id="hero-text-slider">
+              <?php $index = 0; while( have_rows('hero_slider') ): the_row(); 
+                  // vars
+                  $title = get_sub_field('slider_title');
+                  $description = get_sub_field('slider_description');
+                  $link = get_sub_field('link_url');
+                  $index++;
+                  ?>
+                  <li class="slide <?php echo ($index==1 ? 'showing' : null); ?>">
+                      <h1><?php echo $title; ?></h1>
+                      <p class="is-hidden-mobile"><?php echo $description; ?></p>
+                      <?php if( $link ): ?>
+                          <a href="<?php echo $link; ?>" class="button btn-cta">
+                            <?php echo get_sub_field('link_text'); ?>
+                          </a>
+                      <?php endif; ?>
+                  </li>
+              <?php endwhile; ?>
+              </ul>
+              <?php endif; ?>
+          </div>
+      </div>
+      <?php if (is_front_page()) : ?>
+        <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
+        <div class="awards-container">
+          <div class="awards-backbar">  
+          </div>
+          <div class="awards-forebar">
+          </div>
+          <?php 
+            // the query
+            $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+            <?php if ( $wpb_all_query->have_posts() ) : ?>
+            <div class="slider js_multislides">
+                <div class="frame js_frame">
+                    <ul class="slides js_slides">
+                        <!-- the loop -->
+                        <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+                            <li class="js_slide"><?php the_post_thumbnail(); ?></li>
+                        <?php endwhile; ?>
+                        <!-- end of the loop -->     
+                    </ul>
+                </div>
+                <span class="js_prev prev">
+                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
+                </span>
+                <span class="js_next next">
+                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+                </span>
+            </div>
+            <?php wp_reset_postdata(); ?>       
+            <?php else : ?>
+                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
             <?php endif; ?>
         </div>
+      <?php endif; ?>
     </div>
-    <?php if (is_front_page()) : ?>
-      <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
-      <div class="awards-container">
-        <div class="awards-backbar">  
-        </div>
-        <div class="awards-forebar">
-        </div>
-        <?php 
-          // the query
-          $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
-          <?php if ( $wpb_all_query->have_posts() ) : ?>
-          <div class="slider js_multislides">
-              <div class="frame js_frame">
-                  <ul class="slides js_slides">
-                      <!-- the loop -->
-                      <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-                          <li class="js_slide"><?php the_post_thumbnail(); ?></li>
-                      <?php endwhile; ?>
-                      <!-- end of the loop -->     
-                  </ul>
-              </div>
-              <span class="js_prev prev">
-                  <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
-              </span>
-              <span class="js_next next">
-                  <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
-              </span>
-          </div>
-          <?php wp_reset_postdata(); ?>       
-          <?php else : ?>
-              <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-          <?php endif; ?>
-      </div>
-    <?php endif; ?>
   </div>
-</div>
+<?php endif; ?>

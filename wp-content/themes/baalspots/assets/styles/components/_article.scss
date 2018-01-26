@@ -1,0 +1,52 @@
+article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: white;
+    @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
+    .article-photo {
+        figure {
+            margin: 0;
+            background-color: lightgray;
+        }
+    }
+    .article-summary {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        .article-content {
+            p.categories {
+                a {
+                    font-size: 14px;
+                    color: $alizarin-crimson;    
+                }
+            }
+            a {
+                color: #333333;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 28px;
+                 
+            }
+            .article-description {
+                margin-top: 20px;
+                color: #333333;
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+        .meta-data {
+            margin-top: 20px;
+        }
+    }
+}
+
+@include tablet-only {
+    article {
+        .article-summary {
+            padding: 20px;
+        }
+    }
+}

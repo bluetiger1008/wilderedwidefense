@@ -10,7 +10,8 @@
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="article">
-                            <?php the_post_thumbnail('full', ['class'=>'article-image']); ?>
+                            <div class="article-photo <?php echo has_post_thumbnail()? '': 'empty'; ?>" style="background-image: url('<?php echo has_post_thumbnail()? the_post_thumbnail_url( 'full' ) : null; ?>')">
+                            </div>
                             <div class="article-summary">
                                 <p>
                                     <?php

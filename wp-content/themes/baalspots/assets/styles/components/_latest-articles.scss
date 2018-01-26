@@ -17,33 +17,6 @@ section.latest-articles {
             top: 0;
             right: 40px;
         }
-        .column {
-            .article {
-                height: 100%;
-                background-color: white;
-                @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
-                .article-photo {
-                    height: 200px;
-                    background-size: cover;
-                }
-                .article-summary {
-                    padding: 40px;
-                    min-height: 250px;
-                    .article-title {
-                        color: #333333;
-                        font-size: 22px;
-                        font-weight: bold;
-                        line-height: 28px;
-                        margin-bottom: 20px;
-                    }
-                    .article-description {
-                        color: #333333;
-                        font-size: 16px;
-                        line-height: 26px;
-                    }
-                }
-            }
-        }
     }
     
     @include mobile {
@@ -57,18 +30,6 @@ section.latest-articles {
             text-align: center;
             right: 0 !important;
             margin-top: 28px;
-        }
-    }
-
-    @include tablet-only {
-        .container {
-            .column {
-                .article {
-                    .article-summary {
-                        padding: 20px;
-                    }
-                }
-            }
         }
     }
 }
@@ -85,9 +46,12 @@ section.latest-articles-rows {
             display: flex;
             margin-bottom: 30px;
             align-items: center;
-            img.article-image {
+            .article-photo {
                 width: 270px;
                 height: 140px;
+                &.empty {
+                    background-color: #a9a9a9;
+                }
             }
             &-summary {
                 margin-left: 30px;

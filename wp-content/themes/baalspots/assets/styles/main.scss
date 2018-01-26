@@ -3,6 +3,7 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/animatewithsass/animate.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 // bower:sass
@@ -25,6 +26,7 @@
 @import "components/subscribe-form";
 @import "components/black-comment";
 @import "components/testimonial";
+@import "components/article";
 @import "components/latest-articles";
 @import "components/sticky-footer";
 @import "components/formstack";
