@@ -248,12 +248,26 @@ function listing_articles( $atts ) {
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>
           <div class="column is-one-third">
             <article>
-              <div class="article-photo <?php echo has_post_thumbnail()? '': 'empty'; ?>" style="background-image: url('<?php echo has_post_thumbnail()? the_post_thumbnail_url( 'full' ) : null; ?>')">
+              <div class="article-photo">
+                <figure class="image is-3by2">
+                  <?php if ( has_post_thumbnail() ) : ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>"/>
+                  <?php endif; ?>
+                </figure>
               </div>
               <div class="article-summary">
-                <p class="tags"><?php the_tags('',','); ?></p>
-                <div class="article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
+                <div class="article-content">
+                  <p class="categories">
+                    <?php
+                    $categories = get_the_category();
+                    if ( ! empty( $categories ) ) {
+                        echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                    }
+                    ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
+                </div>
               </div>
             </article>
           </div>

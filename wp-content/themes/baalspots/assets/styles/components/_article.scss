@@ -16,7 +16,7 @@ article {
         flex-direction: column;
         height: 100%;
         justify-content: space-between;
-        .article-title {
+        .article-content {
             p.categories {
                 a {
                     font-size: 14px;
@@ -30,12 +30,15 @@ article {
                 line-height: 28px;
                  
             }
-            margin-bottom: 20px;
+            .article-description {
+                margin-top: 20px;
+                color: #333333;
+                font-size: 16px;
+                line-height: 26px;
+            }
         }
-        .article-description {
-            color: #333333;
-            font-size: 16px;
-            line-height: 26px;
+        .meta-data {
+            margin-top: 20px;
         }
     }
 }

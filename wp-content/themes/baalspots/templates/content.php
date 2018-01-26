@@ -8,7 +8,7 @@
     	</figure>
     </div>
     <div class="article-summary">
-    	<div class="article-title">
+    	<div class="article-content">
 	      <p class="categories">
 	      	<?php
 	      	$categories = get_the_category();
