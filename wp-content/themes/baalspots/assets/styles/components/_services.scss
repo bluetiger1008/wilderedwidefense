@@ -1,0 +1,45 @@
+section {
+	&.services {
+		padding-top: 100px;
+		figure {
+			margin: 0 !important;
+		}
+		.service-header {
+			text-align: center;
+			width: 70%;
+			margin: 0 auto 85px;
+		}
+		.service-list {
+			flex-wrap: wrap;
+			.service {
+				display: flex;
+				flex-direction: column;
+				.service-footer {
+					background-color: $bg-black;
+					flex-grow: 1;
+					display: flex;
+					.content {
+						position: relative;
+				    background-color: #1b1b1b;
+				    margin-left: 10px;
+				    margin-right: 10px;
+				    padding: 14px 12px 40px;
+				    display: flex;
+				    flex-grow: 1;
+				    flex-direction: column;
+				    justify-content: space-between;
+				    margin-top: -20px;
+						.summary {
+							h3 {
+								color: white;
+								font-size: 28px;
+								line-height: 32px;
+								margin: 10px 0;
+							}	
+						}
+					}
+				}
+			}
+		}
+	}	
+}

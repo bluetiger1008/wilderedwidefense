@@ -53,6 +53,16 @@
         $('.delete').click(function() {
           document.querySelector(".modal.is-active").classList.remove('is-active'); 
         });
+
+        /* awards logo slider */
+        var multiSlides  = document.querySelector('.js_multislides');
+        // http://easings.net/
+        if(multiSlides) {
+          lory(multiSlides, {
+            infinite: 6,
+            slidesToScroll: 1
+          });  
+        }
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -124,13 +134,6 @@
           slides[currentSlide].className = 'slide showing';
         }
         /* jshint ignore:end */
-        
-        var multiSlides  = document.querySelector('.js_multislides');
-        // http://easings.net/
-        lory(multiSlides, {
-          infinite: 6,
-          slidesToScroll: 1
-        });
 
         /* award team slider */
         var award_team_slider = document.querySelector('.js_award_team_slider');
@@ -155,12 +158,13 @@
         // JavaScript to be fired on the about us page
       }
     },
-    'page_template_template_internal': {
+    'internal': {
       init: function() {
         // JavaScript to be fired on the about us page
         var wp_content = document.querySelector('.wp-content');
         var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
         var form_consult = document.querySelector('.form-consult');
+        var article_content = document.querySelector('.latest-articles-rows');
 
         function offset(el) {
             var rect = el.getBoundingClientRect(),
@@ -197,9 +201,9 @@
                 sticky_consultation_form.style.width = "100%";
                 document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "44px";
               }
-              if(sticky_consultation_form.getBoundingClientRect().bottom >= wp_content.getBoundingClientRect().bottom - 72) {           
+              if(sticky_consultation_form.getBoundingClientRect().bottom >= article_content.getBoundingClientRect().bottom - 30) {           
                 form_consult.style.position = "absolute";
-                form_consult.style.bottom = ".75rem";
+                form_consult.style.bottom = "30px";
                 form_consult.style.left = ".75rem";
                 form_consult.style.width = "calc(100% - 1.5rem)";
                 sticky_consultation_form.style.position = "relative";

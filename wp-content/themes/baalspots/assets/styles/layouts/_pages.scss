@@ -15,7 +15,7 @@
 }
 
 .pg-blog {
-    padding: 150px 0;
+    padding: 150px 0 80px;
     background-color: $bg-grey;
     .columns {
         flex-wrap: wrap;
@@ -51,5 +51,15 @@
                 }
             }
         }
+    }
+    span.yellow-border-bar {
+        margin: 60px 0;
+        &:before {
+            width: 84px;
+        }
+    }
+    section.subscribe {
+        margin-top: 80px;
+        margin-bottom: 0;
     }
 }

@@ -1,4 +1,4 @@
-<div class="column is-one-third" data-aos="fade-down" data-aos-anchor-placement="top-center">
+<div class="column is-one-third" data-aos="fade-up">
 	<article <?php post_class(); ?>>
     <div class="article-photo">
     	<figure class="image is-3by2">
@@ -20,7 +20,12 @@
 	      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	    </div>
       <div class="meta-data">
-	      <?php get_template_part('templates/entry-meta'); ?>
+      	<div class="meta-left">
+	      	<?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+	      </div>
+	      <div class="meta-content">
+		      <?php get_template_part('templates/entry-meta'); ?>
+	      </div>
 	    </div>
     </div>
 	</article>

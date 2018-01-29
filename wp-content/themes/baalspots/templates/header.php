@@ -21,7 +21,7 @@
       </div>
     </nav>
   </div>
-  <div class="backbar">
+  <div class="backbar <?php echo is_home()?'black': null; ?>">
     <button class="button navbar-burger" id="showRight">
       <span></span>
       <span></span>
@@ -79,8 +79,10 @@
               <?php endif; ?>
           </div>
       </div>
-      <?php if (is_front_page()) : ?>
-        <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
+      <?php if (is_front_page() || is_page_template( 'templates/criminalPage.php' ) ) : ?>
+        <?php if(get_field('attorney_image')) : ?>
+          <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
+        <?php endif; ?>
         <div class="awards-container">
           <div class="awards-backbar">  
           </div>

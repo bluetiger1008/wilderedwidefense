@@ -35,3 +35,13 @@
   padding-bottom: 1px;
   font-weight: bold;
 }
+@mixin articleCategory($fontSize) {
+  font-size: $fontSize;
+  color: $alizarin-crimson;
+}
+@mixin articleTitleLink($fontSize, $lineHeight) {
+  color: #333333;
+  font-size: $fontSize;
+  font-weight: bold;
+  line-height: $lineHeight;
+}

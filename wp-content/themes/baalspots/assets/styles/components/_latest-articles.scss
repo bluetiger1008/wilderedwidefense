@@ -35,59 +35,58 @@ section.latest-articles {
 }
 
 section.latest-articles-rows {
-    margin-bottom: 30px;
-    .container {
-        h1 {
-            margin-bottom: 40px;
-            font-size: 34px;
-            line-height: 1.2em;
-        }
-        .article {
-            display: flex;
-            margin-bottom: 30px;
-            align-items: center;
-            .article-photo {
-                width: 270px;
-                height: 140px;
-                &.empty {
-                    background-color: #a9a9a9;
-                }
+    margin: 40px 0 30px;
+    h1 {
+        margin-top: 60px;
+        margin-bottom: 40px;
+        font-size: 34px;
+        line-height: 1.2em;
+    }
+    .article {
+        display: flex;
+        margin-bottom: 30px;
+        align-items: center;
+        .article-photo {
+            width: 270px;
+            height: 140px;
+            &.empty {
+                background-color: #a9a9a9;
             }
-            &-summary {
-                margin-left: 30px;
-                p {
-                    margin-bottom: 0;
-                    a {
-                        color: #D8252F;    
-                        font-size: 16px;
-                        line-height: 19px;
-                        font-family: "Trueno";
-                        font-weight: 800;
-                        &:hover {
-                            color: #D8252F;
-                        }
+        }
+        &-summary {
+            margin-left: 30px;
+            flex: 1;
+            p {
+                margin-bottom: 0;
+                a {
+                    color: #D8252F;    
+                    font-size: 16px;
+                    line-height: 19px;
+                    font-family: "Trueno";
+                    font-weight: 800;
+                    &:hover {
+                        color: #D8252F;
                     }
                 }
-                h2 {
-                    font-size: 28px;
-                    line-height: 32px;
-                    color: #302F35;
-                    margin: 0;
-                }
+            }
+            h2 {
+                font-size: 28px;
+                line-height: 32px;
+                color: #302F35;
+                margin: 0;
             }
         }
     }
     @include mobile {
-        .container {
-            .article {
-                flex-direction: column;
-                img.article-image {
-                    width: 100%;
-                    height: auto;
-                }
-                &-summary {
-                    margin-left: 0;
-                }
+        .article {
+            flex-direction: column;
+            img.article-image {
+                width: 100%;
+                height: auto;
+            }
+            &-summary {
+                flex: 1;
+                margin-left: 0;
             }
         }
     }

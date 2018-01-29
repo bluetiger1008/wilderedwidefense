@@ -60,7 +60,7 @@ function latest_victories_tiles_shortcode( $atts ) {
         'order'   => 'ASC',
     ) );
     if ( $query->have_posts() ) { ?>
-      <div data-aos="fade-up" class="tile-victories">
+      <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="tile-victories">
         <?php 
         $index = 0;
         while ( $query->have_posts() ) : $query->the_post(); $index++;?>

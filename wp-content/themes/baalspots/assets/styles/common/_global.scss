@@ -7,12 +7,26 @@ a {
     }
 }
 .button {
-    font-family: $buttonPrimaryFont;
+    font-family: $fontPoppins;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 16px;
     &:hover {
         color: white;
+    }
+}
+.btn-more {
+    display: flex;
+    align-items: center;
+    span {
+        color: #fff;
+        border-bottom: 2px solid #fac627;
+        font-size: 16px;
+        padding-bottom: 1px;
+        font-weight: 700;
+    }
+    img {
+        margin-left: 15px;
     }
 }
 .txt-red {
@@ -145,5 +159,20 @@ ul.check-list {
         background: url('../images/icon-check.svg') no-repeat 0 3px !important;
         padding-left: 30px;
         list-style: none;
+    }
+}
+span.yellow-border-bar {
+    border-top: 1px solid #ddd;
+    display: block;
+    position: relative;
+    width: 100%;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -3px;
+        width: 48px;
+        height: 4px;
+        background-color: #fac627;
     }
 }
