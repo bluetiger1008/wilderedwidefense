@@ -15,6 +15,20 @@ a {
         color: white;
     }
 }
+.btn-more {
+    display: flex;
+    align-items: center;
+    span {
+        color: #fff;
+        border-bottom: 2px solid #fac627;
+        font-size: 16px;
+        padding-bottom: 1px;
+        font-weight: 700;
+    }
+    img {
+        margin-left: 15px;
+    }
+}
 .txt-red {
     color: $alizarin-crimson;
 }

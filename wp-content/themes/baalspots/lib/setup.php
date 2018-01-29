@@ -88,7 +88,8 @@ function display_sidebar() {
     is_single(),
     is_home(),
     is_page_template('template-custom.php'),
-    is_page_template('template-internal.php')
+    is_page_template('template-internal.php'),
+    is_page_template('templates/criminalPage.php')
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

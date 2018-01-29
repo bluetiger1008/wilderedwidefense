@@ -30,6 +30,8 @@
     }  
 } 
 .form-consult {
+    display: flex;
+    flex-direction: column;
     &-title {
         background-color: #252525;
         width: 100%;
@@ -90,6 +92,15 @@
         font-size: 18px;
         color: #39393A;
         font-family: "Roboto";
+    }
+    &.reverse {
+        .form-quote {
+            order: 1;
+            margin-bottom: 40px;
+        }
+        .form-content {
+            order: 2;
+        }
     }
 }
 
