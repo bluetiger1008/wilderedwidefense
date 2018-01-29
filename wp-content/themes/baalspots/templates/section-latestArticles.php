@@ -1,5 +1,5 @@
 <section class="latest-articles-rows">
-    <span class="bar"></span>
+    <span class="yellow-border-bar"></span>
     <h1>Latest Articles</h1>
     <?php $query = new WP_Query( array(
         'post_type'=>'post',

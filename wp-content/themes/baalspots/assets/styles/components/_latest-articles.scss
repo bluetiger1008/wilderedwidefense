@@ -36,20 +36,6 @@ section.latest-articles {
 
 section.latest-articles-rows {
     margin: 40px 0 30px;
-    span.bar {
-        border-top: 1px solid #ddd;
-        display: block;
-        position: relative;
-        &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: -3px;
-            width: 48px;
-            height: 4px;
-            background-color: #fac627;
-        }
-    }
     h1 {
         margin-top: 60px;
         margin-bottom: 40px;

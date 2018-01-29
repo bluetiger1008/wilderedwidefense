@@ -21,7 +21,7 @@
       </div>
     </nav>
   </div>
-  <div class="backbar">
+  <div class="backbar <?php echo is_home()?'black': null; ?>">
     <button class="button navbar-burger" id="showRight">
       <span></span>
       <span></span>

@@ -72,6 +72,15 @@ header {
                 color: $bg-black;
             }
         }
+        &.black {
+            @include shapedBar(98, 90%, 70px, black, right, 30px, null);
+            .phone_number {
+                color: white;
+                a {
+                    color: white;
+                }
+            }
+        }
     }
     @include touch {
         .backbar {

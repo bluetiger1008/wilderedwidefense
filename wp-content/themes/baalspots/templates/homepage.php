@@ -13,7 +13,7 @@ Template Post Type: post, page, event
 
     <?php get_template_part('templates/section', 'daysLeft'); ?>
 
-    <section data-aos="fade-up" data-aos-delay="300" class="meet-team">
+    <section data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="meet-team">
         <div class="container">
             <?php the_field('award_team_content') ?>
         </div>
@@ -51,7 +51,7 @@ Template Post Type: post, page, event
         </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="300" class="latest-articles">
+    <section data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="latest-articles">
         <div class="container">
             <div class="articles-header">
                 <h1>Latest Articles</h1>
@@ -64,14 +64,16 @@ Template Post Type: post, page, event
         </div>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="300" class="consultation">
+    <section class="consultation">
         <img src="<?= get_template_directory_uri(); ?>/dist/images/dark-city.jpg">
         <div class="form">
             <div class="container">
                 <div class="wrapper">
                     <h1><?php the_field('footer_consultation_form_header'); ?></h1>
                     <p><?php the_field('footer_consultation_form_description'); ?></p>
-                    <?php the_field('footer_consultation_form_script'); ?>
+                    <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+                        <?php the_field('footer_consultation_form_script'); ?>
+                    </div>
                 </div>
             </div>
         </div>

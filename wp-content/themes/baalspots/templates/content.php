@@ -20,7 +20,12 @@
 	      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	    </div>
       <div class="meta-data">
-	      <?php get_template_part('templates/entry-meta'); ?>
+      	<div class="meta-left">
+	      	<?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+	      </div>
+	      <div class="meta-content">
+		      <?php get_template_part('templates/entry-meta'); ?>
+	      </div>
 	    </div>
     </div>
 	</article>
