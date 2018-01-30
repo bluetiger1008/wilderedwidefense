@@ -124,6 +124,7 @@ section.consultation {
 @include mobile {
     .form-consult {
         margin: 0 -20px;
+        width: auto !important;
         .fsBody {
             .fsForm {
                 padding-left: 22px;

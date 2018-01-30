@@ -6,6 +6,9 @@ a {
         color: white;
     }
 }
+.is-absolute {
+    position: absolute;
+}
 .button {
     font-family: $fontPoppins;
     font-weight: bold;
@@ -174,5 +177,36 @@ span.yellow-border-bar {
         width: 48px;
         height: 4px;
         background-color: #fac627;
+    }
+}
+.meta-data {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    .meta-left {
+        margin-right: 20px;
+        display: flex;
+        img {
+            border-radius: 100%;
+        }
+    }
+    .meta-content {
+        display: flex;
+        flex-direction: column;
+        .author {
+            margin: 0;
+            line-height: 1;
+            a {
+                font-family: $fontPoppins;
+                font-size: 14px;
+                line-height: 21px;
+                color: #181818;    
+            }
+        }
+        time {
+            color: #999999;
+            font-size: 14px;
+            line-height: 14px;
+        }
     }
 }

@@ -21,7 +21,7 @@
       </div>
     </nav>
   </div>
-  <div class="backbar <?php echo is_home()?'black': null; ?>">
+  <div class="backbar <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
     <button class="button navbar-burger" id="showRight">
       <span></span>
       <span></span>
@@ -46,7 +46,7 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home()): ?>
+<?php if(!is_home() && !is_single() && !is_category()): ?>
   <?php if(get_field('hero_image')): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>

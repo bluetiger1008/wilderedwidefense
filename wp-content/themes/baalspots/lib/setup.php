@@ -87,6 +87,7 @@ function display_sidebar() {
     is_front_page(),
     is_single(),
     is_home(),
+    is_category(),
     is_page_template('template-custom.php'),
     is_page_template('template-internal.php'),
     is_page_template('templates/criminalPage.php')

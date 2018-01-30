@@ -1,4 +1,4 @@
-<div class="column is-one-third" data-aos="fade-up">
+<div class="column is-one-third" data-aos="fade-up" data-aos-once="true">
 	<article <?php post_class(); ?>>
     <div class="article-photo">
     	<figure class="image is-3by2">

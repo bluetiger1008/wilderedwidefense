@@ -1,0 +1,36 @@
+section {
+	&.single-article {
+		padding-top: 150px;
+		.summary {
+			display: flex;
+			flex-direction: column;
+			p.categories {
+				a {
+		      font-weight: bold;
+					@include articleCategory(16px);
+				}
+			}
+			a.post-title {
+				@include articleTitleLink(56px, 68px);
+			}
+		}
+		.featured-image {
+			background-color: $bg-articlePhoto;
+			margin-top: 30px;
+			figure {
+				margin: 0;
+			}
+		}
+		.article-wrapper {
+			margin-top: -45px;
+			position: relative;
+			.article-content {
+				padding: 30px;
+				background-color: white;
+				a {
+					color: $alizarin-crimson;
+				}
+			}
+		}
+	}
+}

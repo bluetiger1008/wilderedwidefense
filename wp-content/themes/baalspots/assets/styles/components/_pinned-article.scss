@@ -10,6 +10,7 @@
 		flex-direction: column;
 		p.categories {
 			margin-top: 45px;
+			margin-bottom: 0;
 			a {
 	      font-weight: bold;
 				@include articleCategory(16px);
