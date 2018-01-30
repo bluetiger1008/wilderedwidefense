@@ -30,6 +30,24 @@ section {
 				a {
 					color: $alizarin-crimson;
 				}
+				.tags {
+					.yellow-border-bar {
+						margin: 30px 0 20px;
+					}
+					.tag-list{
+						display: flex;
+						a {
+							border: 1px solid #EFEFEF;
+							border-radius: 100px;
+							height: 30px;
+							padding: 0 20px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin-right: 15px;
+						}	
+					}
+				}
 			}
 		}
 	}

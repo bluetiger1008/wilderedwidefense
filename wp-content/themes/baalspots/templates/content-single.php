@@ -33,6 +33,14 @@
 		  		<div class="column is-8">
 		  			<div class="article-content">
 						  <?php the_content(); ?>
+						  <div class="tags">
+						  	<span class="yellow-border-bar"></span>
+						  	<div class="tag-list">
+								  <?php
+									echo get_the_tag_list();
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
