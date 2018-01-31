@@ -21,8 +21,8 @@
 		    </div>
 	    </div>
 	    <div class="featured-image">
-				<figure class="image is-16by9">
-		  		<img src="<?php the_post_thumbnail_url(); ?>"/>
+	    	<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+				<figure class="image is-16by9" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
 		  	</figure>
 		  </div>
 		  <div class="article-wrapper">

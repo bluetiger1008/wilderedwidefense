@@ -2,8 +2,11 @@
 	.article-image {
 		padding-right: 30px;
 		figure {
-			margin: 0;
-		}	
+        margin: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }	
 	}
 	.content {
 		display: flex;

@@ -7,9 +7,9 @@
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       	<div class="columns">
 					<div class="column is-two-thirds article-image">
-						<figure class="image is-3by2">
-			    		<img src="<?php the_post_thumbnail_url(); ?>"/>
-			    	</figure>
+						<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+			    	<figure class="image is-3by2" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
+				  	</figure>
 					</div>
 					<div class="column">
 						<div class="content">

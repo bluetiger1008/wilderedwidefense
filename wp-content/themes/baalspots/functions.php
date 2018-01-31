@@ -250,10 +250,8 @@ function listing_articles( $atts ) {
           <div class="column is-one-third">
             <article>
               <div class="article-photo">
-                <figure class="image is-3by2">
-                  <?php if ( has_post_thumbnail() ) : ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>"/>
-                  <?php endif; ?>
+                <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+                <figure class="image is-3by2" style="background-image: url('<?php echo $backgroundImg[0]; ?>');">
                 </figure>
               </div>
               <div class="article-summary">

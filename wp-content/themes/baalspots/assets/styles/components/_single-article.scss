@@ -19,6 +19,9 @@ section {
 			margin-top: 30px;
 			figure {
 				margin: 0;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
 			}
 		}
 		.article-wrapper {
@@ -27,8 +30,15 @@ section {
 			.article-content {
 				padding: 30px;
 				background-color: white;
+				p {
+					font-family: "Playfair Display";
+					font-size: 20px;
+					line-height: 33px;
+					color: #242424;
+				}
 				a {
 					color: $alizarin-crimson;
+					font-family: "Playfair Display";
 				}
 				.tags {
 					.yellow-border-bar {
@@ -45,6 +55,9 @@ section {
 							align-items: center;
 							justify-content: center;
 							margin-right: 15px;
+							font-size: 14px;
+							font-family: $fontPoppins;
+							color: #181818;
 						}	
 					}
 				}
