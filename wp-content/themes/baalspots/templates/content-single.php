@@ -26,8 +26,8 @@
 		  	</figure>
 		  </div>
 		  <div class="article-wrapper">
-		  	<div class="columns">
-		  		<div class="column is-2 is-hidden-mobile">
+		  	<div class="columns" id="main-blog-content">
+		  		<div class="column is-2 is-hidden-mobile" id="side-bar">
 		  			<?php get_template_part('templates/blog', 'share'); ?>
 		  		</div>
 		  		<div class="column is-8">
