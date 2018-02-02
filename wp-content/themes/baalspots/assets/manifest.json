@@ -34,6 +34,9 @@
     },
     "aos.js": {
       "bower": ["aos"]
+    },
+    "stickySidebar.js": {
+      "files": [ "scripts/stickySidebar.js" ]
     }
   },
   "config": {

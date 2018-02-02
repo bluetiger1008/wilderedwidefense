@@ -108,6 +108,7 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_script('sage/headroom', Assets\asset_path('scripts/stickySidebar.js'));
   wp_enqueue_script( 'sage/classie_js', Assets\asset_path('scripts/classie.js'));
   wp_enqueue_script('sage/header_js', Assets\asset_path('scripts/headroom.js'));
   wp_enqueue_script('sage/lory_js', Assets\asset_path('scripts/lory.js'));

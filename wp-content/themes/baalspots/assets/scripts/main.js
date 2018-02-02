@@ -13,6 +13,13 @@
 (function($) {
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
+  function offset(el) {
+      var rect = el.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft, width: rect.width, height: rect.height, bottom: rect.top + scrollTop + rect.height };
+  }
+  
   var Sage = {
     // All pages
     'common': {
@@ -158,6 +165,13 @@
         // JavaScript to be fired on the about us page
       }
     },
+    'single': {
+      init: function() {
+        var sidebar = new StickySidebar('#side-bar', {
+          topSpacing: 20
+        });
+      }
+    },
     'internal': {
       init: function() {
         // JavaScript to be fired on the about us page
@@ -165,13 +179,6 @@
         var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
         var form_consult = document.querySelector('.form-consult');
         var article_content = document.querySelector('.latest-articles-rows');
-
-        function offset(el) {
-            var rect = el.getBoundingClientRect(),
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            return { top: rect.top + scrollTop, left: rect.left + scrollLeft, width: rect.width, height: rect.height };
-        }
 
         if(sticky_consultation_form) {
           var sticky_form_offset =  offset(sticky_consultation_form);  
