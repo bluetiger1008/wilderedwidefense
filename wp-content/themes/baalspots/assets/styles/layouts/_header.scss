@@ -28,8 +28,14 @@ header {
             background: transparent;
             .navbar-brand {
                 margin-right: 100px;
-                .navbar-item img {
-                    max-height: 2.75rem;
+                .navbar-item {
+                    &:hover {
+                        background: white;
+                    }
+                    img {
+                        width: 150px;
+                        max-height: 100%;
+                    }
                 }
             }
             .navbar-menu {
@@ -84,9 +90,9 @@ header {
     }
     @include touch {
         .backbar {
-            width: 100%;
-            border-top: none;
-            border-right: none;
+            width: 100% !important;
+            border-top: none !important;
+            border-right: none !important;
             margin-top: 0;
             background-color: $lightening-yellow;
             height: 85px;

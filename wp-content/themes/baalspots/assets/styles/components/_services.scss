@@ -41,5 +41,10 @@ section {
 				}
 			}
 		}
-	}	
+		@include mobile {
+			.service-header {
+				width: 100%;
+			}	
+		}
+	}
 }

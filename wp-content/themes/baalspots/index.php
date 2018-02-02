@@ -1,4 +1,4 @@
-<div class="<?php echo is_home()? 'pg-blog' : '' ?>">
+<div class="<?php echo is_home() || is_category()? 'pg-blog' : '' ?>">
 	<div class="container">
 		<?php if (!have_posts()) : ?>
 		  <div class="alert alert-warning">

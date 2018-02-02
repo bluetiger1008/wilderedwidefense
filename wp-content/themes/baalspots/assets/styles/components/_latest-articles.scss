@@ -49,6 +49,8 @@ section.latest-articles-rows {
         .article-photo {
             width: 270px;
             height: 140px;
+            background-size: cover;
+            background-position: center;
             &.empty {
                 background-color: #a9a9a9;
             }
