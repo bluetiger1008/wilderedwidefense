@@ -40,6 +40,8 @@ header {
             }
             .navbar-menu {
                 justify-content: flex-end;
+                align-items: center;
+                position: relative;
                 .menu-items {
                     display: flex;
                     li {

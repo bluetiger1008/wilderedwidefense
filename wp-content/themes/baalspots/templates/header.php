@@ -18,6 +18,15 @@
           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
         endif;
         ?>
+        <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
+          <div>
+            <input type="text" value="" name="s" id="input_search" class="input-search" placeholder="Search" />
+            <span id="search_submit" class="search-submit">
+              <img src="<?= get_template_directory_uri(); ?>/dist/images/search.png" class="icon-search">
+              <img src="<?= get_template_directory_uri(); ?>/dist/images/cancel.png" class="icon-cancel">
+            </span>
+          </div>
+        </form>
       </div>
     </nav>
   </div>
@@ -36,17 +45,27 @@
     wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
   endif;
   ?>
-  <div class="search-box">
-    <div class="control">
-      <input type="text" placeholder="Search">
-      <span class="btn-cancel"><img src="<?= get_template_directory_uri(); ?>/dist/images/cancel.png"></span>
+  <div class="cbp-spmenu-footer">
+    <div class="social-share">
+      <a href=""><img src="<?= get_template_directory_uri(); ?>/dist/images/facebook-black.png"></a>
+      <a href=""><img src="<?= get_template_directory_uri(); ?>/dist/images/twitter-black.png"></a>
+      <a href=""><img src="<?= get_template_directory_uri(); ?>/dist/images/linkedin-black.png"></a>
+      <a href=""><img src="<?= get_template_directory_uri(); ?>/dist/images/google-black.png"></a>
     </div>
-    <span class="btn-search"><img src="<?= get_template_directory_uri(); ?>/dist/images/search.png"></span>
+    <form role="search" method="get" id="mobile_searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
+      <div>
+        <input type="text" value="" name="s" id="mobile_input_search" class="input-search" placeholder="Search" />
+        <span id="mobile_search_submit" class="search-submit">
+          <img src="<?= get_template_directory_uri(); ?>/dist/images/search.png" class="icon-search">
+          <img src="<?= get_template_directory_uri(); ?>/dist/images/cancel.png" class="icon-cancel">
+        </span>
+      </div>
+    </form>
   </div>
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_category()): ?>
+<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php')): ?>
   <?php if(get_field('hero_image')): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>

@@ -7,7 +7,9 @@
 		  <?php get_search_form(); ?>
 		<?php endif; ?>
 
-		<?php get_template_part('templates/section', 'pinnedArticle'); ?>
+		<?php if(!is_category()) {
+			get_template_part('templates/section', 'pinnedArticle');
+		}?>
 
 		<span class="yellow-border-bar"></span>
 

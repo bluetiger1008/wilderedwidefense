@@ -36,6 +36,21 @@ article {
             }
         }
     }
+    h2.entry-title {
+        a {
+            @include articleTitleLink(22px, 28px);
+        }
+    }
+    .entry-summary {
+        p {
+            color: #333333;
+            font-family: "Playfair Display";
+            a {
+                color: #333;
+                border-bottom: 1px solid $alizarin-crimson;
+            }
+        }
+    }
 }
 
 @include tablet-only {

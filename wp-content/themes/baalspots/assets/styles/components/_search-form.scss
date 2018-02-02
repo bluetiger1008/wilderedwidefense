@@ -1,0 +1,51 @@
+form.searchform {
+	.input-search {
+		width: calc(100% - 30px);
+    max-width:0;
+    transition: all .5s ease;
+    position:absolute;
+    right:30px;
+    box-sizing:border-box;
+    opacity:0;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #F4F4F4;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 16px;
+    font-size: 16px;
+    font-family: "Trueno";
+    font-weight: bold;
+    color: #242424;
+    ~.search-submit {
+    	.icon-search {
+          display: block;
+      }
+      .icon-cancel {
+          display: none;
+      }
+    }
+    &.expanded {
+        max-width: calc(100% - 35px);
+        opacity:1;
+        ~.search-submit {
+            .icon-search {
+                display: none;
+            }
+            .icon-cancel {
+                display: block;
+            }
+        }
+    }
+	}
+	.search-submit {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+  }
+}
