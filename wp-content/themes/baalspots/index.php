@@ -19,9 +19,7 @@
 			<?php endwhile; ?>
 		</div>
 
-		<div class="posts-navigation">
-			<?php posts_nav_link("<span class='separator'></span>","<span class='nav-button left'><i class='fa fa-angle-left' aria-hidden='true'></i></span>Older posts","Newer posts<span class='nav-button right'><i class='fa fa-angle-right' aria-hidden='true'></i></span>"); ?>
-		</div>
+		<?php the_posts_navigation(); ?>
 	</div>
 
 	<?php get_template_part('templates/section', 'subscribe'); ?>

@@ -28,6 +28,16 @@
     filter: drop-shadow($shadow);
   }
 }
+@mixin internalHeroSliderTextStyle() {
+  #hero-text-slider {
+      .slide {
+          h1 {
+              font-size: 56px;
+              line-height: 1;
+          }
+      }    
+  }
+}
 @mixin btnViewAll() {
   color: white;
   font-size: 16px;

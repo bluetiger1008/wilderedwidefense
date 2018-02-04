@@ -2498,3 +2498,127 @@ URL: http://www.wilderdwidefense.com/blog/2013/december/2013-celebrity-arrest-re
 2018-02-02 13:51:41 TASK ID: 471 - PID: 4468 - RAM: 22.9MB - 1 end of posts.
 2018-02-02 13:51:41 TASK ID: 471 - PID: 4468 - RAM: 22.9MB - 1 repeat count: 0
 2018-02-02 13:51:41 TASK ID: 471 - PID: 4468 - RAM: 22.82MB - 1 471 task ended
+2018-02-04 16:44:08 TASK ID: 471 - PID: 4716 - RAM: 22.39MB - 1 471 id task starting...
+2018-02-04 16:44:08 TASK ID: 471 - PID: 4716 - RAM: 22.54MB - 1 Serial scrape starts at URL:http://www.wilderdwidefense.com/blog-categories/10
+2018-02-04 16:44:10 TASK ID: 471 - PID: 4716 - RAM: 22.87MB - 1 scraping page #1
+2018-02-04 16:44:10 TASK ID: 471 - PID: 4716 - RAM: 22.88MB - 1 serial fuzzy match links
+2018-02-04 16:44:10 TASK ID: 471 - PID: 4716 - RAM: 22.88MB - 1 number of links:6
+2018-02-04 16:44:10 TASK ID: 471 - PID: 4716 - RAM: 22.89MB - 1 next link is: 
+2018-02-04 16:44:10 TASK ID: 471 - PID: 4716 - RAM: 22.89MB - 1 471 id task queued...
+2018-02-04 16:44:12 TASK ID: 0 - PID: 4465 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:12 TASK ID: 0 - PID: 4465 - RAM: 22.46MB - 1 process_task_queue starts
+2018-02-04 16:44:12 TASK ID: 0 - PID: 4465 - RAM: 22.46MB - 1 max_execution_time: 0
+2018-02-04 16:44:12 TASK ID: 471 - PID: 4465 - RAM: 22.46MB - 1 repeat count:0
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 22.84MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2017/june/texas-court-criminal-appeals-issues-dwi-ruling.html
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 22.88MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2017/june/texas-court-criminal-appeals-issues-dwi-ruling.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 22.88MB - 1 
+2018-02-04 16:44:13 TASK ID: 353 - PID: 4716 - RAM: 22.53MB - 1 353 id task starting...
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 23MB - 1 Repeat check only title:
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 22.92MB - 1 number of posts: 1
+2018-02-04 16:44:13 TASK ID: 471 - PID: 4465 - RAM: 22.92MB - 1 repeat count: 0
+2018-02-04 16:44:14 TASK ID: 353 - PID: 4716 - RAM: 22.88MB - 1 Serial scrape starts at URL:http://www.wilderdwidefense.com/criminal-defense
+2018-02-04 16:44:15 TASK ID: 353 - PID: 4716 - RAM: 22.89MB - 1 Reference a element not found URL:http://www.wilderdwidefense.com/criminal-defense XPath: //html/body/div[2]/div/div/div/div/nav/div/div/ul/li[1]/a
+2018-02-04 16:44:15 TASK ID: 353 - PID: 4716 - RAM: 22.73MB - 1 353 id task starting...
+2018-02-04 16:44:16 TASK ID: 353 - PID: 4716 - RAM: 22.88MB - 1 Serial scrape starts at URL:http://www.wilderdwidefense.com/criminal-defense
+2018-02-04 16:44:18 TASK ID: 0 - PID: 4834 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:18 TASK ID: 0 - PID: 4834 - RAM: 22.46MB - 1 process_task_queue starts
+2018-02-04 16:44:18 TASK ID: 0 - PID: 4834 - RAM: 22.46MB - 1 max_execution_time: 0
+2018-02-04 16:44:18 TASK ID: 471 - PID: 4834 - RAM: 22.46MB - 1 repeat count:0
+2018-02-04 16:44:19 TASK ID: 353 - PID: 4716 - RAM: 22.89MB - 1 Reference a element not found URL:http://www.wilderdwidefense.com/criminal-defense XPath: //html/body/div[2]/div/div/div/div/nav/div/div/ul/li[1]/a
+2018-02-04 16:44:19 TASK ID: 471 - PID: 4465 - RAM: 23MB - 1 non blocking admin ajax called exiting
+2018-02-04 16:44:19 TASK ID: 331 - PID: 4716 - RAM: 22.73MB - 1 331 id task starting...
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 22.84MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2014/january/collin-county-court-faqs.html
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 22.88MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2014/january/collin-county-court-faqs.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 22.88MB - 1 
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 23MB - 1 Repeat check only title:
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 22.92MB - 1 number of posts: 2
+2018-02-04 16:44:20 TASK ID: 471 - PID: 4834 - RAM: 22.92MB - 1 repeat count: 0
+2018-02-04 16:44:20 TASK ID: 331 - PID: 4716 - RAM: 22.85MB - 1 331 id task queued...
+2018-02-04 16:44:21 TASK ID: 0 - PID: 4466 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:21 TASK ID: 0 - PID: 4466 - RAM: 22.47MB - 1 process_task_queue starts
+2018-02-04 16:44:21 TASK ID: 0 - PID: 4466 - RAM: 22.47MB - 1 max_execution_time: 0
+2018-02-04 16:44:21 TASK ID: 331 - PID: 4466 - RAM: 22.47MB - 1 repeat count:0
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.84MB - 1 Single scraping started: http://www.wilderdwidefense.com/testimonials
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.88MB - 1 
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.85MB - 1 Repeat check only title:
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.79MB - 1 number of posts: 1
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.79MB - 1 end of posts.
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.79MB - 1 repeat count: 0
+2018-02-04 16:44:22 TASK ID: 331 - PID: 4466 - RAM: 22.79MB - 1 331 task ended
+2018-02-04 16:44:24 TASK ID: 0 - PID: 4468 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:24 TASK ID: 0 - PID: 4468 - RAM: 22.45MB - 1 process_task_queue starts
+2018-02-04 16:44:24 TASK ID: 0 - PID: 4468 - RAM: 22.45MB - 1 max_execution_time: 0
+2018-02-04 16:44:24 TASK ID: 471 - PID: 4468 - RAM: 22.45MB - 1 repeat count:0
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4834 - RAM: 23MB - 1 non blocking admin ajax called exiting
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.83MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2014/january/miranda-warning-basics-what-every-dallas-driver-.html
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.87MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2014/january/miranda-warning-basics-what-every-dallas-driver-.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.87MB - 1 
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.99MB - 1 Repeat check only title:
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.91MB - 1 number of posts: 3
+2018-02-04 16:44:26 TASK ID: 471 - PID: 4468 - RAM: 22.91MB - 1 repeat count: 0
+2018-02-04 16:44:31 TASK ID: 0 - PID: 7170 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:31 TASK ID: 0 - PID: 7170 - RAM: 22.45MB - 1 process_task_queue starts
+2018-02-04 16:44:31 TASK ID: 0 - PID: 7170 - RAM: 22.45MB - 1 max_execution_time: 0
+2018-02-04 16:44:31 TASK ID: 471 - PID: 7170 - RAM: 22.45MB - 1 repeat count:0
+2018-02-04 16:44:32 TASK ID: 471 - PID: 4468 - RAM: 22.99MB - 1 non blocking admin ajax called exiting
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 22.83MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2014/january/creative-lawyering-the-affluenza-defense-in-texa.html
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 22.87MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2014/january/creative-lawyering-the-affluenza-defense-in-texa.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 22.87MB - 1 
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 23MB - 1 Repeat check only title:
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 22.91MB - 1 number of posts: 4
+2018-02-04 16:44:33 TASK ID: 471 - PID: 7170 - RAM: 22.91MB - 1 repeat count: 0
+2018-02-04 16:44:37 TASK ID: 0 - PID: 7813 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:37 TASK ID: 0 - PID: 7813 - RAM: 22.45MB - 1 process_task_queue starts
+2018-02-04 16:44:37 TASK ID: 0 - PID: 7813 - RAM: 22.45MB - 1 max_execution_time: 0
+2018-02-04 16:44:37 TASK ID: 471 - PID: 7813 - RAM: 22.45MB - 1 repeat count:0
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.83MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2013/december/change-in-texas-warrant-law.html
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.87MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2013/december/change-in-texas-warrant-law.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.87MB - 1 
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.99MB - 1 Repeat check only title:
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.91MB - 1 number of posts: 5
+2018-02-04 16:44:38 TASK ID: 471 - PID: 7813 - RAM: 22.91MB - 1 repeat count: 0
+2018-02-04 16:44:39 TASK ID: 471 - PID: 7170 - RAM: 22.99MB - 1 non blocking admin ajax called exiting
+2018-02-04 16:44:42 TASK ID: 0 - PID: 4466 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 16:44:42 TASK ID: 0 - PID: 4466 - RAM: 22.45MB - 1 process_task_queue starts
+2018-02-04 16:44:42 TASK ID: 0 - PID: 4466 - RAM: 22.45MB - 1 max_execution_time: 0
+2018-02-04 16:44:42 TASK ID: 471 - PID: 4466 - RAM: 22.45MB - 1 repeat count:0
+2018-02-04 16:44:44 TASK ID: 471 - PID: 7813 - RAM: 22.99MB - 1 non blocking admin ajax called exiting
+2018-02-04 16:44:44 TASK ID: 471 - PID: 4466 - RAM: 22.84MB - 1 Single scraping started: http://www.wilderdwidefense.com/blog/2013/december/2013-celebrity-arrest-recap.html
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.88MB - 1 
+ === Scrapes Warning === 
+URL: http://www.wilderdwidefense.com/blog/2013/december/2013-celebrity-arrest-recap.html XPath: //span[contains(concat (" ", normalize-space(@class), " "), " field-content continue-reading ")]//a returned empty for scrape_title
+ === Scrapes Warning === 
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.88MB - 1 
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 23.01MB - 1 Repeat check only title:
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.91MB - 1 number of posts: 6
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.91MB - 1 end of posts.
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.91MB - 1 repeat count: 0
+2018-02-04 16:44:45 TASK ID: 471 - PID: 4466 - RAM: 22.83MB - 1 471 task ended
+2018-02-04 17:10:42 TASK ID: 331 - PID: 4468 - RAM: 19.49MB - 1 331 id task starting...
+2018-02-04 17:10:44 TASK ID: 331 - PID: 4468 - RAM: 19.99MB - 1 331 id task queued...
+2018-02-04 17:10:45 TASK ID: 0 - PID: 4716 - RAM: 22.31MB - 1 process task queue called
+2018-02-04 17:10:45 TASK ID: 0 - PID: 4716 - RAM: 22.47MB - 1 process_task_queue starts
+2018-02-04 17:10:45 TASK ID: 0 - PID: 4716 - RAM: 22.47MB - 1 max_execution_time: 0
+2018-02-04 17:10:45 TASK ID: 331 - PID: 4716 - RAM: 22.47MB - 1 repeat count:0
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.85MB - 1 Single scraping started: http://www.wilderdwidefense.com/testimonials
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.88MB - 1 
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.86MB - 1 Repeat check only title:
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.79MB - 1 number of posts: 1
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.79MB - 1 end of posts.
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.79MB - 1 repeat count: 0
+2018-02-04 17:10:46 TASK ID: 331 - PID: 4716 - RAM: 22.8MB - 1 331 task ended

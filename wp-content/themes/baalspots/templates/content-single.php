@@ -19,6 +19,9 @@
 			      <?php get_template_part('templates/entry-meta'); ?>
 		      </div>
 		    </div>
+		    <div class="is-hidden-tablet">
+		    	<?php get_template_part('templates/blog', 'share'); ?>
+		    </div>
 	    </div>
 	    <div class="featured-image">
 	    	<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>

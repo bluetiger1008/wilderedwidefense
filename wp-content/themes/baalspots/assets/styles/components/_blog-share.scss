@@ -1,3 +1,13 @@
+.blog-share {
+	.social-share-icons {
+		a {
+			font-size: 20px;
+			color: #7f7f7f;
+			line-height: 1;
+		}
+	}
+}
+
 #side-bar {
 	padding: 0;
 	.blog-share {
@@ -10,10 +20,22 @@
 			flex-direction: column;
 			a {
 				margin: 15px 0;
-				line-height: 1;
-				font-size: 20px;
-				color: #7f7f7f;
 			}
 		}
 	}	
+}
+
+.summary {
+	.blog-share {
+		margin-top: 30px;
+		.social-share-icons {
+			display: flex;
+			a {
+				margin-right: 15px;
+				img {
+					margin-top: 3px;
+				}
+			}
+		}
+	}
 }
