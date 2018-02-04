@@ -44,9 +44,16 @@
 .pg-search {
     padding: 150px 0;
     h1.title {
-        font-style: italic;
         small {
             font-size: 0.5em;
         }
+    }
+    .blog-mark {
+        margin: 0;
+        color: red;
+        font-size: 14px;
+    }
+    h2.entry-title {
+        margin: 10px 0 !important;
     }
 }
