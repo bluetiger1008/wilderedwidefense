@@ -63,5 +63,10 @@ section {
 				}
 			}
 		}
+		@include mobile {
+			.article-wrapper {
+				margin-top: 0;
+			}
+		}
 	}
 }

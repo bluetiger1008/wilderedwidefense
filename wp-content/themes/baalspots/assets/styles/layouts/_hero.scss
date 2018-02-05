@@ -10,14 +10,14 @@
         height: 600px;
         .hero-text {
             top: 220px;
-            #hero-text-slider {
-                .slide {
-                    h1 {
-                        font-size: 56px;
-                        line-height: 1;
-                    }
-                }    
-            }
+            @include internalHeroSliderTextStyle();
+        }
+    }
+    &.criminal-hero {
+        height: 800px;
+        .hero-text {
+            top: 300px;
+            @include internalHeroSliderTextStyle();
         }
     }
     background-size: cover;

@@ -70,6 +70,15 @@
             slidesToScroll: 1
           });  
         }
+
+        $('#search_submit').click(function () {
+            $('#input_search').toggleClass('expanded');
+        });
+
+        $('#mobile_search_submit').click(function () {
+          console.log('toggle');
+            $('#mobile_input_search').toggleClass('expanded');
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

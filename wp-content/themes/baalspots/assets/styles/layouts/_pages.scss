@@ -23,35 +23,6 @@
     h2.screen-reader-text {
         display: none;
     }
-    .posts-navigation {
-        display: flex;
-        justify-content: space-between;
-        .separator {
-            display: none;
-        }
-        a {
-            color: #333;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            span {
-                width: 40px;
-                height: 40px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid #ddd;
-                background-color: white;
-                font-size: 24px;
-                &.left {
-                    margin-right: 15px;
-                }
-                &.right {
-                    margin-left: 15px;
-                }
-            }
-        }
-    }
     span.yellow-border-bar {
         margin: 60px 0;
         &:before {
@@ -67,5 +38,23 @@
 .pg-single-article {
     section.subscribe {
         margin: 60px 0 80px;
+    }
+}
+
+.pg-search {
+    padding: 150px 0;
+    h1.title {
+        small {
+            font-size: 0.5em;
+        }
+    }
+    .blog-mark {
+        margin: 0 !important;
+        color: red;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    h2.entry-title {
+        margin: 10px 0 !important;
     }
 }

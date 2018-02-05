@@ -1,0 +1,23 @@
+section {
+	&.search-result {
+		.results-list {
+			margin-top: 100px;
+			border-top: 4px solid #181818;
+			background-color: white;
+			padding: 40px;
+			article {
+				border-bottom: 1px solid #efefef;
+				padding: 30px 0;
+				background-color: transparent;
+				.meta-data {
+					margin-bottom: 15px;
+				}
+			}
+		}
+		.posts-navigation {
+			h2 {
+				display: none;
+			}
+		}
+	}
+}

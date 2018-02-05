@@ -5,6 +5,10 @@ article {
     background-color: white;
     @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
     .article-photo {
+        height: inherit;
+        display: block;
+        position: relative;
+        overflow: hidden;
         figure {
             margin: 0;
             background-position: center;
@@ -33,6 +37,21 @@ article {
                 color: #333333;
                 font-size: 16px;
                 line-height: 26px;
+            }
+        }
+    }
+    h2.entry-title {
+        a {
+            @include articleTitleLink(22px, 28px);
+        }
+    }
+    .entry-summary {
+        p {
+            color: #333333;
+            font-family: "Playfair Display";
+            a {
+                color: #333;
+                border-bottom: 1px solid $alizarin-crimson;
             }
         }
     }

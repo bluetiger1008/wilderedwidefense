@@ -33,14 +33,14 @@
             overflow: hidden;
             white-space: nowrap;
             .slides {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
+                display: inline-block;
                 height: 140px;
                 li {
                     position: relative;
-                    display: inline-block;
-                    text-align: center;
+                    height: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
                     /**
                      * (optional) if the content inside the slide element has a defined size.
                      */
