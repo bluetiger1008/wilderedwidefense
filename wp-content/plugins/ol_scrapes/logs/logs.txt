@@ -2844,3 +2844,16 @@ URL: http://www.wilderdwidefense.com/blog/2013/december/2013-celebrity-arrest-re
 2018-02-07 13:59:02 TASK ID: 471 - PID: 4716 - RAM: 22.94MB - 1 repeat count: 0
 2018-02-07 13:59:02 TASK ID: 471 - PID: 4716 - RAM: 22.85MB - 1 471 task ended
 2018-02-07 13:59:02 TASK ID: 471 - PID: 4467 - RAM: 23.03MB - 1 non blocking admin ajax called exiting
+2018-02-07 17:10:21 TASK ID: 331 - PID: 4467 - RAM: 19.5MB - 1 331 id task starting...
+2018-02-07 17:10:21 TASK ID: 331 - PID: 4467 - RAM: 20.02MB - 1 331 id task queued...
+2018-02-07 17:10:24 TASK ID: 0 - PID: 4465 - RAM: 22.32MB - 1 process task queue called
+2018-02-07 17:10:24 TASK ID: 0 - PID: 4465 - RAM: 22.5MB - 1 process_task_queue starts
+2018-02-07 17:10:24 TASK ID: 0 - PID: 4465 - RAM: 22.5MB - 1 max_execution_time: 0
+2018-02-07 17:10:24 TASK ID: 331 - PID: 4465 - RAM: 22.5MB - 1 repeat count:0
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.87MB - 1 Single scraping started: http://www.wilderdwidefense.com/testimonials
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.91MB - 1 
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.88MB - 1 Repeat check only title:
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.81MB - 1 number of posts: 1
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.81MB - 1 end of posts.
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.81MB - 1 repeat count: 0
+2018-02-07 17:10:25 TASK ID: 331 - PID: 4465 - RAM: 22.82MB - 1 331 task ended
