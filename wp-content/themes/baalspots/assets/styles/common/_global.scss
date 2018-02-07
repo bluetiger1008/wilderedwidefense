@@ -103,7 +103,7 @@ a {
 }
 .anchor-view-all {
     a {
-        @include btnViewAll();
+        @include textLink();
         color: black;
     }
     img {

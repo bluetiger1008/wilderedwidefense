@@ -14,9 +14,10 @@
       </div>
       <div class="navbar-menu">
         <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
-        endif;
+        // if (has_nav_menu('primary_navigation')) :
+        //   wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu-items']);
+        // endif;
+        clean_custom_menu('primary_navigation');
         ?>
         <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
           <div>
