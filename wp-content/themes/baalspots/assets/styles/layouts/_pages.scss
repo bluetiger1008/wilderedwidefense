@@ -42,6 +42,7 @@
 
 .pg-search {
     padding: 150px 0;
+    background-color: #f8f8f8;
     h1.title {
         small {
             font-size: 0.5em;
@@ -57,5 +58,10 @@
         margin-top: 0;
         margin-bottom: 10px;
         line-height: 1;
+    }
+}
+@include mobile {
+    .pg-search {
+        padding: 90px 0;
     }
 }

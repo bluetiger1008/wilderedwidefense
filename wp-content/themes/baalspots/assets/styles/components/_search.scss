@@ -23,4 +23,15 @@ section {
 			}
 		}
 	}
+	@include mobile {
+		&.search-result {
+			.results-list {
+				margin-top: 50px;
+				padding: 20px;
+				article {
+					padding: 10px 0;
+				}
+			}
+		}
+	}
 }
