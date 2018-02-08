@@ -1,6 +1,6 @@
 <!-- fixed navbar -->
 <header class="header--fixed">
-  <div class="forebar">
+  <div class="forebar <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="<?= esc_url(home_url('/')); ?>">
@@ -43,9 +43,11 @@
   <a class="btn-close" id="closeMenu"><img src="<?= get_template_directory_uri(); ?>/dist/images/close.svg"></a>
   <?php
     if (has_nav_menu('primary_navigation')) :
-      wp_nav_menu(['theme_location' => 'primary_navigation', 'depth' => '2', 'menu_class' => 'menu-items', 'container'=> false]);
+      wp_nav_menu(['theme_location' => 'primary_navigation', 'depth' => '2', 'menu_class' => 'mobile-menu-items', 'container'=> false]);
     endif;
   ?>
+  <div id="gradient">
+  </div>
   <div class="cbp-spmenu-footer">
     <div class="social-share">
       <a href=""><img src="<?= get_template_directory_uri(); ?>/dist/images/facebook-black.png"></a>
@@ -68,7 +70,7 @@
 <!-- hero -->
 <?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php')): ?>
   <?php if(get_field('hero_image')): ?>
-    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
   <?php endif; ?>

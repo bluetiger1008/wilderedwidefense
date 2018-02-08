@@ -5,6 +5,7 @@ section {
 			display: flex;
 			flex-direction: column;
 			p.categories {
+				margin-bottom: 0;
 				a {
 		      font-weight: bold;
 					@include articleCategory(16px);

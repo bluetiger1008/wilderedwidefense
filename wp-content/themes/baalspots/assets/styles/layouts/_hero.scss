@@ -14,10 +14,9 @@
         }
     }
     &.criminal-hero {
-        height: 800px;
+        height: 800px ;
         .hero-text {
             top: 300px;
-            @include internalHeroSliderTextStyle();
         }
     }
     background-size: cover;
@@ -84,6 +83,22 @@
                 width: 100%;
                 position: relative;
                 left: 0;
+                h1 {
+                    font-size: 44px !important;
+                }
+            }
+        }
+        &.internal-hero {
+            justify-content: center;
+            .container {
+                .hero-text {
+                    top: 0;
+                    #hero-text-slider {
+                        .slide {
+                            position: relative;
+                        }
+                    }
+                }
             }
         }
         img.img-attorney {

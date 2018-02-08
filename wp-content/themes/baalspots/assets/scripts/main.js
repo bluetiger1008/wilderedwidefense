@@ -75,25 +75,25 @@
         closeMenu = document.getElementById( 'closeMenu' );
         showRight.onclick = function() {
           classie.toggle( menuRight, 'cbp-spmenu-open' );
+          document.querySelector('.mobile-menu-items').classList.add('is-show-menu');   
         };
         closeMenu.onclick = function() {
           classie.toggle( menuRight, 'cbp-spmenu-open' );
           document.querySelector('.cbp-spmenu').classList.remove('is-active-submenu');
-          document.querySelector('.menu-items').classList.remove('is-overflow-visible');                
+          document.querySelector('.mobile-menu-items').classList.remove('is-show-menu');   
           document.querySelector('.sub-menu').classList.remove('is-active');
         };
 
         var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
         // Check if there are any navbar burgers
         if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them              
-          document.querySelector('.menu-items').classList.add('is-overflow-visible');   
+        // Add a click event on each of them
+          console.log('navbar-burger', document.querySelector('.mobile-menu-items').classList);
         }
+        // document.querySelector('.mobile-menu-items').classList.add('is-overflow-visible');   
 
         var $navbarLink = Array.prototype.slice.call(document.querySelectorAll('.menu-item-has-children'), 0);
-        console.log('test');
         if ($navbarLink.length > 0) {
-          console.log('action for navbar');
           [].forEach.call($navbarLink, function($el) {
             var li = document.createElement("li");            
             var link = document.createElement("a");
@@ -118,7 +118,7 @@
                 e.stopPropagation();
                 e.preventDefault();
                
-                document.querySelector('.menu-items').classList.toggle('is-overflow-visible');                            
+                // document.querySelector('.mobile-menu-items').classList.toggle('is-overflow-visible');                            
                 $navbarSubMenu.classList.toggle('is-active');
                 document.querySelector('.cbp-spmenu').classList.toggle('is-active-submenu');
 
@@ -129,7 +129,7 @@
                 $navbarSubMenu.classList.toggle('is-active');
                 document.querySelector('.cbp-spmenu').classList.toggle('is-active-submenu');
                 setTimeout(function() {
-                    document.querySelector('.menu-items').classList.toggle('is-overflow-visible');                
+                    // document.querySelector('.mobile-menu-items').classList.toggle('is-overflow-visible');                
                 }, 500);
             });            
           });

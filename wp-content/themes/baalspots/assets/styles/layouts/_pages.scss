@@ -16,7 +16,6 @@
 
 .pg-blog {
     padding: 150px 0 80px;
-    background-color: $bg-grey;
     .columns {
         flex-wrap: wrap;
     }
@@ -55,6 +54,8 @@
         font-weight: bold;
     }
     h2.entry-title {
-        margin: 10px 0 !important;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1;
     }
 }

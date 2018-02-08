@@ -3,17 +3,17 @@
 
 .cbp-spmenu {
 	background: $bg-black;
-    position: fixed;
-    font-size: 18px;
-    .btn-close {
-        position: absolute;
-        right: 30px;
-        top: 30px;
-        width: 21px;
-        height: 21px;
-        img {
-            vertical-align: top;
-        }
+  position: fixed;
+  font-size: 18px;
+  .btn-close {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      width: 21px;
+      height: 21px;
+      img {
+          vertical-align: top;
+      }
 	}
 	h3 {
 		color: #afdefa;
@@ -30,9 +30,9 @@
 		font-weight: 600;
 		line-height: 3em;
 		text-transform: uppercase;
+		position: relative;
 		&:active {
-			background: #afdefa;
-			color: #47a3da;
+			color: $alizarin-crimson;
 		}
 		i {
 			margin-right: 10px;
@@ -41,13 +41,23 @@
 	.is-overflow-visible {
     overflow-y: scroll;
 	}
-	.menu-items {
+	.mobile-menu-items {
     transition: transform .5s ease;
     margin-top: 78px;
     padding: 0 40px;
+    height: calc(100% - 200px);
+    opacity: 0;
+    .menu-item {
+    	&:last-child {
+    		padding-bottom: 100px;
+    	}
+    }
+    &.is-show-menu {
+    	opacity: 1;
+    }
 	}
 	&.is-active-submenu {
-		.menu-items {
+		.mobile-menu-items {
 	    transform: translate3d(-100%,0,0);
 		}
 	}
@@ -84,6 +94,11 @@
 	    display: block;
     	opacity: 1;
     }
+    li {
+    	&:last-child {
+    		padding-bottom: 100px;
+    	}
+    }
 	}
 	.cbp-spmenu-footer {
 		height: 70px;
@@ -115,6 +130,14 @@
           }
       }
 	  }
+	}
+	#gradient {
+		position:absolute;
+    z-index:2;
+    right:0; bottom:70px; left:0;
+    height:150px; /* adjust it to your needs */
+    background: url(data:image/svg+xml;base64,alotofcodehere);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,#1B1B1B 70%);
 	}
 }
 
@@ -155,15 +178,15 @@
 
 .cbp-spmenu-right.cbp-spmenu-open {
     right: 0px;
-    a, .search-box {
-        @include fadeInDown(
-            $duration: 1s,
-            $count: 1,
-            $delay: .2s,
-            $function: ease, 
-            $fill: both
-        );
-	}
+ //    a, .search-box {
+ //        @include fadeInDown(
+ //            $duration: 1s,
+ //            $count: 1,
+ //            $delay: .2s,
+ //            $function: ease, 
+ //            $fill: both
+ //        );
+	// }
 }
 
 /* Horizontal menu that slides from the top or bottom */

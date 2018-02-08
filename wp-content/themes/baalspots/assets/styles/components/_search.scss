@@ -12,6 +12,9 @@ section {
 				.meta-data {
 					margin-bottom: 15px;
 				}
+				&:last-child {
+					border-bottom: none;
+				}
 			}
 		}
 		.posts-navigation {
