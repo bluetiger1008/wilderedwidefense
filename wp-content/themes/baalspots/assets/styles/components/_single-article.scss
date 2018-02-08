@@ -11,8 +11,9 @@ section {
 					@include articleCategory(16px);
 				}
 			}
-			a.post-title {
+			h1.post-title {
 				@include articleTitleLink(56px, 68px);
+				margin: 0;
 			}
 		}
 		.featured-image {
