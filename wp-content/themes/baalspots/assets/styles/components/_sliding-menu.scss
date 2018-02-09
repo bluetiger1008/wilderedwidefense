@@ -1,8 +1,7 @@
-
 /* General styles for all menus */
 
 .cbp-spmenu {
-	background: $bg-black;
+	background: $cod-gray;
   position: fixed;
   font-size: 18px;
   .btn-close {
@@ -124,7 +123,7 @@
           right:70px;
           background-color: $lightening-yellow;
           font-size: 18px;
-        	color: #1B1B1B;
+        	color: $cod-gray;
           &.expanded {
               max-width: calc(100% - 110px);
           }
@@ -137,7 +136,7 @@
     right:0; bottom:70px; left:0;
     height:150px; /* adjust it to your needs */
     background: url(data:image/svg+xml;base64,alotofcodehere);
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,#1B1B1B 70%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,$cod-gray 70%);
 	}
 }
 

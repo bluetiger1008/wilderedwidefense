@@ -1,0 +1,41 @@
+section {
+	&.victories {
+		padding: 100px 0 40px;
+		.masonry {
+			column-count: 2;
+		  padding: 0;
+		  .item {
+		  	display: inline-block;
+		    background: #fff;
+		    padding: 36px 25px;
+		    margin: 2px 0 20px;
+		    width: 100%;
+		    p.victory-type {
+		    	color: $alizarin-crimson;
+		    	margin-bottom: 0;
+		    	font-weight: bold;
+		    }
+				.victory-content {
+					p {
+						font-family: $fontOpenSans;
+						line-height: 26px;
+						margin-bottom: 0;
+						color: #4A4A4A;	
+					}
+				}    
+		    h2 {
+		    	font-size: 28px;
+		    	color: $cod-gray;
+		    	margin: 0 0 10px;
+		    }
+		  }
+		}	
+	}
+	@include mobile {
+		&.victories {
+			.masonry {
+				column-count: 1;
+			}
+		}
+	}
+}
