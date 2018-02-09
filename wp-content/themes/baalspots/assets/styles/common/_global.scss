@@ -103,7 +103,7 @@ a {
 }
 .anchor-view-all {
     a {
-        @include btnViewAll();
+        @include textLink();
         color: black;
     }
     img {
@@ -156,6 +156,9 @@ a {
             }
         }
     }
+    p, ul {
+        font-family: 'Open Sans';
+    }
 }
 ul.check-list {
     li {
@@ -165,7 +168,7 @@ ul.check-list {
     }
 }
 span.yellow-border-bar {
-    border-top: 1px solid #ddd;
+    border-top: 4px solid $bg-black;
     display: block;
     position: relative;
     width: 100%;
@@ -173,8 +176,8 @@ span.yellow-border-bar {
         content: '';
         position: absolute;
         left: 0;
-        top: -3px;
-        width: 48px;
+        top: -4px;
+        width: 84px;
         height: 4px;
         background-color: #fac627;
     }

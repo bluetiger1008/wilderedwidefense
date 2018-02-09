@@ -16,7 +16,6 @@
 
 .pg-blog {
     padding: 150px 0 80px;
-    background-color: $bg-grey;
     .columns {
         flex-wrap: wrap;
     }
@@ -43,6 +42,7 @@
 
 .pg-search {
     padding: 150px 0;
+    background-color: #f8f8f8;
     h1.title {
         small {
             font-size: 0.5em;
@@ -55,6 +55,13 @@
         font-weight: bold;
     }
     h2.entry-title {
-        margin: 10px 0 !important;
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+}
+@include mobile {
+    .pg-search {
+        padding: 90px 0;
     }
 }

@@ -291,6 +291,63 @@ function black_comment($atts=[], $content=null, $tag='') {
   }
 }
 
+function clean_custom_menu( $theme_location ) {
+    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
+         
+        $menu_list  = '<div class="navbar-start">' ."\n";       
+         
+        $menu = get_term( $locations[$theme_location], 'nav_menu' );
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+          
+        foreach( $menu_items as $menu_item ) {
+            if( $menu_item->menu_item_parent == 0 ) {
+                 
+                $parent = $menu_item->ID;
+                 
+                $menu_array = array();
+                foreach( $menu_items as $submenu ) {
+                    if( $submenu->menu_item_parent == $parent ) {
+                        $bool = true;
+                        $menu_array[] = '<a href="' . $submenu->url . '" class="navbar-item">' . $submenu->title . '</a>' ."\n";
+                    }
+                }
+                if( $bool == true && count( $menu_array ) > 0 ) {
+                     
+                    $menu_list .= '<div class="navbar-item has-dropdown is-hoverable">' ."\n";
+                    $menu_list .= '<a href="' . $menu_item->url . '" class="navbar-link">' . $menu_item->title . ' </a>' ."\n";
+                     
+                    $menu_list .= '<div class="navbar-dropdown">' ."\n";
+                    $menu_list .= '<div class="menu-content">' ."\n";
+                    $menu_list .= '<div class="menu-items">' ."\n";
+                    $menu_list .= implode( "\n", $menu_array );
+                    $menu_list .= '</div>' ."\n";
+                    $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/key.png" class="menu-img">' ."\n";
+                    $menu_list .= '</div>' ."\n";
+                    $menu_list .= '<div class="bar-act-now">' ."\n";
+                    $menu_list .= '<p>You Have 15 Days to Save Your Driver’s License</p>' ."\n";
+                    $menu_list .= '<div class="btn-act"><a>Act Now</a>' ."\n";
+                    $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/arrowRight.svg"></div>' ."\n";
+                    $menu_list .= '</div>' ."\n";
+                    $menu_list .= '</div>' ."\n";
+                    $menu_list .= '</div>' ."\n";
+                } else {
+                    $menu_list .= '<a href="' . $menu_item->url . '" class="navbar-item">' . $menu_item->title . '</a>' ."\n";
+                }
+                 
+            }
+            
+            // end <li>
+            
+        }
+          
+        $menu_list .= '</div>' ."\n";  
+    } else {
+        $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
+    }
+     
+    echo $menu_list;
+}
+
 add_shortcode( 'latest-victories-tiles', 'latest_victories_tiles_shortcode' );
 add_shortcode( 'list-victories-carousel', 'listing_victories_carousel_shortcode' );
 add_shortcode( 'list-award-team', 'listing_award_team' );

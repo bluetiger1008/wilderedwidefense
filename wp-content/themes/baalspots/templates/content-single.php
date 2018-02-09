@@ -10,7 +10,7 @@
 				}
 				?>
 				</p>
-				<a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a>
+				<h1 class="post-title"><?php the_title(); ?></h1>
 				<div class="meta-data">
 	      	<div class="meta-left">
 		      	<?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>

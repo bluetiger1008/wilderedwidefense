@@ -12,11 +12,25 @@ section {
 				.meta-data {
 					margin-bottom: 15px;
 				}
+				&:last-child {
+					border-bottom: none;
+				}
 			}
 		}
 		.posts-navigation {
 			h2 {
 				display: none;
+			}
+		}
+	}
+	@include mobile {
+		&.search-result {
+			.results-list {
+				margin-top: 50px;
+				padding: 20px;
+				article {
+					padding: 10px 0;
+				}
 			}
 		}
 	}

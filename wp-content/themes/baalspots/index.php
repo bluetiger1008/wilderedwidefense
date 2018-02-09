@@ -9,9 +9,8 @@
 
 		<?php if(!is_category()) {
 			get_template_part('templates/section', 'pinnedArticle');
-		}?>
-
-		<span class="yellow-border-bar"></span>
+			echo '<span class="yellow-border-bar"></span>';
+		}?>	
 
 		<div class="columns">
 			<?php while (have_posts()) : the_post(); ?>
