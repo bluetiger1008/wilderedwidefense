@@ -305,10 +305,6 @@
     },
     'testimonials': {
       init: function() {
-        makeFormSticky();
-        window.onresize = function() {
-          makeFormSticky();
-        };
         function makeFormSticky() {
           if( window.screen.width > 769 ) {
             var sidebar = new StickySidebar('#sticky_consult_form', {
@@ -319,6 +315,11 @@
           }  
         }
 
+        makeFormSticky();
+        window.onresize = function() {
+          makeFormSticky();
+        };
+        
         var btnTestimonialSubmit = document.querySelector("#btnTestimonialSubmit");
 
         btnTestimonialSubmit.onclick = function() {
