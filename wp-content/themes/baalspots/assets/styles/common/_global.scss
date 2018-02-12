@@ -1,5 +1,5 @@
 body {
-    font-family: 'Open Sans';
+    font-family: $fontOpenSans;
 }
 a {
     &:hover {
@@ -54,7 +54,7 @@ a {
 .content {
     h1, h2, h3, h4, h5, h6 {
         font-weight: bold;
-        font-family: 'Trueno';
+        font-family: $fontTrueno;
     }
     h1 {
         font-size: 44px;
@@ -72,11 +72,11 @@ a {
         font-size: 16px;
         font-weight: 300;
         line-height: 1.8em;
-        font-family: 'Trueno';
+        font-family: $fontTrueno;
         font-weight: 300;
     }
     ul {
-        font-family: 'Trueno';
+        font-family: $fontTrueno;
     }
     @media screen and (max-width:374px) {
         h1 {
@@ -157,7 +157,7 @@ a {
         }
     }
     p, ul {
-        font-family: 'Open Sans';
+        font-family: $fontOpenSans;
     }
 }
 ul.check-list {
@@ -168,7 +168,7 @@ ul.check-list {
     }
 }
 span.yellow-border-bar {
-    border-top: 4px solid $bg-black;
+    border-top: 4px solid $cod-gray;
     display: block;
     position: relative;
     width: 100%;

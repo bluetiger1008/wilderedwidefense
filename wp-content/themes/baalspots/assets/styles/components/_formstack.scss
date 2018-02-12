@@ -1,5 +1,5 @@
 .fsBody {
-    background-color: $bg-black !important;
+    background-color: $cod-gray !important;
     padding: 0 !important;
     .fsForm {
         background: none !important;
@@ -90,7 +90,7 @@
         font-size: 24px;
         font-family: "Playfair Display";
         line-height: 34px;
-        color: #1b1b1b;
+        color: $cod-gray;
         border-bottom: 1px solid $alizarin-crimson;
         padding-bottom: 20px;
         margin-bottom: 20px;

@@ -60,7 +60,7 @@ header {
                 }
                 .navbar-start {
                     height: 100%;
-                    font-family: "Trueno";
+                    font-family: $fontTrueno;
                     font-size: 14px;
                     letter-spacing: 1px;
                     margin-right: 0;
@@ -135,7 +135,7 @@ header {
                                             padding: 0;
                                             color: $tuna;
                                             font-size: 14px;
-                                            font-family: "Trueno";
+                                            font-family: $fontTrueno;
                                             &:hover {
                                                 background-color: white;
                                                 color: $alizarin-crimson;
@@ -228,20 +228,20 @@ header {
             line-height: 70px;
             font-size: 14px;
             letter-spacing: 1px;
-            font-family: 'Trueno';
+            font-family: $fontTrueno;
             font-weight: bold;
-            color: $bg-black;
+            color: $cod-gray;
             width: 16%;
             text-align: center;
             a {
-                color: $bg-black;
+                color: $cod-gray;
             }
         }
         &.black {
             @include shapedBar(98, 90%, 70px, black, right, 30px, null);
             .phone_number {
                 color: white;
-                a {
+                a {
                     color: white;
                 }
             }
