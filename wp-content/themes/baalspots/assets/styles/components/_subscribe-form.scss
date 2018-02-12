@@ -23,11 +23,6 @@ section.subscribe {
             }
         }    
     }
-    .pg-victories & {
-        .subscribe-content {
-            border-left: 10px solid $alizarin-crimson;
-        }
-    }
     @include mobile {
         margin-bottom: 60px;
         .subscribe-content {

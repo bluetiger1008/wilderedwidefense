@@ -15,5 +15,13 @@
     "classie": "^1.0.1",
     "aos": "^2.2.0",
     "font-awesome": "fontawesome#^4.7.0"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    }
   }
 }
