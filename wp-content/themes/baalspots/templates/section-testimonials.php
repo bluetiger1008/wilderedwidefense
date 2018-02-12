@@ -25,32 +25,30 @@
                 <?php endif;?>
             </div>
             <div class="column" style="position: relative;">
-                <div id="sticky_consult_form">
-                    <div class="form-submit-testimonial">
-                        <div class="form-header">
-                            <p>Share your positive <br> experience at <br> The Wilder Firm!</p>
-                            <img src="<?= get_template_directory_uri(); ?>/dist/images/testimonial-girl.png">
-                        </div>
-                        <div class="form-content">
-                            <span>
-                                <a id="btnTestimonialSubmit">Submit My Testimonial</a>
-                                <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
-                            </span>
-                        </div>
+                <div class="form-submit-testimonial">
+                    <div class="form-header">
+                        <p>Share your positive <br> experience at <br> The Wilder Firm!</p>
+                        <img src="<?= get_template_directory_uri(); ?>/dist/images/testimonial-girl.png">
                     </div>
-                    <div class="form-consult">
-                        <div class="form-content">
-                            <div class="form-consult-title"><?php the_field('consultation_form_title'); ?></div>
-                            <?php the_field('consultation_form_script') ?>
-                        </div>
-                        <?php if(get_field('consultation_form_quote')) : ?>
-                            <div class="form-quote">
-                                <img class="icon-quote" src="<?= get_template_directory_uri(); ?>/dist/images/icon-quote.png">
-                                <p class="quote"><?php the_field('consultation_form_quote') ?></p>
-                                <p class="verdict"><?php the_field('consultation_form_verdict') ?></p>
-                            </div>
-                        <?php endif; ?>
+                    <div class="form-content">
+                        <span>
+                            <a id="btnTestimonialSubmit">Submit My Testimonial</a>
+                            <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
+                        </span>
                     </div>
+                </div>
+                <div class="form-consult" id="sticky_consult_form">
+                    <div class="form-content">
+                        <div class="form-consult-title"><?php the_field('consultation_form_title'); ?></div>
+                        <?php the_field('consultation_form_script') ?>
+                    </div>
+                    <?php if(get_field('consultation_form_quote')) : ?>
+                        <div class="form-quote">
+                            <img class="icon-quote" src="<?= get_template_directory_uri(); ?>/dist/images/icon-quote.png">
+                            <p class="quote"><?php the_field('consultation_form_quote') ?></p>
+                            <p class="verdict"><?php the_field('consultation_form_verdict') ?></p>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
