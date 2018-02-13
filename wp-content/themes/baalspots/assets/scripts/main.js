@@ -51,9 +51,10 @@
         });
 
         /* awards logo slider */
-        var multiSlides  = document.querySelector('.js_multislides');
+        var multiSlides  = document.querySelector('.awards-multiple-slider');
         // http://easings.net/
         if(multiSlides) {
+          console.log('abc');
           lory(multiSlides, {
             infinite: 6,
             slidesToScroll: 1

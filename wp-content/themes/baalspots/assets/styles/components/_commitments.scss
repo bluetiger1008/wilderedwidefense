@@ -1,0 +1,25 @@
+section {
+	&.commitments {
+		background-image: url('../images/bg-commitments.jpg');
+		background-size: cover;
+		padding: 130px 0;
+		h1 {
+			color: white;
+			margin-bottom: 60px;
+		}
+		.columns {
+			flex-wrap: wrap;
+			.commitment {
+				h3 {
+					color: $sunglow;
+					font-size: 14px;
+					text-transform: uppercase;
+					margin-bottom: 17px;
+				}
+				p {
+					color: white;
+				}
+			}
+		}
+	}
+}

@@ -5,7 +5,7 @@
                 <?php 
                     the_content();
 
-                    if(!is_front_page()) {
+                    if(!is_front_page() && !is_page_template('template-theFirm.php')) {
                         get_template_part('templates/section', 'latestArticles'); 
                     }
                 ?>

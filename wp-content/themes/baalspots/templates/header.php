@@ -68,7 +68,7 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php')): ?>
+<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php')): ?>
   <?php if(get_field('hero_image')): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>
@@ -110,31 +110,7 @@
           </div>
           <div class="awards-forebar">
           </div>
-          <?php 
-            // the query
-            $wpb_all_query = new WP_Query(array('post_type'=>'award', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
-            <?php if ( $wpb_all_query->have_posts() ) : ?>
-            <div class="slider js_multislides">
-                <div class="frame js_frame">
-                    <ul class="slides js_slides">
-                        <!-- the loop -->
-                        <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-                            <li class="js_slide"><?php the_post_thumbnail(); ?></li>
-                        <?php endwhile; ?>
-                        <!-- end of the loop -->     
-                    </ul>
-                </div>
-                <span class="js_prev prev">
-                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowLeft.svg">
-                </span>
-                <span class="js_next next">
-                    <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
-                </span>
-            </div>
-            <?php wp_reset_postdata(); ?>       
-            <?php else : ?>
-                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-            <?php endif; ?>
+          <?php get_template_part('templates/section', 'awardsSlider'); ?>
         </div>
       <?php endif; ?>
     </div>
