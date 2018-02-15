@@ -80,7 +80,7 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php')): ?>
+<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php')): ?>
   <?php if(get_field('hero_image')): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>

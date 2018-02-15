@@ -1,0 +1,11 @@
+.awardLogosWrapper {
+	.logos {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.logo {
+			width: 20%;
+			margin-bottom: 50px;
+		}
+	}
+}

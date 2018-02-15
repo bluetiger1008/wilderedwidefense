@@ -23,7 +23,6 @@ Template Post Type: post, page, event
                 while( have_rows('testimoinals') ): the_row(); 
                     
                     // vars
-                    $image = get_sub_field('image');
                     $title = get_sub_field('title');
                     $script = get_sub_field('testimonial_script');
                     
@@ -31,7 +30,7 @@ Template Post Type: post, page, event
                     <div class="columns is-gapless">
                         <div class="column is-half">
                             <div class="testimonial-title" style="background-image: url('<?php echo $image['url']; ?>');">
-                                <img class="is-hidden-mobile" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                <img class="is-hidden-mobile" src="<?= get_template_directory_uri(); ?>/dist/images/bg-law.jpg">
                                 <h1><?php echo $title; ?></h1>
                             </div>
                         </div>

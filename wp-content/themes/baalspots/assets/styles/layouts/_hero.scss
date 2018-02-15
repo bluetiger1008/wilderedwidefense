@@ -19,15 +19,33 @@
             top: 300px;
         }
     }
+    .content {
+        height: 100%;
+        .container {
+            height: 100%;
+        }
+    }
     background-size: cover;
     img {
-        &.hero-background {
-            width: 100%;
-        }
         &.img-attorney {
             position: absolute;
             bottom: 150px;
             right: 200px;
+        }
+    }
+    .pg-douglas & {
+        img {
+            &.img-attorney {
+                bottom: 0;
+                left: 0;
+                width: 390px;
+            }
+        }
+        &.internal-hero {
+            .hero-text {
+                top: 400px;
+                left: 350px;
+            }
         }
     }
     .hero-text {

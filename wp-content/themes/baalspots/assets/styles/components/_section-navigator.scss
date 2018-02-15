@@ -1,0 +1,32 @@
+.section-navigator {
+	width: 100%;
+	height: 80px;
+	transform: skew(-20deg);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+	background-color: $cod-gray;
+	position: relative;
+	margin-top: -25px;
+	.navigators {
+		position: absolute;
+		transform: skew(20deg);
+		display: flex;
+		.navigator {
+			width: 120px;
+			text-align: center;
+			&:first-child {
+				margin-left: 20px;
+			}
+			a {
+				line-height: 80px;
+				height: 80px;
+				font-size: 16px;
+				color: white;
+				display: inline-block;
+				&:hover {
+					font-weight: bold;
+					border-bottom: 3px solid #DA2128;
+				}
+			}
+		}
+	}
+}

@@ -227,6 +227,20 @@
         // JavaScript to be fired on the about us page
       }
     },
+    'douglas': {
+      init: function() {
+        console.log('yes');
+        var victories_slider = document.querySelector('.js_victories_slider');
+        var testimonials_slider = document.querySelector('.js_testimonials_slider');
+
+        lory(victories_slider, {
+            infinite: 1
+        });
+        lory(testimonials_slider, {
+            infinite: 1
+        });
+      }
+    },
     'single': {
       init: function() {
         var sidebar = new StickySidebar('#side-bar', {
