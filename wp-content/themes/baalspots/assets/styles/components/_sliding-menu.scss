@@ -94,6 +94,14 @@
     	opacity: 1;
     }
     li {
+    	a {
+    		text-transform: capitalize;
+    	}
+    	&.parent {
+    		a {
+    			text-transform: uppercase;
+    		}
+    	}
     	&:last-child {
     		padding-bottom: 100px;
     	}

@@ -5,6 +5,7 @@ header {
         right: 0;
         left: 0;
         top: 0;
+        height: 93px;
     }
     &.headroom {
         will-change: transform;
@@ -16,180 +17,144 @@ header {
     &.headroom--unpinned {
         transform: translateY(-100%);
     }
-    .forebar {
-        position: relative;
-        @include shapedBar(99, 75%, 80px, white, right, 30px, 0 2px 4px rgba(0,0,0,0.2));
-        .navbar {
+    .backbar {
+        filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+        .backbar-bg {
             position: absolute;
-            width: 1000px;
-            height: 80px;
-            top: -80px;
-            right: 0;
-            background: transparent;
-            .navbar-brand {
-                margin-right: 100px;
-                .navbar-item {
-                    padding: 0;
-                    &:hover {
-                        background: white;
-                    }
-                    img {
-                        width: 150px;
-                        max-height: 100%;
+            top: 23px;
+            z-index: 98;
+            background-color: $lightening-yellow;
+            width: 50%;
+            height: 70px;
+            &.black {
+                @include shapedBar(98, 90%, 70px, black, right, 30px, null);
+                .phone_number {
+                    color: white;
+                    a {
+                        color: white;
                     }
                 }
             }
-            .navbar-menu {
-                justify-content: space-between;
-                align-items: center;
-                position: relative;
-                .menu-items {
-                    display: flex;
-                    li {
-                        margin: 0 20px;
-                        a {
-                            color: #000;
-                            letter-spacing: 1px;
-                            font-size: 15px;
-                            font-weight: 500;
-                            line-height: 80px;
-                            text-transform: uppercase;
-                            font-family: 'Roboto';
-                        }
-                    }
-                }
-                .navbar-start {
-                    height: 100%;
-                    font-family: $fontTrueno;
+        }
+        .backbar-wrapper {
+            width: 1140px;
+            position: absolute;
+            top: 23px;
+            left: 50%;
+            z-index: 98;
+            transform: translateX(-50%);
+            .backbar-back {
+                @include shapedBar(98, calc(100% + 100px), 70px, $lightening-yellow, right, 30px, null);
+                .phone_number {
+                    position: absolute;
+                    right: -30px;
+                    margin-top: -70px;
+                    line-height: 70px;
                     font-size: 14px;
                     letter-spacing: 1px;
-                    margin-right: 0;
-                    .navbar-link {
-                        outline: none;
-                        &:after {
-                            content: none;
-                        }
-                        &:hover {
-                            background-color: white;
-                            color: $alizarin-crimson;
-                        }
-                        padding: 0;
-                    }
-                    .navbar-item {
-                        height: 100%;
-                        padding: 0 20px;
-                        &:hover {
-                            background-color: white;
-                            color: $alizarin-crimson;
-                        }
-                        &.has-dropdown {
-                            &:hover {
-                                a.navbar-link {
-                                    position: relative;
-                                    background-color: white;
-                                    &:after {
-                                        content: "";
-                                        position: absolute;
-                                        bottom: -16px;
-                                        left: 0;
-                                        right: 0;
-                                        top: auto;
-                                        z-index: 1000;
-                                        margin: 0 auto;
-                                        width: 0;
-                                        height: 0;
-                                        border-top: 6px solid #fac627;
-                                        border-left: 6px solid transparent;
-                                        border-right: 6px solid transparent;
-                                        border-bottom: none;
-                                        -webkit-transform: initial;
-                                        transform: none;
-                                    }
-                                }
-                            }
-                            .navbar-dropdown {
-                                position: fixed;
-                                right: calc(25% + 30px);
-                                left: auto;
-                                width: 1000px;
-                                min-width: auto;
-                                padding: 0;
-                                border-radius: 0;
-                                &:before {
-                                    content: "";
-                                    position: absolute;
-                                    width: 100%;
-                                    height: 100%;
-                                    top: -10px;
-                                }
-                                .menu-content {
-                                    padding: 60px;
-                                    .menu-items {
-                                        height: 160px;
-                                        display: inline-flex;
-                                        flex-direction: column;
-                                        flex-wrap: wrap;
-                                        a.navbar-item {
-                                            width: 290px;
-                                            height: 40px;
-                                            padding: 0;
-                                            color: $tuna;
-                                            font-size: 14px;
-                                            font-family: $fontTrueno;
-                                            &:hover {
-                                                background-color: white;
-                                                color: $alizarin-crimson;
-                                            }
-                                        }    
-                                    }
-                                    .menu-img {
-                                        position: absolute;
-                                        right: 35px;
-                                        top: 70px;
-                                        width: 290px;
-                                        height: auto;
-                                        max-height: initial;
-                                    }
-                                }
-                                .bar-act-now {
-                                    padding: 20px 60px;
-                                    display: flex;
-                                    align-items: center;
-                                    p {
-                                        margin-right: 50px;
-                                        font-weight: bold;
-                                        color: #302F35;
-                                    }
-                                    .btn-act {
-                                        display: flex;
-                                        align-items: center;
-                                        a {
-                                            @include textLink();
-                                            color: #302F35;
-                                        }
-                                        img {
-                                            margin-left: 15px;
-                                            width: 17px;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                    font-family: $fontTrueno;
+                    font-weight: bold;
+                    color: $cod-gray;
+                    text-align: center;
+                    a {
+                        color: $cod-gray;
                     }
                 }
-                .searchform {
-                    margin-right: 30px;
-                }
-            }                
+            }
         }
-        &.black {
+    }
+    .forebar {
+        filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+        z-index: 100;
+        position: relative;
+        .forebar-bg {
+            width: 50%;
+            background-color: white;
+            height: 80px;
+            position: relative;
+            z-index: 99;
+        }
+        .navbar-wrapper {
+            width: 1140px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 101;
+            transform: translateX(-50%);
+            .navbar-back {
+                @include shapedBar(99, 942px, 80px, white, right, 30px, null);
+            }
             .navbar {
+                width: 912px;
+                height: 80px;
+                background: white;
+                position: absolute;
+                top: 0;
+                .navbar-brand {
+                    margin-right: 40px;
+                    .navbar-item {
+                        padding: 0;
+                        &:hover {
+                            background: white;
+                        }
+                        img {
+                            width: 150px;
+                            max-height: 100%;
+                        }
+                    }
+                }
                 .navbar-menu {
+                    align-items: center;
+                    position: relative;
+                    .menu-items {
+                        display: flex;
+                        li {
+                            margin: 0 20px;
+                            a {
+                                color: #000;
+                                letter-spacing: 1px;
+                                font-size: 15px;
+                                font-weight: 500;
+                                line-height: 80px;
+                                text-transform: uppercase;
+                                font-family: 'Roboto';
+                            }
+                        }
+                    }
                     .navbar-start {
+                        height: 100%;
+                        font-family: $fontTrueno;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        margin-right: 0;
+                        .navbar-link {
+                            outline: none;
+                            text-transform: uppercase;
+                            &:after {
+                                content: none;
+                            }
+                            &:hover {
+                                background-color: white;
+                                color: $alizarin-crimson;
+                            }
+                            padding: 0;
+                        }
                         .navbar-item {
+                            text-transform: uppercase;
+                            height: 100%;
+                            padding: 0 18px;
+                            &:first-child {
+                                padding-left: 0;
+                            }
+                            &:hover {
+                                background-color: white;
+                                color: $alizarin-crimson;
+                            }
                             &.has-dropdown {
                                 &:hover {
                                     a.navbar-link {
+                                        position: relative;
+                                        background-color: white;
                                         &:after {
                                             content: "";
                                             position: absolute;
@@ -201,7 +166,7 @@ header {
                                             margin: 0 auto;
                                             width: 0;
                                             height: 0;
-                                            border-top: 6px solid black;
+                                            border-top: 6px solid #fac627;
                                             border-left: 6px solid transparent;
                                             border-right: 6px solid transparent;
                                             border-bottom: none;
@@ -210,108 +175,206 @@ header {
                                         }
                                     }
                                 }
+                                .navbar-dropdown {
+                                    position: fixed;
+                                    right: 25%;
+                                    left: 0;
+                                    width: 912px;
+                                    min-width: auto;
+                                    padding: 0;
+                                    border-radius: 0;
+                                    top: 90px;
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        top: -10px;
+                                    }
+                                    .menu-content {
+                                        padding: 60px;
+                                        .menu-items {
+                                            height: 160px;
+                                            display: inline-flex;
+                                            flex-direction: column;
+                                            flex-wrap: wrap;
+                                            a.navbar-item {
+                                                width: 290px;
+                                                height: 40px;
+                                                padding: 0;
+                                                color: $tuna;
+                                                font-size: 14px;
+                                                font-family: $fontTrueno;
+                                                text-transform: capitalize;
+                                                &:hover {
+                                                    background-color: white;
+                                                    color: $alizarin-crimson;
+                                                }
+                                            }    
+                                        }
+                                        .menu-img {
+                                            position: absolute;
+                                            right: 35px;
+                                            top: 70px;
+                                            width: 290px;
+                                            height: auto;
+                                            max-height: initial;
+                                        }
+                                    }
+                                    .bar-act-now {
+                                        padding: 20px 60px;
+                                        display: flex;
+                                        align-items: center;
+                                        p {
+                                            margin-right: 50px;
+                                            font-weight: bold;
+                                            color: #302F35;
+                                        }
+                                        .btn-act {
+                                            display: flex;
+                                            align-items: center;
+                                            a {
+                                                @include textLink();
+                                                color: #302F35;
+                                            }
+                                            img {
+                                                margin-left: 15px;
+                                                width: 17px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .searchform {
+                        margin-left: 15px;
+                    }
+                }                
+            }
+            &.black {
+                .navbar {
+                    .navbar-menu {
+                        .navbar-start {
+                            .navbar-item {
+                                &.has-dropdown {
+                                    &:hover {
+                                        a.navbar-link {
+                                            &:after {
+                                                content: "";
+                                                position: absolute;
+                                                bottom: -16px;
+                                                left: 0;
+                                                right: 0;
+                                                top: auto;
+                                                z-index: 1000;
+                                                margin: 0 auto;
+                                                width: 0;
+                                                height: 0;
+                                                border-top: 6px solid black;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-bottom: none;
+                                                -webkit-transform: initial;
+                                                transform: none;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }
-        } 
-    }
-    .backbar {
-        position: relative;
-        margin-top: -60px;
-        @include shapedBar(98, 90%, 70px, $lightening-yellow, right, 30px, null);
-        .phone_number {
-            position: absolute;
-            right: 0px;
-            margin-top: -70px;
-            line-height: 70px;
-            font-size: 14px;
-            letter-spacing: 1px;
-            font-family: $fontTrueno;
-            font-weight: bold;
-            color: $cod-gray;
-            width: 16%;
-            text-align: center;
-            a {
-                color: $cod-gray;
-            }
-        }
-        &.black {
-            @include shapedBar(98, 90%, 70px, black, right, 30px, null);
-            .phone_number {
-                color: white;
-                a {
-                    color: white;
-                }
-            }
+            } 
         }
     }
     @include touch {
-        .backbar {
-            width: 100% !important;
-            border-top: none !important;
-            border-right: none !important;
-            margin-top: 0;
-            background-color: $lightening-yellow;
+        &.header--fixed {
             height: 85px;
-            margin-top: -80px;
-            display: flex;
-            align-items: center;
-            .phone_number {
-                display: none;
-            }
-            .navbar-burger {
-                margin-right: 20px;
-                background: transparent;
-                border: none;
-                width: 26px;
-                span {
-                    width: 100%;
-                    height: 2px;
-                    left: 0;
-                    &:first-child {
-                        top: calc(50% - 3px);
-                    }
-                    &:nth-child(2) {
-                        top: calc(50% + 3px);
+        }
+        .backbar {
+            .backbar-bg {
+                width: 100% !important;
+                border-top: none !important;
+                border-right: none !important;
+                margin-top: 0;
+                background-color: $lightening-yellow;
+                height: 85px;
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                top: 0;
+                .phone_number {
+                    display: none;
+                }
+                .navbar-burger {
+                    margin-right: 20px;
+                    background: transparent;
+                    border: none;
+                    width: 26px;
+                    span {
+                        width: 100%;
+                        height: 2px;
+                        left: 0;
+                        &:first-child {
+                            top: calc(50% - 3px);
+                        }
+                        &:nth-child(2) {
+                            top: calc(50% + 3px);
+                        }
                     }
                 }
+            }
+            .backbar-wrapper {
+                display: none;
             }
         }
         .forebar {
             width: calc(100% - 50px);
-            .navbar {
-                left: 0;
+            .forebar-bg {
+                @include shapedBar(99, 100%, 80px, white, right, 30px, 4px 2px 4px rgba(0,0,0,0.2));
+                background-color: transparent;
+            }
+            .navbar-wrapper {
                 width: 100%;
-                .navbar-brand {
-                    height: 100%;
-                    .navbar-item {
-                        padding-left: 20px;
+                .navbar {
+                    left: 0;
+                    width: auto;
+                    background: transparent;
+                    .navbar-brand {
+                        height: 100%;
+                        .navbar-item {
+                            padding-left: 20px;
+                        }
                     }
                 }
-            }
+                .navbar-back {
+                    display: none;
+                }
+            }    
         }
     }
     @include desktop-only {
         .forebar {
-            width: 85%;
-            .navbar {
-                width: 800px;
-                .navbar-brand {
-                    margin-right: 50px;
-                }
-                .navbar-menu {
-                    .navbar-start {
-                        .navbar-item {
-                            padding: 0 10px;
-                            &.has-dropdown {
-                                .navbar-dropdown {
-                                    right: calc(15% + 30px);
-                                    width: 800px;
-                                    .menu-content {
-                                        .menu-img {
-                                            display: none;
+            .navbar-wrapper {
+                width: 960px;
+                .navbar {
+                    width: 768px;
+                    .navbar-brand {
+                        margin-right: 10px;
+                    }
+                    .navbar-menu {
+                        .navbar-start {
+                            .navbar-item {
+                                padding: 0 8px;
+                                &.has-dropdown {
+                                    .navbar-dropdown {
+                                        right: calc(15% + 30px);
+                                        width: 768px;
+                                        .menu-content {
+                                            .menu-img {
+                                                display: none;
+                                            }
                                         }
                                     }
                                 }
@@ -319,46 +382,46 @@ header {
                         }
                     }
                 }
+                .navbar-back {
+                    width: 798px;
+                }
             }
         }
         .backbar {
-            .phone_number {
-                display: none;
-            }
+            .backbar-wrapper {
+                width: 960px;
+                .backbar-back {
+                    width: 100%;
+                    .phone_number {
+                        right: 40px;
+                    }
+                }
+            }    
         }
     }
-    @media screen and (max-width:1480px) and (min-width: 1216px) {
+    @include widescreen-only {
         .backbar {
-            .phone_number {
-                span {
-                    display: none;
+            .backbar-wrapper {
+                .backbar-back {
+                    width: 100%;
+                    .phone_number {
+                        right: 50px;
+                    }
                 }
-            }
+            }    
         }
-        .forebar {
-            .navbar {
-                width: 850px;
-                .navbar-brand {
-                    margin-right: 50px;
-                }
-                .navbar-menu {
-                    .navbar-start {
-                        .navbar-item {
-                            padding: 0 15px;
-                            &.has-dropdown {
-                                .navbar-dropdown {
-                                    width: 850px;
-                                    .menu-content {
-                                        .menu-img {
-                                            width: 200px;
-                                        }
-                                    }
-                                }
-                            }
+    }
+    @media screen and (max-width: 1407px) {
+        .backbar {
+            .backbar-wrapper {
+                .backbar-back {
+                    .phone_number {
+                        span {
+                            display: none;
                         }
                     }
                 }
-            }
+            }    
         }
     }
 }
