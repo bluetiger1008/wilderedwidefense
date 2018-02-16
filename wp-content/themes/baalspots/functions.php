@@ -394,7 +394,7 @@ function testimonials_slider($atts) {
         </div>
       </div>
       <div class="view-all">
-        <a class="">View All Victories</a>
+        <a class="">View All Testimonials</a>
         <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
       </div>
     </div>

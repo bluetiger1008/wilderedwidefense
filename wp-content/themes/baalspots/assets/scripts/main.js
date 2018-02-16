@@ -54,7 +54,6 @@
         var multiSlides  = document.querySelector('.awards-multiple-slider');
         // http://easings.net/
         if(multiSlides) {
-          console.log('abc');
           lory(multiSlides, {
             infinite: 6,
             slidesToScroll: 1
@@ -251,10 +250,10 @@
     'internal': {
       init: function() {
         // JavaScript to be fired on the about us page
-        var wp_content = document.querySelector('.wp-content');
         var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
         var form_consult = document.querySelector('.form-consult');
-        var article_content = document.querySelector('.latest-articles-rows');
+        var left_contents = document.querySelectorAll('.left-content');
+        var last_left_content = left_contents[left_contents.length - 1];
 
         if(sticky_consultation_form) {
           var sticky_form_offset =  offset(sticky_consultation_form);  
@@ -282,18 +281,16 @@
                 sticky_consultation_form.style.top = "0px";
                 sticky_consultation_form.style.left = "0px";
                 sticky_consultation_form.style.width = "100%";
-                document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "44px";
-              }
-              if(sticky_consultation_form.getBoundingClientRect().bottom >= article_content.getBoundingClientRect().bottom - 30) {           
-                form_consult.style.position = "absolute";
-                form_consult.style.bottom = "30px";
-                form_consult.style.left = ".75rem";
-                form_consult.style.width = "calc(100% - 1.5rem)";
-                sticky_consultation_form.style.position = "relative";
-                sticky_consultation_form.style.top = "0px";
-                sticky_consultation_form.style.left = "0px";
-                sticky_consultation_form.style.width = "100%";
                 document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
+              }
+              if(sticky_consultation_form.getBoundingClientRect().bottom >= last_left_content.getBoundingClientRect().bottom - 30) {
+                form_consult.style.width = "100%";
+                form_consult.style.position = "relative";
+                form_consult.style.left = "0px";
+                sticky_consultation_form.style.position = "fixed";
+                sticky_consultation_form.style.top = last_left_content.getBoundingClientRect().bottom - sticky_consultation_form.getBoundingClientRect().height + "px";
+                sticky_consultation_form.style.left = form_consult_offset.left + "px";
+                sticky_consultation_form.style.width = form_consult_offset.width + "px";
               }  
             } else {
               form_consult.style.position = "relative";
@@ -319,22 +316,7 @@
       }
     },
     'testimonials': {
-      init: function() {
-        function makeFormSticky() {
-          if( window.screen.width > 769 ) {
-            var sidebar = new StickySidebar('#sticky_consult_form', {
-              containerSelector: '#testimonials-content',
-              topSpacing: 50,
-              bottomSpacing: 0
-            });  
-          }  
-        }
-
-        makeFormSticky();
-        window.onresize = function() {
-          makeFormSticky();
-        };
-        
+      init: function() {        
         var btnTestimonialSubmit = document.querySelector("#btnTestimonialSubmit");
 
         btnTestimonialSubmit.onclick = function() {

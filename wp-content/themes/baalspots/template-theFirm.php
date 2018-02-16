@@ -40,7 +40,7 @@
 
 	<div class="container second-content">
 		<div class="columns">
-			<div class="column is-two-thirds" data-aos="fade-up" data-aos-delay="300" data-aos-once="true" >
+			<div class="column is-two-thirds left-content" data-aos="fade-up" data-aos-delay="300" data-aos-once="true" >
 				<?php the_field('the_firm_second_content'); ?>
 			</div>
 		</div>
