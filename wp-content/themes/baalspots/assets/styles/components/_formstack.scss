@@ -55,12 +55,17 @@
             border-top-right-radius: 0px;
         }
     }
-    body.home & {
+    body.home, body.testimonials & {
         &-title {
             h3 {
-                font-size: 24px;
+                font-size: 20px;
             }
-        }   
+        }
+        .fsBody {
+            .fsForm {
+                margin: 0;
+            }
+        }
     }
     .fsBody {
         border-bottom-right-radius: 3px;

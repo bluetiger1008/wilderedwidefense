@@ -86,10 +86,6 @@
 
         var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
         // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-          console.log('navbar-burger', document.querySelector('.mobile-menu-items').classList);
-        }
         // document.querySelector('.mobile-menu-items').classList.add('is-overflow-visible');   
 
         var $navbarLink = Array.prototype.slice.call(document.querySelectorAll('.menu-item-has-children'), 0);
@@ -305,6 +301,30 @@
         window.onresize = function() {
           resetConsultationFormPosition();
         };
+      }
+    },
+    'testimonials': {
+      init: function() {
+        function makeFormSticky() {
+          if( window.screen.width > 769 ) {
+            var sidebar = new StickySidebar('#sticky_consult_form', {
+              containerSelector: '#testimonials-content',
+              topSpacing: 50,
+              bottomSpacing: 0
+            });  
+          }  
+        }
+
+        makeFormSticky();
+        window.onresize = function() {
+          makeFormSticky();
+        };
+        
+        var btnTestimonialSubmit = document.querySelector("#btnTestimonialSubmit");
+
+        btnTestimonialSubmit.onclick = function() {
+          document.getElementById('testimonial-modal').classList.add('is-active');
+        };  
       }
     }
 

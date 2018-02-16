@@ -4,7 +4,7 @@ section.subscribe {
         padding: 57px 0 64px 87px;
         background-image: url('../images/bg-stay-desktop.jpg') !important;
         background-size: cover;
-        border-left: 10px solid $lightening-yellow;
+        border-left: 10px solid $alizarin-crimson;
         h1, p {
             color: white;
         }
@@ -22,11 +22,6 @@ section.subscribe {
                 }
             }
         }    
-    }
-    .pg-victories & {
-        .subscribe-content {
-            border-left: 10px solid $alizarin-crimson;
-        }
     }
     @include mobile {
         margin-bottom: 60px;
