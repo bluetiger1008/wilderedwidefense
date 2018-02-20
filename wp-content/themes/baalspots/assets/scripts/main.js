@@ -228,7 +228,6 @@
     },
     'douglas': {
       init: function() {
-        console.log('yes');
         var victories_slider = document.querySelector('.js_victories_slider');
         var testimonials_slider = document.querySelector('.js_testimonials_slider');
 
@@ -238,6 +237,20 @@
         lory(testimonials_slider, {
             infinite: 1
         });
+
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+
       }
     },
     'single': {

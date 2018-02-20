@@ -48,19 +48,19 @@
 		<div class="section-navigator">
 			<div class="navigators">
 				<div class="navigator">
-					<a>Biography</a>
+					<a href="#biography">Biography</a>
 				</div>
 				<div class="navigator">
-					<a>Education</a>
+					<a href="#education">Education</a>
 				</div>
 				<div class="navigator">
-					<a>Awards</a>
+					<a href="#awards">Awards</a>
 				</div>
 				<div class="navigator">
-					<a>Victories</a>
+					<a href="#victories">Victories</a>
 				</div>
 				<div class="navigator">
-					<a>Testimonials</a>
+					<a href="#testimonials">Testimonials</a>
 				</div>
 			</div>
 		</div>

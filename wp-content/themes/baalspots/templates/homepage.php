@@ -29,7 +29,7 @@ Template Post Type: post, page, event
                     ?>
                     <div class="columns is-gapless">
                         <div class="column is-half">
-                            <div class="testimonial-title" style="background-image: url('<?php echo $image['url']; ?>');">
+                            <div class="testimonial-title">
                                 <img class="is-hidden-mobile" src="<?= get_template_directory_uri(); ?>/dist/images/bg-law.jpg">
                                 <h1><?php echo $title; ?></h1>
                             </div>
@@ -53,7 +53,7 @@ Template Post Type: post, page, event
             </div>
             <?php the_field('article_script'); ?>
             <div class="anchor-view-all">
-                <a>View All Articles</a>
+                <a href="<?= esc_url(home_url('/')); ?>blog/">View All Articles</a>
                 <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
             </div>
         </div>

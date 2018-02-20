@@ -44,7 +44,7 @@
         <span></span>
       </button>
     </div>
-    <div class="backbar-wrapper">
+    <div class="backbar-wrapper <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
       <div class="backbar-back">
         <p class="phone_number"><span>CALL 24/7</span> <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
       </div>
@@ -80,7 +80,7 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php')): ?>
+<?php if(!is_home() && !is_single() && !is_404() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php')): ?>
   <?php if(get_field('hero_image')): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
   <?php else: ?>

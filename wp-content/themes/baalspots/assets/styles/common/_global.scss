@@ -1,5 +1,8 @@
 body {
     font-family: $fontOpenSans;
+    &.in-transition {
+        transition: transform 900ms ease;
+    }
 }
 a {
     &:hover {

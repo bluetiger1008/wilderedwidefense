@@ -17,6 +17,9 @@ section.testimonials {
                 color: white;
                 line-height: 1em;
             }
+            @include mobile {
+                background-image: url('../images/bg-law.jpg');
+            }
         }
         .testimonial-content {
             position: absolute;

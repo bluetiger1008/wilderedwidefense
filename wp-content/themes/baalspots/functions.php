@@ -95,7 +95,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 <?php if($index == 3): ?>
                   <div class="anchor-view-all is-hidden-desktop is-hidden-tablet">
-                      <a>View All</a>
+                      <a href="<?= esc_url(home_url('/')); ?>victories/">View All</a>
                       <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
                   </div>
                 <?php endif; ?>
@@ -189,7 +189,11 @@ function listing_award_team( $atts ) {
           </span>
       </div>
       <div class="anchor-view-all has-text-centered">
-          <a>Read More</a>
+        <?php if(!is_page_template('template-theFirm.php')) : ?>
+          <a href="<?= esc_url(home_url('/')); ?>douglas/">Read More</a>
+        <?php else: ?>
+          <a href="<?= esc_url(home_url('/')); ?>douglas/">Douglas's Profile</a>
+        <?php endif; ?>
           <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
       </div>
     </div>
@@ -346,7 +350,7 @@ function notable_victories($atts) {
         </div>
       </div>
       <div class="view-all">
-        <a class="">View All Victories</a>
+        <a class="" href="<?= esc_url(home_url('/')); ?>victories/">View All Victories</a>
         <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
       </div>
     </div>
@@ -394,7 +398,7 @@ function testimonials_slider($atts) {
         </div>
       </div>
       <div class="view-all">
-        <a class="">View All Testimonials</a>
+        <a class="" href="<?= esc_url(home_url('/')); ?>testimonials/">View All Testimonials</a>
         <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
       </div>
     </div>

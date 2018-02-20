@@ -47,6 +47,25 @@
                 left: 350px;
             }
         }
+        @include mobile {
+            img {
+                &.img-attorney {
+                    width: 250px;
+                    height: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            &.internal-hero {
+                .hero-text {
+                    left: 0;
+                    top: 100px !important;
+                    #hero-text-slider .slide p {
+                        display: block !important;
+                    }
+                }
+            }
+        }
     }
     .hero-text {
         position: absolute;

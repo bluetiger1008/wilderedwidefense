@@ -27,13 +27,7 @@ header {
             width: 50%;
             height: 70px;
             &.black {
-                @include shapedBar(98, 90%, 70px, black, right, 30px, null);
-                .phone_number {
-                    color: white;
-                    a {
-                        color: white;
-                    }
-                }
+                background-color: black;
             }
         }
         .backbar-wrapper {
@@ -58,6 +52,17 @@ header {
                     text-align: center;
                     a {
                         color: $cod-gray;
+                    }
+                }
+            }
+            &.black {
+                .backbar-back {
+                    @include shapedBar(98, calc(100% + 100px), 70px, black, right, 30px, null);
+                    .phone_number {
+                        color: white;
+                        a {
+                            color: white;
+                        }
                     }
                 }
             }

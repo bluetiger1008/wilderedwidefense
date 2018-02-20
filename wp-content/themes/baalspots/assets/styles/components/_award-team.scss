@@ -1,6 +1,8 @@
 section.meet-team {
     padding: 144px 0 100px;
-    background-color: #EFEFEF;
+    .pg-firm & {
+        background-color: #EFEFEF;    
+    }
     h1 {
         color: #131313;
     }
