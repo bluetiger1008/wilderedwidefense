@@ -14,58 +14,6 @@
         right: 0;
         @include shapedBar(96, 90%, 140px, white, left, 50px, 	0 2px 10px rgba(0,0,0,0.1));
     }
-    .slider {
-        width: 900px;
-        position: relative;
-        margin-bottom: -20px;
-        height: 140px;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 97;
-        .frame {
-            /**
-             * (optional) wrapper width, specifies width of the slider frame.
-             */
-            width: 100%;
-            position: relative;
-            font-size: 0;
-            line-height: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            .slides {
-                display: inline-block;
-                height: 140px;
-                li {
-                    position: relative;
-                    height: 100%;
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    /**
-                     * (optional) if the content inside the slide element has a defined size.
-                     */
-                    width: 150px;
-                }
-            } 
-        }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            margin-top: -10px;
-            display: block;
-            cursor: pointer;
-            img {
-                width: 25px;
-                height: 20px;
-            }
-        }   
-        .next {
-            right: -50px;
-        }
-        .prev {
-            left: -50px;
-        }
-    }
     @include mobile {
         .awards-backbar {
             width: calc(100% - 20px);
@@ -81,47 +29,100 @@
             background-color: white;
             padding: 0 30px;
         }
-        .slider {
+    }
+}
+.slider.awards-multiple-slider {
+    width: 900px;    
+    position: relative;
+    margin-bottom: -20px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 97;
+    .pg-firm & {
+        height: 240px;
+        background-color: #F8F8F8;
+        .frame {
+            .slides {
+                height: 240px;
+            }
+        }
+    }
+    .frame {
+        /**
+         * (optional) wrapper width, specifies width of the slider frame.
+         */
+        width: 100%;
+        position: relative;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        .slides {
+            display: inline-block;
+            height: 140px;
+            li {
+                position: relative;
+                height: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                /**
+                 * (optional) if the content inside the slide element has a defined size.
+                 */
+                width: 150px;
+            }
+        } 
+    }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        display: block;
+        cursor: pointer;
+        img {
+            width: 25px;
+            height: 20px;
+        }
+    }   
+    .next {
+        right: -50px;
+    }
+    .prev {
+        left: -50px;
+    }
+    @include mobile {
+        width: 200px;
+        margin-bottom: 0;
+        .frame {
             width: 200px;
-            margin-bottom: 0;
-            .frame {
-                width: 200px;
-                .slides {
-                    li {
-                        width: 100px;
-                    }
+            .slides {
+                li {
+                    width: 100px;
                 }
             }
         }
     }
     @media screen and (max-width:500px) { 
-        .slider {
-            .frame {
-                width: 200px !important;
-            }
+        .frame {
+            width: 200px !important;
         }
     }
     @include tablet-only {
-        .slider {
+        width: 450px;
+        .frame {
             width: 450px;
-            .frame {
-                width: 450px;
-                margin: 0 auto;
-            }
+            margin: 0 auto;
         }
     }
     @include desktop-only {
-        .slider {
-            width: 600px;
-        }
+        width: 600px;
     }
     @include widescreen-only {
-        .slider {
-            width: 750px;
-            .frame {
-                width: 100%;
-                margin: 0 auto;
-            }
+        width: 750px;
+        .frame {
+            width: 100%;
+            margin: 0 auto;
         }
     }
 }

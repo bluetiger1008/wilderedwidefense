@@ -95,7 +95,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <div class="post-summary"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 <?php if($index == 3): ?>
                   <div class="anchor-view-all is-hidden-desktop is-hidden-tablet">
-                      <a>View All</a>
+                      <a href="<?= esc_url(home_url('/')); ?>victories/">View All</a>
                       <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
                   </div>
                 <?php endif; ?>
@@ -189,7 +189,11 @@ function listing_award_team( $atts ) {
           </span>
       </div>
       <div class="anchor-view-all has-text-centered">
-          <a>Read More</a>
+        <?php if(!is_page_template('template-theFirm.php')) : ?>
+          <a href="<?= esc_url(home_url('/')); ?>douglas/">Read More</a>
+        <?php else: ?>
+          <a href="<?= esc_url(home_url('/')); ?>douglas/">Douglas's Profile</a>
+        <?php endif; ?>
           <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
       </div>
     </div>
@@ -291,6 +295,118 @@ function black_comment($atts=[], $content=null, $tag='') {
   }
 }
 
+function award_logos($atts) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'award',
+      'posts_per_page' => -1,
+  ) );
+  if ( $query->have_posts() ) { ?>
+    <div class="awardLogosWrapper">    
+      <h1>Awards</h1>
+      <div class="logos">
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <div class="logo">
+          <?php the_post_thumbnail(); ?>
+        </div>
+        <?php endwhile;
+        wp_reset_postdata(); ?>
+      </div>
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
+function notable_victories($atts) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'notable_victories',
+      'posts_per_page' => -1,
+  ) );
+  if ( $query->have_posts() ) { ?>
+    <h1>Notable Victories</h1>
+    <div class="customSliderWrapper">
+      <div class="slider js_victories_slider simple">
+        <div class="frame js_frame">
+          <ul class="slides js_slides">
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+              <li class="js_slide">
+                <p class="victory-type"><?php the_field('victory_type'); ?></p>
+                <h2><?php the_title(); ?></h2>
+                <p><?php echo wp_trim_words( get_the_content(), 25, $more = '… ' ); ?></p>
+              </li>
+              <?php endwhile;
+              wp_reset_postdata(); ?>
+          </ul>
+        </div>
+        <div class="slider_nav">
+          <span class="js_prev prev">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowLeft.svg">
+          </span>
+          <span class="js_next next">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowRight.svg">
+          </span>
+        </div>
+      </div>
+      <div class="view-all">
+        <a class="" href="<?= esc_url(home_url('/')); ?>victories/">View All Victories</a>
+        <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+      </div>
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
+function testimonials_slider($atts) {
+  ob_start();
+  $query = new WP_Query( array(
+      'post_type'=>'testimonial',
+      'posts_per_page' => -1,
+  ) );
+  if ( $query->have_posts() ) { ?>
+    <h1>Testimonials</h1>
+    <div class="customSliderWrapper">
+      <div class="slider js_testimonials_slider simple">
+        <div class="frame js_frame">
+          <ul class="slides js_slides">
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+              <li class="js_slide">
+                <div class="stars">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <h2><?php the_title(); ?></h2>
+                <p><?php echo wp_trim_words( get_the_content(), 45, $more = '… ' ); ?></p>
+                <h3>– Anonymous</h3>
+              </li>
+              <?php endwhile;
+              wp_reset_postdata(); ?>
+          </ul>
+        </div>
+        <div class="slider_nav">
+          <span class="js_prev prev">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowLeft.svg">
+          </span>
+          <span class="js_next next">
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/iconArrowRight.svg">
+          </span>
+        </div>
+      </div>
+      <div class="view-all">
+        <a class="" href="<?= esc_url(home_url('/')); ?>testimonials/">View All Testimonials</a>
+        <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+      </div>
+    </div>
+  <?php $myvariable = ob_get_clean();
+  return $myvariable;
+  }
+}
+
 function clean_custom_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
          
@@ -354,6 +470,9 @@ add_shortcode( 'list-award-team', 'listing_award_team' );
 add_shortcode( 'list-testimonials', 'listing_testimonials');
 add_shortcode( 'list-articles', 'listing_articles');
 add_shortcode( 'black-comment', 'black_comment');
+add_shortcode( 'award-logos', 'award_logos');
+add_shortcode( 'notable-victories', 'notable_victories');
+add_shortcode( 'testimonials-slider', 'testimonials_slider');
 
 function victories_tiles_init() {
     register_sidebar( array(

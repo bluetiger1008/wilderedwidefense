@@ -19,15 +19,52 @@
             top: 300px;
         }
     }
+    .content {
+        height: 100%;
+        .container {
+            height: 100%;
+        }
+    }
     background-size: cover;
     img {
-        &.hero-background {
-            width: 100%;
-        }
         &.img-attorney {
             position: absolute;
             bottom: 150px;
             right: 200px;
+        }
+    }
+    .pg-douglas & {
+        img {
+            &.img-attorney {
+                bottom: 0;
+                left: 0;
+                width: 390px;
+            }
+        }
+        &.internal-hero {
+            .hero-text {
+                top: 400px;
+                left: 350px;
+            }
+        }
+        @include mobile {
+            img {
+                &.img-attorney {
+                    width: 250px;
+                    height: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            &.internal-hero {
+                .hero-text {
+                    left: 0;
+                    top: 100px !important;
+                    #hero-text-slider .slide p {
+                        display: block !important;
+                    }
+                }
+            }
         }
     }
     .hero-text {

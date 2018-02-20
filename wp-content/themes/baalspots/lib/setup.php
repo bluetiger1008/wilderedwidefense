@@ -94,7 +94,9 @@ function display_sidebar() {
     is_page_template('template-internal.php'),
     is_page_template('templates/criminalPage.php'),
     is_page_template('template-victories.php'),
-    is_page_template('template-testimonials.php')
+    is_page_template('template-testimonials.php'),
+    is_page_template('template-theFirm.php'),
+    is_page_template('template-douglas.php')
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
@@ -112,8 +114,8 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-  wp_enqueue_script('sage/headroom', Assets\asset_path('scripts/stickySidebar.js'));
-  wp_enqueue_script( 'sage/classie_js', Assets\asset_path('scripts/classie.js'));
+  wp_enqueue_script('sage/stickySidebar', Assets\asset_path('scripts/stickySidebar.js'));
+  wp_enqueue_script('sage/classie_js', Assets\asset_path('scripts/classie.js'));
   wp_enqueue_script('sage/header_js', Assets\asset_path('scripts/headroom.js'));
   wp_enqueue_script('sage/lory_js', Assets\asset_path('scripts/lory.js'));
   wp_enqueue_script('sage/aos_js', Assets\asset_path('scripts/aos.js'));

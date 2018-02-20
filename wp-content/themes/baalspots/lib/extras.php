@@ -16,7 +16,7 @@ function body_class($classes) {
     }
   }
 
-  if (is_page_template('template-internal.php') || is_page_template('templates/criminalPage.php')) {
+  if (is_page_template('template-internal.php') || is_page_template('templates/criminalPage.php') || is_page_template('template-testimonials.php') || is_page_template('template-theFirm.php') || is_page_template('template-douglas.php')) {
     $classes[] = 'internal';
   }
 

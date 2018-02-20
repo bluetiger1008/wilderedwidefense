@@ -1,7 +1,11 @@
-<?php get_template_part('templates/page', 'header'); ?>
-
-<div class="alert alert-warning">
-  <?php _e('Sorry, but the page you were trying to view does not exist.', 'sage'); ?>
+<div class="pg-404">
+	<div class="container">
+		<p class="sm">Ohh Nooo</p>
+		<h1>Page Not Found</h1>
+		<p class="alert">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		<div class="goBack">
+      <a href="<?= esc_url(home_url('/')); ?>">Lets go back home</a>
+      <img src="<?= get_template_directory_uri(); ?>/dist/images/arrowRight.svg">
+    </div>
+	</div>
 </div>
-
-<?php get_search_form(); ?>

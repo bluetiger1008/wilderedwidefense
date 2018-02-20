@@ -1,7 +1,7 @@
 <section class="all-testimonials">
     <div class="container">
         <div class="columns" id="testimonials-content">
-            <div class="column is-two-thirds" data-aos="fade-up" data-aos-delay="300" data-aos-once="true" >
+            <div class="column is-two-thirds left-content" data-aos="fade-up" data-aos-delay="300" data-aos-once="true" >
                 <?php $query = new WP_Query( array(
                     'post_type'=>'testimonial',
                     'posts_per_page' => -1,
@@ -37,7 +37,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="form-consult" id="sticky_consult_form">
+                <div class="form-consult sticky" id="sticky_consult_form">
                     <div class="form-content">
                         <div class="form-consult-title"><?php the_field('consultation_form_title'); ?></div>
                         <?php the_field('consultation_form_script') ?>

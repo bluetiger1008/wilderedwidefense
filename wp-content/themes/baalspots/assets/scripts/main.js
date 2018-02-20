@@ -51,7 +51,7 @@
         });
 
         /* awards logo slider */
-        var multiSlides  = document.querySelector('.js_multislides');
+        var multiSlides  = document.querySelector('.awards-multiple-slider');
         // http://easings.net/
         if(multiSlides) {
           lory(multiSlides, {
@@ -226,6 +226,33 @@
         // JavaScript to be fired on the about us page
       }
     },
+    'douglas': {
+      init: function() {
+        var victories_slider = document.querySelector('.js_victories_slider');
+        var testimonials_slider = document.querySelector('.js_testimonials_slider');
+
+        lory(victories_slider, {
+            infinite: 1
+        });
+        lory(testimonials_slider, {
+            infinite: 1
+        });
+
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
+
+      }
+    },
     'single': {
       init: function() {
         var sidebar = new StickySidebar('#side-bar', {
@@ -236,10 +263,10 @@
     'internal': {
       init: function() {
         // JavaScript to be fired on the about us page
-        var wp_content = document.querySelector('.wp-content');
         var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
         var form_consult = document.querySelector('.form-consult');
-        var article_content = document.querySelector('.latest-articles-rows');
+        var left_contents = document.querySelectorAll('.left-content');
+        var last_left_content = left_contents[left_contents.length - 1];
 
         if(sticky_consultation_form) {
           var sticky_form_offset =  offset(sticky_consultation_form);  
@@ -267,18 +294,16 @@
                 sticky_consultation_form.style.top = "0px";
                 sticky_consultation_form.style.left = "0px";
                 sticky_consultation_form.style.width = "100%";
-                document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "44px";
-              }
-              if(sticky_consultation_form.getBoundingClientRect().bottom >= article_content.getBoundingClientRect().bottom - 30) {           
-                form_consult.style.position = "absolute";
-                form_consult.style.bottom = "30px";
-                form_consult.style.left = ".75rem";
-                form_consult.style.width = "calc(100% - 1.5rem)";
-                sticky_consultation_form.style.position = "relative";
-                sticky_consultation_form.style.top = "0px";
-                sticky_consultation_form.style.left = "0px";
-                sticky_consultation_form.style.width = "100%";
                 document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
+              }
+              if(sticky_consultation_form.getBoundingClientRect().bottom >= last_left_content.getBoundingClientRect().bottom - 30) {
+                form_consult.style.width = "100%";
+                form_consult.style.position = "relative";
+                form_consult.style.left = "0px";
+                sticky_consultation_form.style.position = "fixed";
+                sticky_consultation_form.style.top = last_left_content.getBoundingClientRect().bottom - sticky_consultation_form.getBoundingClientRect().height + "px";
+                sticky_consultation_form.style.left = form_consult_offset.left + "px";
+                sticky_consultation_form.style.width = form_consult_offset.width + "px";
               }  
             } else {
               form_consult.style.position = "relative";
@@ -304,22 +329,7 @@
       }
     },
     'testimonials': {
-      init: function() {
-        function makeFormSticky() {
-          if( window.screen.width > 769 ) {
-            var sidebar = new StickySidebar('#sticky_consult_form', {
-              containerSelector: '#testimonials-content',
-              topSpacing: 50,
-              bottomSpacing: 0
-            });  
-          }  
-        }
-
-        makeFormSticky();
-        window.onresize = function() {
-          makeFormSticky();
-        };
-        
+      init: function() {        
         var btnTestimonialSubmit = document.querySelector("#btnTestimonialSubmit");
 
         btnTestimonialSubmit.onclick = function() {

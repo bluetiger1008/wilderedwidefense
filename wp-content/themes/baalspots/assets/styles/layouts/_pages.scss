@@ -60,6 +60,33 @@
         line-height: 1;
     }
 }
+
+.pg-firm {
+    .second-content {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        p, ul {
+            font-family: $fontOpenSans;
+        }
+    }
+    section.meet-team {
+        h1 {
+            font-size: 56px;
+            line-height: 68px;
+            margin-bottom: 30px;
+        }
+        p {
+            color: $cod-gray;
+        }
+    }
+    .awards-slider {
+        background: #F8F8F8;
+    }
+    .wp-content {
+        padding: 60px 0;
+    }
+}
+
 @include mobile {
     .pg-search {
         padding: 90px 0;
