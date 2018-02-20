@@ -1,5 +1,4 @@
-.pg-404 {
-	height: 930px;
+.pg-404, .pg-thankyou {
 	text-align: center;
 	padding-top: 200px;
 	.container {
@@ -38,6 +37,20 @@
 	}
 	@include mobile {
 		padding-top: 100px;
+	}
+}
+
+.pg-404 {
+	height: 930px;
+	@include mobile {
 		height: 600px;
+	}
+}
+
+.pg-thankyou {
+	height: auto;
+	section.subscribe {
+		text-align: left;
+		margin-top: 70px;
 	}
 }
