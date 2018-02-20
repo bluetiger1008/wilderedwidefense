@@ -182,7 +182,16 @@
             }
           }
           /* jshint ignore:end */
-        }        
+        }
+
+        if(document.querySelector('.js_award_team_slider')) {
+          var award_team_slider = document.querySelector('.js_award_team_slider');
+          var lory_team_slider = lory(award_team_slider, {
+              infinite: 1
+          });
+          var child_slider = award_team_slider.querySelectorAll('.js_slide');
+          lory_team_slider.slideTo(1);
+        }   
       }      
     },
     // Home page
@@ -202,14 +211,6 @@
           slides[currentSlide].className = 'slide showing';
         }
         /* jshint ignore:end */
-
-        /* award team slider */
-        var award_team_slider = document.querySelector('.js_award_team_slider');
-        var lory_team_slider = lory(award_team_slider, {
-            infinite: 1
-        });
-        var child_slider = award_team_slider.querySelectorAll('.js_slide');
-        lory_team_slider.slideTo(1);
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

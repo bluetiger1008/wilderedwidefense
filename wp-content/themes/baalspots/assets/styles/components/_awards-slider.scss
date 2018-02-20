@@ -71,6 +71,10 @@
                  * (optional) if the content inside the slide element has a defined size.
                  */
                 width: 150px;
+                img {
+                    max-height: 70px;
+                    width: auto;
+                }
             }
         } 
     }
