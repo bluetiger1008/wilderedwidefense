@@ -18,8 +18,7 @@
 				    	?>
 				      <div class="column is-4-desktop is-6-tablet service">
 				      	<div class="service-image">
-					      	<figure class="image is-16by9">
-					    			<img src="<?php echo $service_image; ?>"/>
+					      	<figure class="image is-16by9" style="background-image: url('<?php echo $service_image; ?>');">
 						    	</figure>
 						    </div>
 					    	<div class="service-footer">

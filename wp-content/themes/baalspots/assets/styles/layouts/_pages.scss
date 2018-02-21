@@ -77,6 +77,24 @@
     }
 }
 
+.pg-contact {
+    #map {
+        height: 865px;
+    }
+    section.contact {
+        margin-top: -500px;
+    }
+    .awards-slider {
+        margin: 80px 0;
+        .slider.awards-multiple-slider {
+            height: 70px;
+            margin-bottom: 0;
+            .frame .slides {
+                height: 70px;
+            }
+        }
+    }
+}
 @include mobile {
     .pg-search {
         padding: 90px 0;
