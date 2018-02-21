@@ -325,7 +325,12 @@ function notable_victories($atts) {
       'posts_per_page' => -1,
   ) );
   if ( $query->have_posts() ) { ?>
-    <h1>Notable Victories</h1>
+    <?php if(!is_page_template('template-internal.php') && !is_front_page()): ?>
+      <h1>Notable Victories</h1>
+    <?php else :?>
+      <p class="txt-red txt-xs is-uppercase" style="text-align: center;">Notable Victories</p>
+    <?php endif; ?>
+
     <div class="customSliderWrapper">
       <div class="slider js_victories_slider simple">
         <div class="frame js_frame">

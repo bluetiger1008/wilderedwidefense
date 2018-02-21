@@ -78,4 +78,40 @@ section.contact {
 			}
 		}
 	}
+	@include touch {
+		.container {
+			.contact-wrapper {
+				.contact-form {
+					.form {
+						padding-right: 30px;
+					}
+					.contact-information {
+						padding-left: 30px;
+					}
+				}	
+			}
+		}
+	}
+	@include mobile {
+		.container {
+			.contact-wrapper {
+				width: 100%;
+				h1 {
+			    font-size: 40px;
+			    line-height: 40px;
+			    margin-bottom: 30px;
+				}
+				.contact-form {
+					padding: 20px;
+					.form {
+						padding-right: 0;
+					}
+					.contact-information {
+						padding-left: 0;
+						margin-top: 30px;
+					}
+				}
+			}
+		}
+	}
 }

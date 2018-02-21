@@ -94,6 +94,14 @@
             }
         }
     }
+    @include mobile {
+        #map {
+            height: 500px;
+        }
+        section.contact {
+            margin-top: -200px;
+        }
+    }
 }
 @include mobile {
     .pg-search {
