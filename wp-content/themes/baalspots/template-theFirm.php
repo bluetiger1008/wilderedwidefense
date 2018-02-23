@@ -10,7 +10,9 @@
 		<?php get_template_part('templates/section', 'awardsSlider'); ?>
 	</div>
 
-	<?php get_template_part('templates/section', 'content'); ?>
+	<?php while (have_posts()) : the_post(); ?>
+		<?php get_template_part('templates/section', 'content'); ?>
+	<?php endwhile; ?>
 
 	<section class="commitments">
 		<div class="container">
@@ -47,5 +49,4 @@
 	</div>
 
 	<?php get_template_part('templates/section', 'subscribe'); ?>
-	<?php get_template_part('templates/footer', 'consultation'); ?>
 </div>

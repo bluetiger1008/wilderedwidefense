@@ -16,7 +16,6 @@ $sage_includes = [
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
-  'lib/postTypes.php',  //Custom Post Types
 ];
 
 function listing_victories_carousel_shortcode( $atts ) {
@@ -84,7 +83,7 @@ function latest_victories_tiles_shortcode( $atts ) {
                 <?php the_post_thumbnail(); ?>
                 <?php if($index == 3): ?>
                   <div class="post-all">
-                    <a>View All</a>
+                    <a href="<?= esc_url(home_url('/')); ?>victories/">View All</a>
                     <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
                   </div>
                 <?php endif; ?>
@@ -231,7 +230,7 @@ function listing_testimonials( $atts ) {
         </div>
       </div>
       <div class="testimonial-all">
-        <a class="">View All</a>
+        <a class="" href="<?= esc_url(home_url('/')); ?>testimonials/">View All</a>
         <img src="<?= get_template_directory_uri(); ?>/dist/images/whiteRightArrow.svg">
       </div>
     </div>
@@ -325,7 +324,12 @@ function notable_victories($atts) {
       'posts_per_page' => -1,
   ) );
   if ( $query->have_posts() ) { ?>
-    <h1>Notable Victories</h1>
+    <?php if(!is_page_template('template-internal.php') && !is_front_page()): ?>
+      <h1>Notable Victories</h1>
+    <?php else :?>
+      <p class="txt-red txt-xs is-uppercase" style="text-align: center;">Notable Victories</p>
+    <?php endif; ?>
+
     <div class="customSliderWrapper">
       <div class="slider js_victories_slider simple">
         <div class="frame js_frame">

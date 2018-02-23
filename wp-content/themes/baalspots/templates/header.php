@@ -1,7 +1,7 @@
 <!-- fixed navbar -->
-<header class="header--fixed">
+<header class="header--fixed <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
   <div class="forebar">
-    <div class="forebar-bg <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
+    <div class="forebar-bg">
     </div>
     <div class="navbar-wrapper">
       <div class="navbar-back">
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="backbar">
-    <div class="backbar-bg <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
+    <div class="backbar-bg">
       <button class="button navbar-burger" id="showRight" data-target="primaryNavigation">
         <span></span>
         <span></span>
@@ -80,9 +80,10 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_404() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php')): ?>
-  <?php if(get_field('hero_image')): ?>
-    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php the_field('hero_image') ?>');">
+<?php if(!is_home() && !is_single() && !is_404() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php') && !is_page_template('template-thankyou.php') && !is_page_template('template-contactus.php')): ?>
+  <?php $heroBackgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+  <?php if($heroBackgroundImg): ?>
+    <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php echo $heroBackgroundImg[0]; ?>');">
   <?php else: ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
   <?php endif; ?>

@@ -1,7 +1,15 @@
 section.meet-team {
     padding: 144px 0 100px;
     .pg-firm & {
-        background-color: #EFEFEF;    
+        background-color: #EFEFEF;
+        h1 {
+            font-size: 56px;
+            line-height: 68px;
+            margin-bottom: 30px;
+        }
+        p {
+            color: $cod-gray;
+        }
     }
     h1 {
         color: #131313;
@@ -92,6 +100,14 @@ section.meet-team {
                 display: none;
             }
         }
+        .pg-firm & {
+            margin: 0;
+            padding: 60px 0;
+            h1 {
+                font-size: 40px;
+                line-height: 45px;
+            }
+        }
         .award-team {
             margin-top: 0;
             .js_award_team_slider {
@@ -140,6 +156,8 @@ section.meet-team {
                                     margin-bottom: 22px;
                                     white-space: pre-wrap;
                                     text-align: center;
+                                    font-size: 34px;
+                                    line-height: 34px;
                                 }   
                             }
                             .about-member {
