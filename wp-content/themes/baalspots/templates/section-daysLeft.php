@@ -4,7 +4,7 @@
             <div class="column is-half-desktop is-12-tablet">
                 <h1><?php the_field('left_days_header') ?></h1>
                 <p><?php the_field('left_days_description') ?></p>
-                <a href="" class="button btn-cta">Act Now</a>
+                <a href="<?= esc_url(home_url('/')); ?>dwi/" class="button btn-cta">Act Now</a>
             </div>
         </div>
     </div>

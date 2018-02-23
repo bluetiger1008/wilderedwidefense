@@ -1,6 +1,7 @@
 <?php
-/**
- * Template Name: Internal Page Template
+/*
+Template Name: Internal Page Template
+Template Post Type: page
  */
 ?>
 

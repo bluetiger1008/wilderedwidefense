@@ -10,7 +10,7 @@ section.contact {
 				color: #242424;
 			}
 			.contact-form {
-				background-color: #F8F8F8;
+				background-color: #fff;
 				padding: 50px 60px;
 				min-height: 500px;
 				border-radius: 3px;
@@ -56,10 +56,26 @@ section.contact {
 				}
 				.contact-information {
 					padding-left: 60px;
-					p {
-						color: #242424;
-						font-size: 16px;
-						line-height: 25px;
+					.info {
+						display: flex;
+						align-items: center;
+						&.address {
+							margin-bottom: 25px;
+						}
+						span {
+							margin-right: 20px;
+							width: 30px;
+							height: 30px;
+							text-align: center;
+						}
+						p {
+							color: #242424;
+							font-size: 16px;
+							line-height: 25px;
+					    flex-basis: 0;
+			        flex-grow: 1;
+			        flex-shrink: 1;
+						}	
 					}
 					.social-share {
 						display: flex;

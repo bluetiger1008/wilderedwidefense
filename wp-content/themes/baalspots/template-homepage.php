@@ -5,7 +5,9 @@ Template Post Type: post, page, event
 */
 ?>
 <div class="home">  
-    <?php get_template_part('templates/section', 'content'); ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('templates/section', 'content'); ?>
+    <?php endwhile; ?>
 
     <?php if ( is_active_sidebar( 'victories_tiles' ) ) : ?>
         <?php dynamic_sidebar( 'victories_tiles' ); ?>

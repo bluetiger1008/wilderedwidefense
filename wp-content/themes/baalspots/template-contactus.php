@@ -29,8 +29,14 @@
 								$contact_information = get_field('contact_information');	
 
 								if( $contact_information ): ?>
-									<p><?php echo $contact_information['address']; ?></p>
-									<p><?php echo $contact_information['phone_number']; ?></p>
+									<div class="info address">
+										<span><img src="<?= get_template_directory_uri(); ?>/dist/images/icon-map.svg"></span>
+										<p><?php echo $contact_information['address']; ?></p>
+									</div>
+									<div class="info">
+										<span><img src="<?= get_template_directory_uri(); ?>/dist/images/icon-mobile.svg"></span>
+										<p><?php echo $contact_information['phone_number']; ?></p>
+									</div>
 								<?php endif; ?>
 
 								<h3>Connect with us!</h3>

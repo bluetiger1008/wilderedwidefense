@@ -20,6 +20,61 @@
       return { top: rect.top + scrollTop, left: rect.left + scrollLeft, width: rect.width, height: rect.height, bottom: rect.top + scrollTop + rect.height };
   }
   
+  function resetConsultationFormPosition(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content) {
+    var form_consult_offset = offset(form_consult);
+    if(sticky_form_offset) {
+      if( window.screen.width > 769 ) {
+        if(document.documentElement.scrollTop > sticky_form_offset.top) {
+          sticky_consultation_form.style.position = "fixed";
+          sticky_consultation_form.style.top = "50px";
+          form_consult.style.width = "100%";
+          sticky_consultation_form.style.left = form_consult_offset.left + "px";
+          sticky_consultation_form.style.width = form_consult_offset.width + "px";
+          form_consult.style.position = "relative";
+          form_consult.style.left = "0px";
+        } else if(document.documentElement.scrollTop < sticky_form_offset.top) {
+          form_consult.style.position = "relative";
+          form_consult.style.left = "0px";
+          form_consult.style.bottom = "0px";
+          form_consult.style.width = "100%";
+          sticky_consultation_form.style.position = "relative";
+          sticky_consultation_form.style.top = "0px";
+          sticky_consultation_form.style.left = "0px";
+          sticky_consultation_form.style.width = "100%";
+          document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
+        }
+        if(sticky_consultation_form.getBoundingClientRect().bottom >= last_left_content.getBoundingClientRect().bottom - 30) {
+          form_consult.style.width = "100%";
+          form_consult.style.position = "relative";
+          form_consult.style.left = "0px";
+          sticky_consultation_form.style.position = "fixed";
+          sticky_consultation_form.style.top = last_left_content.getBoundingClientRect().bottom - sticky_consultation_form.getBoundingClientRect().height + "px";
+          sticky_consultation_form.style.left = form_consult_offset.left + "px";
+          sticky_consultation_form.style.width = form_consult_offset.width + "px";
+        }  
+      } else {
+        form_consult.style.position = "relative";
+        form_consult.style.left = "0px";
+        form_consult.style.bottom = "0px";
+        sticky_consultation_form.style.position = "relative";
+        sticky_consultation_form.style.top = "0px";
+        sticky_consultation_form.style.left = "0px";
+        sticky_consultation_form.style.width = "100%";
+      }
+    }
+  }
+
+  function callResettingOnWindowChange(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content) {
+    resetConsultationFormPosition(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content);
+
+    window.addEventListener('scroll', function(e) {
+      resetConsultationFormPosition(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content);
+    });
+    
+    window.onresize = function() {
+      resetConsultationFormPosition(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content);
+    };
+  }
   var Sage = {
     // All pages
     'common': {
@@ -262,9 +317,22 @@
     },
     'single': {
       init: function() {
-        var sidebar = new StickySidebar('#side-bar', {
-          topSpacing: 20
-        });
+        if(document.querySelector('#side-bar')) {
+          var sidebar = new StickySidebar('#side-bar', {
+            topSpacing: 20
+          });  
+        }
+        if(document.querySelector('.form-consult.sticky .fsBody')) {
+          var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
+          var form_consult = document.querySelector('.form-consult');
+          var left_contents = document.querySelectorAll('.left-content');
+          var last_left_content = left_contents[left_contents.length - 1];       
+          var sticky_form_offset =  offset(sticky_consultation_form);  
+
+          /* sticky side consultation form */
+
+          callResettingOnWindowChange(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content);
+        }
       }
     },
     'internal': {
@@ -273,66 +341,12 @@
         var sticky_consultation_form = document.querySelector('.form-consult.sticky .fsBody');
         var form_consult = document.querySelector('.form-consult');
         var left_contents = document.querySelectorAll('.left-content');
-        var last_left_content = left_contents[left_contents.length - 1];
-
-        if(sticky_consultation_form) {
-          var sticky_form_offset =  offset(sticky_consultation_form);  
-        }
+        var last_left_content = left_contents[left_contents.length - 1];       
+        var sticky_form_offset =  offset(sticky_consultation_form);  
 
         /* sticky side consultation form */
-        function resetConsultationFormPosition() {
-          var form_consult_offset = offset(form_consult);
-          if(sticky_form_offset) {
-            if( window.screen.width > 769 ) {
-              if(document.documentElement.scrollTop > sticky_form_offset.top) {
-                sticky_consultation_form.style.position = "fixed";
-                sticky_consultation_form.style.top = "50px";
-                form_consult.style.width = "100%";
-                sticky_consultation_form.style.left = form_consult_offset.left + "px";
-                sticky_consultation_form.style.width = form_consult_offset.width + "px";
-                form_consult.style.position = "relative";
-                form_consult.style.left = "0px";
-              } else if(document.documentElement.scrollTop < sticky_form_offset.top) {
-                form_consult.style.position = "relative";
-                form_consult.style.left = "0px";
-                form_consult.style.bottom = "0px";
-                form_consult.style.width = "100%";
-                sticky_consultation_form.style.position = "relative";
-                sticky_consultation_form.style.top = "0px";
-                sticky_consultation_form.style.left = "0px";
-                sticky_consultation_form.style.width = "100%";
-                document.querySelector('.form-consult.sticky .fsBody .fsForm').style.marginBottom = "0";
-              }
-              if(sticky_consultation_form.getBoundingClientRect().bottom >= last_left_content.getBoundingClientRect().bottom - 30) {
-                form_consult.style.width = "100%";
-                form_consult.style.position = "relative";
-                form_consult.style.left = "0px";
-                sticky_consultation_form.style.position = "fixed";
-                sticky_consultation_form.style.top = last_left_content.getBoundingClientRect().bottom - sticky_consultation_form.getBoundingClientRect().height + "px";
-                sticky_consultation_form.style.left = form_consult_offset.left + "px";
-                sticky_consultation_form.style.width = form_consult_offset.width + "px";
-              }  
-            } else {
-              form_consult.style.position = "relative";
-              form_consult.style.left = "0px";
-              form_consult.style.bottom = "0px";
-              sticky_consultation_form.style.position = "relative";
-              sticky_consultation_form.style.top = "0px";
-              sticky_consultation_form.style.left = "0px";
-              sticky_consultation_form.style.width = "100%";
-            }
-          }
-        }
 
-        resetConsultationFormPosition();
-
-        window.addEventListener('scroll', function(e) {
-          resetConsultationFormPosition();
-        });
-        
-        window.onresize = function() {
-          resetConsultationFormPosition();
-        };
+        callResettingOnWindowChange(form_consult, sticky_form_offset, sticky_consultation_form, last_left_content);
       }
     },
     'testimonials': {
@@ -358,7 +372,13 @@
 
                 // How you would like to style the map. 
                 // This is where you would paste any style found on Snazzy Maps.
-                styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+                styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}],
+                disableDefaultUI: true,
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                draggable: false,
             };
 
             // Get the HTML DOM element that will contain your map 
@@ -368,12 +388,40 @@
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
 
+            var icon = {
+                url: "http://192.168.4.90:3000/wordpress/wp-content/themes/baalspots/dist/images/icon-google-map.png", // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
             // Let's also add a marker while we're at it
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(32.802532, -96.800898),
                 map: map,
+                icon: icon,
+                size: new google.maps.Size(16, 16),
                 title: 'Snazzy!'
             });
+
+            google.maps.Map.prototype.setCenterWithOffset= function(latlng, offsetX, offsetY) {
+                var map = this;
+                var ov = new google.maps.OverlayView();
+                ov.onAdd = function() {
+                    var proj = this.getProjection();
+                    var aPoint = proj.fromLatLngToContainerPixel(latlng);
+                    aPoint.x = aPoint.x+offsetX;
+                    aPoint.y = aPoint.y+offsetY;
+                    map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
+                }; 
+                ov.draw = function() {}; 
+                ov.setMap(this); 
+            };
+
+            // Using
+
+            var latlng = new google.maps.LatLng(32.802532, -96.800898);          
+
+            map.setCenterWithOffset(latlng, 0, 250);
         }
 
         google.maps.event.addDomListener(window, 'load', init);       
