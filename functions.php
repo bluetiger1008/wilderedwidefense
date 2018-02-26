@@ -414,7 +414,7 @@ function testimonials_slider($atts) {
 function clean_custom_menu( $theme_location ) {
     if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
          
-        $menu_list  = '<div class="navbar-start">' ."\n";       
+        $menu_list  = '<div class="navbar-start" id="navbar_start">' ."\n";       
          
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
@@ -446,8 +446,11 @@ function clean_custom_menu( $theme_location ) {
                     $menu_list .= '<div class="menu-items">' ."\n";
                     $menu_list .= implode( "\n", $menu_array );
                     $menu_list .= '</div>' ."\n";
-                    if($menu_item->title != 'The Firm') {
+                    if($menu_item->title == 'DWI') {
                       $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/key.png" class="menu-img">' ."\n
+                      ";
+                    } else if($menu_item->title != 'The Firm') {
+                      $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/nav-criminal.png" class="menu-img">' ."\n
                       ";
                     }
                     $menu_list .= '</div>' ."\n";
@@ -456,8 +459,8 @@ function clean_custom_menu( $theme_location ) {
                       $menu_list .= '<p>You Have 15 Days to Save Your Driver’s License</p>' ."\n";
                       $menu_list .= '<div class="btn-act"><a>Act Now</a>' ."\n";
                       $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/arrowRight.svg"></div>' ."\n";
+                      $menu_list .= '</div>' ."\n";
                     }
-                    $menu_list .= '</div>' ."\n";
                     $menu_list .= '</div>' ."\n";
                     $menu_list .= '</div>' ."\n";
                 } else {

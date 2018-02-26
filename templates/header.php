@@ -1,5 +1,5 @@
 <!-- fixed navbar -->
-<header class="header--fixed <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
+<header class="header--fixed <?php echo is_home() || is_category() ?'black': null; ?>">
   <div class="forebar">
     <div class="forebar-bg">
     </div>
@@ -44,7 +44,7 @@
         <span></span>
       </button>
     </div>
-    <div class="backbar-wrapper <?php echo is_home() || is_category() || is_single()?'black': null; ?>">
+    <div class="backbar-wrapper <?php echo is_home() || is_category() ?'black': null; ?>">
       <div class="backbar-back">
         <p class="phone_number"><span>CALL 24/7</span> <a href="tel:<?php echo get_theme_mod('phone_number','(214) 741-4000'); ?>"><?php echo get_theme_mod('phone_number', '(214) 741-4000'); ?></a></p>
       </div>

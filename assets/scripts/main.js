@@ -117,6 +117,7 @@
 
         $('#search_submit').click(function () {
             $('#input_search').toggleClass('expanded');
+            $('#navbar_start').toggleClass('hide');
         });
 
         $('#mobile_search_submit').click(function () {

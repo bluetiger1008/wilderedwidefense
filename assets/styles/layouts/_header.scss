@@ -172,6 +172,11 @@ header {
                         font-size: 14px;
                         letter-spacing: 1px;
                         margin-right: 0;
+                        opacity: 1;
+                        transition: all .5s ease;
+                        &.hide {
+                            opacity: 0;
+                        }
                         .navbar-link {
                             outline: none;
                             text-transform: uppercase;
