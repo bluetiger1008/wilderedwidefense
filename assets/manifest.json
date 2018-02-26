@@ -40,6 +40,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost:8888/wordpress"
+    "devUrl": "http://wilderdwidefense.com"
   }
 }
