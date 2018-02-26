@@ -14,6 +14,11 @@ section {
 			.service {
 				display: flex;
 				flex-direction: column;
+				.service-image {
+					figure {
+						background-size: cover;
+					}
+				}
 				.service-footer {
 					background-color: $cod-gray;
 					flex-grow: 1;

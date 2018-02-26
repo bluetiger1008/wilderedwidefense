@@ -90,14 +90,14 @@
         
         /* sticky footer cta button actions */
         var btnCall = document.querySelector(".btn-call"),
-          btnEmail = document.querySelector(".btn-email"),
+          btnChat = document.querySelector(".btn-chat"),
           btnCloseModal = document.getElementsByClassName("modal-close");
 
         btnCall.onclick = function() {
           document.getElementById('call-modal').classList.add('is-active');
         };
        
-        btnEmail.onclick = function() {
+        btnChat.onclick = function() {
           document.getElementById('email-modal').classList.add('is-active');
         };
 
@@ -390,7 +390,7 @@
             var map = new google.maps.Map(mapElement, mapOptions);
 
             var icon = {
-                url: "http://192.168.4.90:3000/wordpress/wp-content/themes/baalspots/dist/images/icon-google-map.png", // url
+                url: "http://c0247.paas3.tx.modxcloud.com/wp-content/themes/baalspots/dist/images/icon-google-map.png", // url
                 scaledSize: new google.maps.Size(50, 50), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(0, 0) // anchor
