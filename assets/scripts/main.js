@@ -89,7 +89,7 @@
         headroom.init();       
         
         /* sticky footer cta button actions */
-        var btnCall = document.querySelector(".btn-call"),
+        var btnCall = document.querySelector("#btn_call"),
           btnChat = document.querySelector(".btn-chat"),
           btnCloseModal = document.getElementsByClassName("modal-close");
 
