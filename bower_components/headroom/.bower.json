@@ -1,0 +1,13 @@
+{
+  "name": "headroom",
+  "_cacheHeaders": {
+    "ETag": "W/\"34e9-15d14740c80\"",
+    "Last-Modified": "Wed, 05 Jul 2017 20:32:16 GMT",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:W/\"34e9-15",
+  "main": "index.js",
+  "_source": "https://unpkg.com/headroom.js",
+  "_target": "*",
+  "_originalSource": "https://unpkg.com/headroom.js"
+}
