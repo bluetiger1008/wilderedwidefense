@@ -5,10 +5,9 @@ article {
     background-color: white;
     @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
     .article-photo {
-        height: inherit;
+        height: auto;
         display: block;
         position: relative;
-        overflow: hidden;
         figure {
             margin: 0;
             background-position: center;

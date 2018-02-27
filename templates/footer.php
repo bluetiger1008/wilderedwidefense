@@ -6,7 +6,7 @@
   </div>
   <div class="sticky-footer-right">
     <a class="cta btn-call is-hidden-mobile" id="btn_call"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png"><p>Call</p></a>
-    <a class="cta btn-call is-hidden-desktop" href="tel:(214) 741-4000"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png"><p>Call</p></a>
+    <a class="cta btn-call is-hidden-desktop is-hidden-tablet" href="tel:(214) 741-4000"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png"><p>Call</p></a>
     <a class="cta btn-chat"><img src="<?= get_template_directory_uri(); ?>/dist/images/chat.png"><p>Chat</p></a>
     <!-- <a class="cta btn-email"><img src="<?= get_template_directory_uri(); ?>/dist/images/email.png"><p>Email</p></a> -->
   </div>

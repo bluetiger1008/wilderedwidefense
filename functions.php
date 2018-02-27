@@ -268,7 +268,6 @@ function listing_articles( $atts ) {
                     ?>
                   </p>
                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                  <div class="article-description"><?php echo wp_trim_words( get_the_content(), 15, $more = '… ' ); ?></div>
                 </div>
               </div>
             </article>
