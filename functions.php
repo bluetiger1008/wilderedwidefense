@@ -456,7 +456,7 @@ function clean_custom_menu( $theme_location ) {
                     if($menu_item->title != 'The Firm') {
                       $menu_list .= '<div class="bar-act-now">' ."\n";
                       $menu_list .= '<p>You Have 15 Days to Save Your Driver’s License</p>' ."\n";
-                      $menu_list .= '<div class="btn-act"><a>Act Now</a>' ."\n";
+                      $menu_list .= '<div class="btn-act"><a href="contact/">Act Now</a>' ."\n";
                       $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/arrowRight.svg"></div>' ."\n";
                       $menu_list .= '</div>' ."\n";
                     }
