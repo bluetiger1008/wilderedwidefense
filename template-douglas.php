@@ -4,12 +4,13 @@
  */
 ?>
 <div class="pg-douglas">
+	<?php $heroBackgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 	<?php if(get_field('hero_image')): ?>
-    <div class="hero internal-hero" style="background-image: url('<?php the_field('hero_image') ?>');">
+    <div class="hero internal-hero" style="background-image: url('<?php echo $heroBackgroundImg[0]; ?>');">
   <?php else: ?>
     <div class="hero internal-hero" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
   <?php endif; ?>
-
+  
 	  <div class="content">
 	  	<div class="container">
 	  		<div class="hero-text">
