@@ -73,9 +73,10 @@ header {
     }
     .backbar {
         filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+        position: relative;
         .backbar-bg {
             position: absolute;
-            top: 23px;
+            top: -57px;
             z-index: 98;
             background-color: $lightening-yellow;
             width: 50%;
@@ -84,7 +85,7 @@ header {
         .backbar-wrapper {
             width: 1140px;
             position: absolute;
-            top: 23px;
+            top: -57px;
             left: 50%;
             z-index: 98;
             transform: translateX(-50%);
@@ -335,7 +336,7 @@ header {
                 margin-top: 0;
                 display: flex;
                 align-items: center;
-                top: 0;
+                top: -80px;
                 .phone_number {
                     display: none;
                 }
