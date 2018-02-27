@@ -6,6 +6,9 @@ body {
 }
 a {
     color: $alizarin-crimson;
+    &:hover {
+        color: $alizarin-crimson;
+    }
 }
 .is-absolute {
     position: absolute;
