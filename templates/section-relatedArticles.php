@@ -42,6 +42,6 @@
 			<?php }
 			wp_reset_postdata(); ?>
 		</div>
-		<?php echo do_shortcode('[wpdevart_facebook_comment curent_url="" order_type="social" width="100%" bg_color="#d4d4d4" animation_effect="random" count_of_comments="3" ]'); ?>
+		<?php echo do_shortcode('[wpdevart_facebook_comment curent_url="http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'" order_type="social" width="100%" bg_color="#d4d4d4" animation_effect="random" count_of_comments="3" ]'); ?>
 	</div>
 </section>
