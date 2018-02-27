@@ -15,10 +15,10 @@
 <footer class="content-info">
   <div class="container">
     <div class="social-share">
-      <a href="https://www.linkedin.com/pub/douglas-wilder/b7/3b1/b97"><img src="<?= get_template_directory_uri(); ?>/dist/images/instagram.png"></a>
+      <a href="https://www.instagram.com/thewilderfirm/"><img src="<?= get_template_directory_uri(); ?>/dist/images/instagram.png"></a>
       <a href="https://twitter.com/TheWilderFirm" target="_blank"><img src="<?= get_template_directory_uri(); ?>/dist/images/twitter.png"></a>
       <a href="https://www.facebook.com/pages/Wilder-Defense/485379268282490?ref" target="_blank"><img src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a>
-      <a href="https://plus.google.com/+TheWilderFirmDallas/posts?hl=en" target="_blank"><img src="<?= get_template_directory_uri(); ?>/dist/images/google.png"></a>
+      <a href="https://www.linkedin.com/pub/douglas-wilder/b7/3b1/b97" target="_blank"><img src="<?= get_template_directory_uri(); ?>/dist/images/icon-ln-w.png"></a>
     </div>
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
