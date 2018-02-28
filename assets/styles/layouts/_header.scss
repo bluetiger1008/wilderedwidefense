@@ -283,6 +283,8 @@ header {
                                                 font-size: 14px;
                                                 font-family: $fontTrueno;
                                                 text-transform: capitalize;
+                                                position: relative;
+                                                z-index: 100;
                                                 &:hover {
                                                     background-color: white;
                                                     color: $alizarin-crimson;
