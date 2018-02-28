@@ -323,12 +323,6 @@ function notable_victories($atts) {
       'posts_per_page' => -1,
   ) );
   if ( $query->have_posts() ) { ?>
-    <?php if(!is_page_template('template-internal.php') && !is_front_page()): ?>
-      <h1>Notable Victories</h1>
-    <?php else :?>
-      <p class="txt-red txt-xs is-uppercase" style="text-align: center;">Notable Victories</p>
-    <?php endif; ?>
-
     <div class="customSliderWrapper">
       <div class="slider js_victories_slider simple">
         <div class="frame js_frame">
@@ -441,10 +435,6 @@ function clean_custom_menu( $theme_location ) {
                       $menu_list .= '<div class="navbar-dropdown">' ."\n";  
                     }
                     
-                    $menu_list .= '<div class="menu-content">' ."\n";
-                    $menu_list .= '<div class="menu-items">' ."\n";
-                    $menu_list .= implode( "\n", $menu_array );
-                    $menu_list .= '</div>' ."\n";
                     if($menu_item->title == 'DWI') {
                       $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/key.png" class="menu-img">' ."\n
                       ";
@@ -452,6 +442,11 @@ function clean_custom_menu( $theme_location ) {
                       $menu_list .= '<img src="' .get_template_directory_uri(). '/dist/images/nav-criminal.png" class="menu-img">' ."\n
                       ";
                     }
+                    
+                    $menu_list .= '<div class="menu-content">' ."\n";
+                    $menu_list .= '<div class="menu-items">' ."\n";
+                    $menu_list .= implode( "\n", $menu_array );
+                    $menu_list .= '</div>' ."\n";
                     $menu_list .= '</div>' ."\n";
                     if($menu_item->title != 'The Firm') {
                       $menu_list .= '<div class="bar-act-now">' ."\n";
