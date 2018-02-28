@@ -261,12 +261,13 @@ header {
                                     .menu-content {
                                         padding: 60px;
                                         .menu-items {
-                                            height: 160px;
+                                            height: auto;
                                             display: inline-flex;
-                                            flex-direction: column;
+                                            width: 520px;
+                                            flex-direction: row;
                                             flex-wrap: wrap;
                                             a.navbar-item {
-                                                width: 290px;
+                                                width: 50%;
                                                 height: 40px;
                                                 padding: 0;
                                                 color: $tuna;
@@ -407,6 +408,9 @@ header {
                                         right: calc(15% + 30px);
                                         width: 768px;
                                         .menu-content {
+                                            .menu-items {
+                                                width: 100%;
+                                            }
                                             .menu-img {
                                                 display: none;
                                             }
