@@ -4,6 +4,9 @@ article {
     height: 100%;
     background-color: white;
     @include box-shadow(0, 0, 24px, rgba(0,0,0,0.1));
+    .home & {
+        padding-bottom: 40px;
+    }
     .article-photo {
         height: auto;
         display: block;

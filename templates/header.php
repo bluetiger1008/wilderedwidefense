@@ -1,5 +1,5 @@
 <!-- fixed navbar -->
-<header class="header--fixed <?php echo is_home() || is_category() ?'black': null; ?>">
+<header class="header--fixed <?php echo is_home() || is_category() || (get_post_type() === 'post') ? 'black': null; ?>">
   <div class="forebar">
     <div class="forebar-bg">
     </div>
