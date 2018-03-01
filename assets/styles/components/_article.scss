@@ -3,7 +3,7 @@ article {
     flex-direction: column;
     height: 100%;
     background-color: white;
-    @include box-shadow(0, 0, 24px, rgba(0,0,0,0.04));
+    @include box-shadow(0, 0, 24px, rgba(0,0,0,0.1));
     .article-photo {
         height: auto;
         display: block;
