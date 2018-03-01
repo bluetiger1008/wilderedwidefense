@@ -200,6 +200,7 @@ header {
                             &:hover {
                                 background-color: white;
                                 color: $alizarin-crimson;
+                                position: static;
                             }
                             &.has-dropdown {
                                 &:hover {
@@ -227,9 +228,9 @@ header {
                                     }
                                 }
                                 .navbar-dropdown {
-                                    position: fixed;
-                                    right: 25%;
-                                    left: 0;
+                                    position: absolute;
+                                    right: 0;
+                                    left: auto;
                                     width: 912px;
                                     min-width: auto;
                                     padding: 0;
@@ -258,6 +259,14 @@ header {
                                         height: 100%;
                                         top: -10px;
                                     }
+                                    .menu-img {
+                                        position: absolute;
+                                        right: 35px;
+                                        top: 70px;
+                                        width: 290px;
+                                        height: auto;
+                                        max-height: initial;
+                                    }
                                     .menu-content {
                                         padding: 60px;
                                         .menu-items {
@@ -274,19 +283,13 @@ header {
                                                 font-size: 14px;
                                                 font-family: $fontTrueno;
                                                 text-transform: capitalize;
+                                                position: relative;
+                                                z-index: 100;
                                                 &:hover {
                                                     background-color: white;
                                                     color: $alizarin-crimson;
                                                 }
                                             }    
-                                        }
-                                        .menu-img {
-                                            position: absolute;
-                                            right: 35px;
-                                            top: 70px;
-                                            width: 290px;
-                                            height: auto;
-                                            max-height: initial;
                                         }
                                     }
                                     .bar-act-now {
