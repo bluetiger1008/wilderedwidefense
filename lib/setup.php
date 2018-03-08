@@ -98,7 +98,8 @@ function display_sidebar() {
     is_page_template('template-testimonials.php'),
     is_page_template('template-theFirm.php'),
     is_page_template('template-douglas.php'),
-    is_page_template('template-thankyou.php')
+    is_page_template('template-thankyou.php'),
+    is_page_template('template-privacy.php')
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
