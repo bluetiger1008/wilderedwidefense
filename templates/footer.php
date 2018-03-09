@@ -21,6 +21,7 @@
       <a href="https://www.linkedin.com/pub/douglas-wilder/b7/3b1/b97" target="_blank"><img src="<?= get_template_directory_uri(); ?>/dist/images/icon-ln-w.png"></a>
     </div>
     <?php dynamic_sidebar('sidebar-footer'); ?>
+    <p class="copyright">©<?php echo date("Y"); ?> The Wilder Firm</p>
   </div>
 </footer>
 

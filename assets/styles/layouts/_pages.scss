@@ -61,6 +61,11 @@
     }
 }
 
+.pg-privacy {
+    padding: 150px 0;
+    background-color: #f8f8f8;
+}
+
 .pg-firm {
     .second-content {
         margin-top: 60px;
@@ -107,7 +112,6 @@
 .pg-douglas {
     .hero.internal-hero .hero-text #hero-text-slider .slide {
         h1 {
-            line-height: 68px;
             margin-bottom: 0;
         }    
         p {
@@ -119,7 +123,7 @@
     }
 }
 @include mobile {
-    .pg-search {
+    .pg-search, .pg-privacy {
         padding: 90px 0;
     }
 }

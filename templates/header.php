@@ -1,5 +1,5 @@
 <!-- fixed navbar -->
-<header class="header--fixed <?php echo is_home() || is_category() ?'black': null; ?>">
+<header class="header--fixed <?php echo is_home() || is_category() || (get_post_type() === 'post') ? 'black': null; ?>">
   <div class="forebar">
     <div class="forebar-bg">
     </div>
@@ -80,7 +80,7 @@
 </nav>
 
 <!-- hero -->
-<?php if(!is_home() && !is_single() && !is_404() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php') && !is_page_template('template-thankyou.php') && !is_page_template('template-contactus.php')): ?>
+<?php if(!is_home() && !is_single() && !is_404() && !is_category() && !is_search() && !is_page_template('search.php') && !is_page_template('template-theFirm.php') && !is_page_template('template-douglas.php') && !is_page_template('template-thankyou.php') && !is_page_template('template-contactus.php') && !is_page_template('template-privacy.php')): ?>
   <?php $heroBackgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
   <?php if($heroBackgroundImg): ?>
     <div class="hero <?php echo is_front_page() ? 'homepage-hero' : (is_page_template('templates/criminalPage.php') ? 'criminal-hero internal-hero' : 'internal-hero'); ?>" style="background-image: url('<?php echo $heroBackgroundImg[0]; ?>');">
