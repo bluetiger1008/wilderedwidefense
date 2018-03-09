@@ -31,20 +31,15 @@ footer {
             }
         }
     }
-    .widget_text {
-        h3 {
-            display: none;
-        }
-        .textwidget {
-            text-align: center;
-            p {
-                font-size: 12px;
-                line-height: 25px;
-                text-align: center;
-                font-family: $fontTrueno;
-            }
-        }
+    
+    p.copyright {
+        text-align: center;
+        font-size: 12px;
+        line-height: 25px;
+        text-align: center;
+        font-family: $fontTrueno;
     }
+
     @include mobile {
         padding: 60px 0 120px;
         .widget_nav_menu {
