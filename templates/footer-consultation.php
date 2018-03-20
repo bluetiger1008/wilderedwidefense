@@ -1,5 +1,5 @@
 <section class="consultation">
-    <?php if(is_home()) : ?>
+    <?php if(is_front_page()) : ?>
         <img src="<?= get_template_directory_uri(); ?>/dist/images/dark-city.jpg">
     <?php endif;?>
     <div class="form">
