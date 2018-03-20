@@ -20,24 +20,24 @@
 
 
 @font-face {
-    font-family: 'truenoregular';
-    src: url('../fonts/trueno/truenorg-webfont.eot');
-    src: url('../fonts/trueno/truenorg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/trueno/truenorg-webfont.woff2') format('woff2'),
-         url('../fonts/trueno/truenorg-webfont.woff') format('woff'),
-         url('../fonts/trueno/truenorg-webfont.ttf') format('truetype');
+    font-family: 'Trueno';
+    src: url('../fonts/truenorg-webfont.eot');
+    src: url('../fonts/truenorg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/truenorg-webfont.woff2') format('woff2'),
+         url('../fonts/truenorg-webfont.woff') format('woff'),
+         url('../fonts/truenorg-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'truenobold';
-    src: url('../fonts/trueno/truenobd-webfont.eot');
-    src: url('../fonts/trueno/truenobd-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/trueno/truenobd-webfont.woff2') format('woff2'),
-         url('../fonts/trueno/truenobd-webfont.woff') format('woff'),
-         url('../fonts/trueno/truenobd-webfont.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Trueno';
+    src: url('../fonts/truenobd-webfont.eot');
+    src: url('../fonts/truenobd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/truenobd-webfont.woff2') format('woff2'),
+         url('../fonts/truenobd-webfont.woff') format('woff'),
+         url('../fonts/truenobd-webfont.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 
 }
