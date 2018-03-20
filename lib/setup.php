@@ -122,6 +122,6 @@ function assets() {
   wp_enqueue_script('sage/header_js', Assets\asset_path('scripts/headroom.js'));
   wp_enqueue_script('sage/lory_js', Assets\asset_path('scripts/lory.js'));
   wp_enqueue_script('sage/aos_js', Assets\asset_path('scripts/aos.js'));
-  wp_enqueue_script('sage/googlemap_js', 'https://maps.googleapis.com/maps/api/js');
+  wp_enqueue_script('sage/googlemap_js', 'https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD0_JrNsqGqhx534C4pc_zu_KQJgTd6bs8');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
