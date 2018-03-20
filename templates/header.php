@@ -9,12 +9,14 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="<?= esc_url(home_url('/')); ?>">
-            <?php
+          <!--  <?php
             if ( get_theme_mod( 'upload_logo' ) ) : ?>
               <img src="<?php echo get_theme_mod( 'upload_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
             <?php else: ?>
               <?php bloginfo( 'name' ); ?>
-            <?php endif; ?>
+            <?php endif; ?> -->
+
+            <img src="<?= get_template_directory_uri(); ?>/dist/images/logo_2x.png" alt="The Wilder Firm">
           </a>
         </div>
         <div class="navbar-menu">
@@ -93,7 +95,7 @@
           <div class="hero-text">
               <?php if( have_rows('hero_slider') ): ?>
               <ul id="hero-text-slider">
-              <?php $index = 0; while( have_rows('hero_slider') ): the_row(); 
+              <?php $index = 0; while( have_rows('hero_slider') ): the_row();
                   // vars
                   $title = get_sub_field('slider_title');
                   $description = get_sub_field('slider_description');
@@ -119,7 +121,7 @@
           <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
         <?php endif; ?>
         <div class="awards-container">
-          <div class="awards-backbar">  
+          <div class="awards-backbar">
           </div>
           <div class="awards-forebar">
           </div>

@@ -1,8 +1,8 @@
 <div class="sticky-footer">
   <div class="sticky-footer-left">
     <img src="<?= get_template_directory_uri(); ?>/dist/images/man.png">
-    <p class="is-hidden-mobile">We’re here to help! Get in Touch</p>
-    <p class="is-hidden-desktop">Get in touch</p>
+    <p class="is-hidden-mobile">We fight for your freedom. Contact us now</p>
+    <p class="is-hidden-desktop">Contact us now</p>
   </div>
   <div class="sticky-footer-right">
     <a class="cta btn-call is-hidden-mobile" id="btn_call"><img src="<?= get_template_directory_uri(); ?>/dist/images/call.png"><p>Call</p></a>

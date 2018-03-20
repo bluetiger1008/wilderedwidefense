@@ -1,21 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700');
 
+//@font-face {
+//	font-family: 'Trueno';
+//    src: url('../fonts/truenoblk-webfont.woff2') format('woff2'),
+//         url('../fonts/truenoblk-webfont.woff') format('woff'),
+//         url('../fonts/truenoblk-webfont.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Trueno';
+//    src: url('../fonts/truenorg-webfont.woff') format('woff'),
+//         url('../fonts/truenorg-webfont.woff2') format('woff2');
+//    font-weight: 300;
+//    font-style: normal;
+//}
+
+
 @font-face {
-	font-family: 'Trueno';
-    src: url('../fonts/truenoblk-webfont.woff2') format('woff2'),
-         url('../fonts/truenoblk-webfont.woff') format('woff'),
-         url('../fonts/truenoblk-webfont.ttf') format('truetype');
-    font-weight: bold;
+    font-family: 'truenoregular';
+    src: url('../fonts/trueno/truenorg-webfont.eot');
+    src: url('../fonts/trueno/truenorg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/trueno/truenorg-webfont.woff2') format('woff2'),
+         url('../fonts/trueno/truenorg-webfont.woff') format('woff'),
+         url('../fonts/trueno/truenorg-webfont.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Trueno';
-    src: url('../fonts/truenorg-webfont.woff') format('woff'),
-         url('../fonts/truenorg-webfont.woff2') format('woff2');
-    font-weight: 300;
+    font-family: 'truenobold';
+    src: url('../fonts/trueno/truenobd-webfont.eot');
+    src: url('../fonts/trueno/truenobd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/trueno/truenobd-webfont.woff2') format('woff2'),
+         url('../fonts/trueno/truenobd-webfont.woff') format('woff'),
+         url('../fonts/trueno/truenobd-webfont.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
+
 }
