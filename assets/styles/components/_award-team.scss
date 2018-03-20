@@ -25,29 +25,33 @@ section.meet-team {
     }
     .award-team {
         margin-top: 60px;
+
+        .columns {
+          justify-content: center;
+        }
         .column {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             .member-photo {
                 height: 320px;
                 display: flex;
                 align-items: flex-end;
-                &.middle {
-                    div {
-                        width: 320px;
-                        height: 320px;
-                    }
-                }
                 div {
-                    width: 230px;
-                    height: 230px;
+                    width: 248px;
+                    height: 248px;
                     position: relative;
                     background-color: #e8e8e8;
                     border-radius: 50%;
                     display: flex;
                     align-items: flex-end;
                     justify-content: center;
+
+                    img {
+                      height: 268px !important;
+                      width: auto !important;
+                    }
                 }
             }
             .member-role {
@@ -135,7 +139,7 @@ section.meet-team {
                                         position: absolute;
                                         bottom: 0;
                                         left: 50%;
-                                        transform: translateX(-50%);                                   
+                                        transform: translateX(-50%);
                                     }
                                 }
                             }
@@ -156,7 +160,7 @@ section.meet-team {
                                     text-align: center;
                                     font-size: 34px;
                                     line-height: 34px;
-                                }   
+                                }
                             }
                             .about-member {
                                 p {
