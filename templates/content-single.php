@@ -12,8 +12,20 @@
 				</p>
 				<h1 class="post-title"><?php the_title(); ?></h1>
 				<div class="meta-data">
-	      	<div class="meta-left">
-		      	<?php echo get_avatar( get_the_author_meta( 'ID' ), 48 ); ?>
+	      	<div class="meta-left is-48x48">
+						<?php
+						    // Retrieve The Post's Author ID
+						    $user_id = get_the_author_meta('ID');
+						    // Set the image size. Accepts all registered images sizes and array(int, int)
+						    $size = 'thumbnail';
+
+						    // Get the image URL using the author ID and image size params
+						    $imgURL = get_cupp_meta($user_id, $size);
+
+						    // Print the image on the page
+						    echo '<img src="'. $imgURL .'" alt="">';
+
+						?>
 		      </div>
 		      <div class="meta-content">
 			      <?php get_template_part('templates/entry-meta'); ?>
@@ -56,4 +68,3 @@
 <?php get_template_part('templates/section', 'subscribe'); ?>
 
 <?php get_template_part('templates/section', 'relatedArticles'); ?>
-
