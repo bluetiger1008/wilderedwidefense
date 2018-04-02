@@ -88,6 +88,7 @@ function display_sidebar() {
     is_single(),
     is_home(),
     is_category(),
+    is_author(),
     is_search(),
     is_page_template('search.php'),
     is_page_template('template-contactus.php'),

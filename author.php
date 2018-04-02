@@ -1,4 +1,4 @@
-<div class="<?php echo is_home() || is_category()? 'pg-blog' : '' ?>">
+<div class="<?php echo is_home() || is_author()? 'pg-blog' : '' ?>">
 	<div class="container">
 		<?php if (!have_posts()) : ?>
 		  <div class="alert alert-warning">
@@ -6,11 +6,6 @@
 		  </div>
 		  <?php get_search_form(); ?>
 		<?php endif; ?>
-
-		<?php if(!is_category()) {
-			get_template_part('templates/section', 'pinnedArticle');
-			echo '<span class="yellow-border-bar"></span>';
-		}?>
 
 		<div class="columns">
 			<?php while (have_posts()) : the_post(); ?>

@@ -4,7 +4,6 @@
 <?php else: ?>
   <div class="hero <?php echo is_front_page() ? 'homepage-hero' : 'internal-hero'; ?>" style="background-image: url('<?= get_template_directory_uri(); ?>/dist/images/hero-placeHolder.jpg');">
 <?php endif; ?>
-
   <div class="content">
     <div class="container">
         <div class="hero-text">
@@ -21,7 +20,7 @@
         <img src="<?php the_field('attorney_image') ?>" class="img-attorney">
       <?php endif; ?>
       <div class="awards-container">
-        <div class="awards-backbar">  
+        <div class="awards-backbar">
         </div>
         <div class="awards-forebar">
         </div>
